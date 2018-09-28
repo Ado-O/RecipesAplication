@@ -1,0 +1,96 @@
+{
+	"data": {
+		"tags": [{
+			"id": 1,
+			"name": "meat"
+		}, {
+			"id": 2,
+			"name": "sugar-free"
+		}, {
+			"id": 3,
+			"name": "vegeterian"
+		}, {
+			"id": 4,
+			"name": "rice"
+		}],
+		"recipes": [{
+			"id": 1,
+			"name": "Cereal with fruti jogurt",
+			"image_url": "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg",
+			"info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
+			"time": 2000,
+			"calorie": 200,
+			"carbs": 20,
+			"fats": 10,
+			"proteins": 20,
+			"level": "MEDIUM",
+			"servings": 2,
+			"ingredients": [{
+				"name": "Ingredient 1",
+				"amount": "300g"
+			}, {
+				"name": "Ingredient 2",
+				"amount": "400g"
+			},{
+				"name": "Ingredient 3",
+				"amount": "200g"
+			},{
+				"name": "Ingredient 4",
+				"amount": "50g"
+			}],
+			"directions": ["Some dir 1", "Some dir 1", "Some dir 1", "Some dir 1"],
+			"tags": [1, 2]
+		},{
+			"id": 2,
+			"name": "American Diner",
+			"image_url": "https://www.snagaslip.com/blog/wp-content/uploads/turkey.jpg",
+			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only ",
+			"time": 4000,
+			"calorie": 400,
+			"carbs": 30,
+			"fats": 40,
+			"proteins": 80,
+			"level": "ADVANCE",
+			"servings": 4,
+			"ingredients": [{
+				"name": "Ingredient 1",
+				"amount": "300g"
+			}, {
+				"name": "Ingredient 2",
+				"amount": "400g"
+			},{
+				"name": "Ingredient 3",
+				"amount": "900g"
+			},{
+				"name": "Ingredient 4",
+				"amount": "40g"
+			},{
+				"name": "Ingredient 5",
+				"amount": "900g"
+			}],
+			"directions": ["Some dir 1", "Some dir 1", "Some dir 1", "Some dir 1", "Some dir 1"],
+			"tags": [1, 2, 3, 4]
+		},{
+			"id": 3,
+			"name": "Recipe 3",
+			"image_url": "https://www.rhiansrecipes.com/wp-content/uploads/2017/08/fullsizeoutput_3f2a-1024x683.jpeg",
+			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+			"time": 3000,
+			"calorie": 600,
+			"carbs": 30,
+			"fats": 30,
+			"proteins": 50,
+			"level": "EASY",
+			"servings": 2,
+			"ingredients": [{
+				"name": "Ingredient 1",
+				"amount": "300g"
+			}],
+			"directions": ["Some dir 1"],
+			"tags": [1]
+		}],
+		"suggested": [
+			1, 2, 3, 1
+		]
+	}
+}
