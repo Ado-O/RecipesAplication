@@ -7,7 +7,6 @@ import java.io.Serializable;
 
 public class IngredientsResponse implements Serializable {
 
-
     @SerializedName("name")
     @Expose
     private String mName;

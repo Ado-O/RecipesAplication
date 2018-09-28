@@ -43,6 +43,7 @@ public class ContentRemoteDataSource {
         callback.onSuccess(
                 baseResponse
         );
+
         Log.e(TAG, baseResponse.getData().getRecipes().get(0).getName());
         Log.e(TAG, "directions "+baseResponse.getData().getRecipes().get(0).getDirections());
         Log.e(TAG, "ingredients "+baseResponse.getData().getRecipes().get(0).getIngredients().get(0).getAmount());
