@@ -8,13 +8,16 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.adoo.recipesaplication.data.Directions;
+import com.example.adoo.recipesaplication.data.Favorite;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
 import com.example.adoo.recipesaplication.data.Suggested;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.local.content.ContentDao;
+import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteDao;
 import com.example.adoo.recipesaplication.data.storage.local.recipes.RecipesDao;
+import com.example.adoo.recipesaplication.data.storage.local.suggested.SuggestedDao;
 
 import java.io.File;
 
@@ -24,7 +27,8 @@ import java.io.File;
         Suggested.class,
         Ingredients.class,
         Directions.class,
-        RecipesTag.class
+        RecipesTag.class,
+        Favorite.class
 }, version = 1, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
@@ -33,6 +37,10 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ContentDao getContentDao();
 
     public abstract RecipesDao getRecipesDao();
+
+    public abstract SuggestedDao getSuggestedDao();
+
+    public abstract FavoriteDao getFavoriteDao();
 
     public static final Object sLock = new Object();
 
