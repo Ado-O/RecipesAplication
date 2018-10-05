@@ -3,4 +3,19 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="whiteColor">#ffff</color>
+    <color name="blackColor">#000</color>
+    
+    <!--basic color for app-->
+    <color name="clickColor">#FF5722</color>
+    <color name="backgroundTextColor">#FFF9C4</color>
+
+    <!--text color-->
+    <color name="darkTextHigh">#DE000000</color>
+    <color name="darkTextMedium">#99000000</color>
+    <color name="darkTextDisabled">#61000000</color>
+
+    <color name="textTag">#C6C6C6</color>
+    <color name="borderTag">#DDDD</color>
 </resources>

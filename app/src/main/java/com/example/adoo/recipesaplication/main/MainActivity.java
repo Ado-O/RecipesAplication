@@ -1,102 +1,134 @@
 package com.example.adoo.recipesaplication.main;
 
+import android.databinding.DataBindingUtil;
+import android.graphics.Color;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.adoo.recipesaplication.Injection;
 import com.example.adoo.recipesaplication.R;
-import com.example.adoo.recipesaplication.data.Recipe;
-import com.example.adoo.recipesaplication.data.storage.ContentRepository;
-import com.example.adoo.recipesaplication.data.storage.FavoriteRepository;
-import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
-import com.example.adoo.recipesaplication.data.storage.SuggestedRepository;
+import com.example.adoo.recipesaplication.data.Tag;
+import com.example.adoo.recipesaplication.other.ThreeFragment;
+import com.example.adoo.recipesaplication.other.TwoFragment;
+import com.example.adoo.recipesaplication.main.recipes.RecipesFragment;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.adoo.recipesaplication.databinding.MainActBinding;
+import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
+import com.example.adoo.recipesaplication.util.ActivityUtils;
+import com.example.adoo.recipesaplication.util.FilterClickListener;
+import com.example.adoo.recipesaplication.util.ViewModelFactory;
+
+public class MainActivity extends AppCompatActivity implements FilterClickListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    private ContentRepository mContentRepository;
-    private RecipesRepository mRecipesRepository;
-    private SuggestedRepository mSuggestedRepository;
-    private FavoriteRepository mFavoriteRepository;
+    private MainAdapter mAdapter;
+    private MainActBinding mMainActBinding;
+    private RecipesViewModel mRecipesViewModel;
+    private long id= 0;
+    private long filterTag = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_act);
 
+        //add content
         Injection.provideContentRepository(this).setContent();
-        mRecipesRepository = Injection.provideRecipesRepository(this);
-        mSuggestedRepository = Injection.provideSuggestedRepository(this);
-        mFavoriteRepository = Injection.provideFavoriteRepository(this);
 
-        mRecipesRepository.getRecipes(new RecipesRepository.GetRecipesCallback() {
-            @Override
-            public void onSuccess(List<Recipe> recipes) {
-                //   Log.e(TAG, recipes.get(0).getName());
-//                Log.e(TAG, "directions "+recipes.get(0).getDirections().get(0).getDes());
-//                Log.e(TAG, "ingredients "+recipes.get(0).getIngredients().get(0).getName());
-//                Log.e(TAG, "tags "+recipes.get(0).getTag().get(0).getName());
-            }
+        mMainActBinding = DataBindingUtil.setContentView(this, R.layout.main_act);
+        mRecipesViewModel = ViewModelFactory.obtainViewModel(this, RecipesViewModel.class);
 
-            @Override
-            public void onError() {
+        mRecipesViewModel.startTag();
+        mMainActBinding.setRecipesViewModel(mRecipesViewModel);
+        mMainActBinding.setListener(this);
 
-            }
-        });
+        //setup
+        setupToolbar();
+        setupPager();
+        setupBottomNavigationView();
+        setupEvent();
+    }
 
-        mRecipesRepository.getRecipesTag(1, new RecipesRepository.GetRecipesTagCallback() {
-            @Override
-            public void onSuccess(List<Recipe> recipes) {
-                //Log.e(TAG, recipes.get(0).getName());
-            }
+    /**
+     * Setting up the toolbar, toolbar actions & title
+     */
+    private void setupToolbar() {
+        setSupportActionBar(mMainActBinding.tbMain);
+        getSupportActionBar().setTitle("Recipes");
+        mMainActBinding.tbMain.setTitleTextColor(Color.BLACK);
+    }
 
-            @Override
-            public void onError() {
+    /**
+     * Setting up the listView & its adapter
+     */
+    private void setupPager() {
 
-            }
-        });
+        ArrayList<Fragment> arrayList = new ArrayList<>();
+        arrayList.add(RecipesFragment.newInstance());
+        arrayList.add(TwoFragment.newInstance());
+        arrayList.add(ThreeFragment.newInstance());
 
-        mSuggestedRepository.getSuggestedRecipes(new SuggestedRepository.GetSuggestedRecipesCallback() {
-            @Override
-            public void onSuccess(List<Recipe> suggesteds) {
-                //Log.e(TAG, suggesteds.get(0).getName());
-            }
+        mAdapter = new MainAdapter(getSupportFragmentManager(), arrayList);
+        mMainActBinding.vpMain.setAdapter(mAdapter);
 
-            @Override
-            public void onError() {
-
-            }
-        });
-
-        mSuggestedRepository.getSearchRecipes("Cereal with fruti jogurt", new SuggestedRepository.GetSearchCallback() {
-            @Override
-            public void onSuccess(List<Recipe> recipes) {
-                //Log.e(TAG, recipes.get(0).getName());
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
-
-        mFavoriteRepository.getFavoriteRecipes(new FavoriteRepository.GetFavoriteRecipesCallback() {
-            @Override
-            public void onSuccess(List<Recipe> suggesteds) {
-                Log.e(TAG, suggesteds.get(0).getName());
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
-
-        mFavoriteRepository.addFavorite(1);
+        mMainActBinding.vpMain.setPagingEnabled(false);
 
     }
+
+    /**
+     * bottomNavigationView
+     */
+    private void setupBottomNavigationView() {
+        mMainActBinding.bottomNavigation.setOnNavigationItemSelectedListener(
+                item -> {
+                    switch (item.getItemId()) {
+                        case R.id.action_recipes:
+                            item.setChecked(true);
+                            mMainActBinding.vpMain.setCurrentItem(0, false);
+                            break;
+                        case R.id.action_search:
+                            item.setChecked(true);
+                            mMainActBinding.vpMain.setCurrentItem(1, false);
+                            break;
+                        case R.id.action_favorite:
+                            item.setChecked(true);
+                            mMainActBinding.vpMain.setCurrentItem(2, false);
+                            break;
+                    }
+                    return false;
+                });
+    }
+
+    /**
+     * add clickListener
+     */
+    public void setupEvent() {
+
+        mRecipesViewModel.getOpenRecipeEvent().observe(MainActivity.this, recipe ->
+                Toast.makeText(this, recipe.getName(), Toast.LENGTH_SHORT).show()
+        );
+    }
+
+    public void getTag(Tag tag) {
+
+        if (id != tag.getId()) {
+            mRecipesViewModel.getFilterItem(tag.getId());
+            id = tag.getId();
+        } else{
+            id = 0;
+            mRecipesViewModel.getRecipes();
+        }
+    }
+
+    @Override
+    public void onClick(Tag tag) {
+        getTag(tag);
+    }
 }
+

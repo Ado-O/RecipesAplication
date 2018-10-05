@@ -29,7 +29,7 @@ import java.io.File;
         Directions.class,
         RecipesTag.class,
         Favorite.class
-}, version = 1, exportSchema = false)
+}, version = 6, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;

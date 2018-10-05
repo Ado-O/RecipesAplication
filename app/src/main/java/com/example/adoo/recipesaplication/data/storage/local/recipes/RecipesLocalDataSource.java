@@ -1,5 +1,7 @@
 package com.example.adoo.recipesaplication.data.storage.local.recipes;
 
+import android.util.Log;
+
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
@@ -53,6 +55,7 @@ public class RecipesLocalDataSource {
 
             List<Tag> tags = mRecipesDao.getTags();
 
+            Log.e("tags-LocalData", String.valueOf(tags.size())+" ....");
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(tags));
         });
     }

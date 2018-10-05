@@ -12,17 +12,22 @@ public class Directions {
     @PrimaryKey(autoGenerate = true)
     private Integer mId;
 
+    @ColumnInfo(name= "recipes_id")
+    private long mRecipesId;
+
     @ColumnInfo(name = "description")
     private String mDes;
 
-    public Directions(Integer id, String des) {
+    public Directions(Integer id, long recipesId, String des) {
         mId = id;
+        mRecipesId = recipesId;
         mDes = des;
     }
 
     @Ignore
-    public Directions(String des) {
+    public Directions(long recipesId, String des) {
         mId = null;
+        mRecipesId = recipesId;
         mDes = des;
     }
 
@@ -32,6 +37,14 @@ public class Directions {
 
     public void setId(Integer id) {
         mId = id;
+    }
+
+    public long getRecipesId() {
+        return mRecipesId;
+    }
+
+    public void setRecipesId(long recipesId) {
+        mRecipesId = recipesId;
     }
 
     public String getDes() {

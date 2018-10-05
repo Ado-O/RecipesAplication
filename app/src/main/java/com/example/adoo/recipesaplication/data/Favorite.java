@@ -13,15 +13,15 @@ public class Favorite {
     private Integer mId;
 
     @ColumnInfo(name = "recipe_id")
-    private int mRecipeId;
+    private long mRecipeId;
 
-    public Favorite(Integer id, int recipeId) {
+    public Favorite(Integer id, long recipeId) {
         mId = id;
         mRecipeId = recipeId;
     }
 
     @Ignore
-    public Favorite(int recipeId) {
+    public Favorite(long recipeId) {
         mId = null;
         mRecipeId = recipeId;
     }
@@ -34,11 +34,11 @@ public class Favorite {
         mId = id;
     }
 
-    public int getRecipeId() {
+    public long getRecipeId() {
         return mRecipeId;
     }
 
-    public void setRecipeId(int recipeId) {
+    public void setRecipeId(long recipeId) {
         mRecipeId = recipeId;
     }
 

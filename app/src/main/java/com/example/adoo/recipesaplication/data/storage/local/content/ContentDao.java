@@ -25,8 +25,14 @@ public interface ContentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertIngredients(List<Ingredients> ingredients);
 
+    @Query("DELETE FROM ingredients_table WHERE recipes_id=:recipesId")
+    void clearIngredients(long recipesId);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertDirections(List<Directions> directions);
+
+    @Query("DELETE FROM directions_table WHERE recipes_id=:recipesId")
+    void clearDirections(long recipesId);
 
     /*****
      *Tag

@@ -51,13 +51,9 @@ public class ContentRepository {
         mContentRemoteDataSource.getRecipe(new ContentRemoteDataSource.GetRecipeCallback() {
             @Override
             public void onSuccess(BaseResponse baseResponse) {
-                mAppExecutors.diskIO().execute(new Runnable() {
-                    @Override
-                    public void run() {
+                mAppExecutors.diskIO().execute(() ->
                         mContentLocalDataSource.setContent(
-                                baseResponse);
-                    }
-                });
+                        baseResponse));
             }
 
             @Override

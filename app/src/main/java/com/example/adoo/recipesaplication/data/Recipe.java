@@ -17,7 +17,7 @@ public class Recipe {
     @ColumnInfo(name = "name")
     private String mName;
 
-    @ColumnInfo(name = "image")
+    @ColumnInfo(name = "image_url")
     private String mImage;
 
     @ColumnInfo(name = "info")

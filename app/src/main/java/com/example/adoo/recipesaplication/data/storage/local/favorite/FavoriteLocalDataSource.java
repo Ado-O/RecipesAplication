@@ -1,5 +1,6 @@
 package com.example.adoo.recipesaplication.data.storage.local.favorite;
 
+import com.example.adoo.recipesaplication.data.Favorite;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.storage.FavoriteRepository;
 import com.example.adoo.recipesaplication.data.storage.local.suggested.SuggestedDao;
@@ -44,12 +45,10 @@ public class FavoriteLocalDataSource {
     /******
      * add
      *****/
-    public void addFavorite(int RecipesId){
-        mAppExecutors.diskIO().execute(() -> {
+    public void addFavorite(long recipeId){
+        mAppExecutors.diskIO().execute(() ->
+                mFavoriteDao.addFavorite(new Favorite(recipeId)));
 
-            mFavoriteDao.addFavorite(RecipesId);
-
-        });
     }
 
     /********

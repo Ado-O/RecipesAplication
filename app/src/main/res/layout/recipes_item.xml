@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View.OnClickListener" />
+
+        <variable
+            name="listener"
+            type="com.example.adoo.recipesaplication.util.RecyclerViewClickListener" />
+
+        <variable
+            name="recipes"
+            type="com.example.adoo.recipesaplication.data.Recipe" />
+    </data>
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:id="@+id/iv_recipes"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{(view)-> listener.recyclerViewListClicked(view, recipes)}"
+                app:loadImage="@{recipes.image}" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/bg_rounded_rectangle"
+                android:maxWidth="250dp"
+                android:padding="20dp"
+                android:text='@{recipes.name}'
+                android:textAllCaps="true"
+                android:textColor="@color/whiteColor"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <!--TODO on click change color-->
+            <ImageView
+                android:id="@+id/like"
+                android:src="@drawable/ic_like_hart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.design.card.MaterialCardView>
+</layout>

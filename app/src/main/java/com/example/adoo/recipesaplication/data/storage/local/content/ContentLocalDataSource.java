@@ -43,8 +43,12 @@ public class ContentLocalDataSource {
             for (RecipeResponse r : recipeResponse) {
 
 
-                mContentDao.insertIngredients(RemoteToLocal.ingredientsConverter(r.getIngredients()));
-                mContentDao.insertDirections(RemoteToLocal.directionsConverter(r.getDirections()));
+                mContentDao.insertIngredients(RemoteToLocal.ingredientsConverter(recipeResponse, r.getIngredients()));
+                mContentDao.clearIngredients(r.getId());
+
+                mContentDao.insertDirections(RemoteToLocal.directionsConverter(recipeResponse, r.getDirections()));
+                mContentDao.clearDirections(r.getId());
+
                 mContentDao.clearTags(r.getId());
                 mContentDao.insertRecipesTag(RemoteToLocal.recipesTagsConvertor(
                         r.getId(),

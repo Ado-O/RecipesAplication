@@ -1,11 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- custom for style filter chips -->
+    <style name="CustomChipFilter" parent="@style/Widget.MaterialComponents.Chip.Choice">
+        <item name="chipStrokeColor">@drawable/border_colors</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipBackgroundColor">@color/whiteColor</item>
+    </style>
+
+    <!-- custom text chip -->
+    <style name="ChipUncheckedText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textColor">@drawable/text_color_chip_state_list</item>
     </style>
 
 </resources>

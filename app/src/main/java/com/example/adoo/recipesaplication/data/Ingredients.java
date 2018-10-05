@@ -14,21 +14,26 @@ public class Ingredients {
     @PrimaryKey(autoGenerate = true)
     private Integer mId;
 
+    @ColumnInfo(name= "recipes_id")
+    private long mRecipesId;
+
     @ColumnInfo(name = "name")
     private String mName;
 
     @ColumnInfo(name = "quantity")
     private String mQuantity;
 
-    public Ingredients(Integer id, String name, String quantity) {
+    public Ingredients(Integer id, long recipesId,String name, String quantity) {
         mId = id;
+        mRecipesId = recipesId;
         mName = name;
         mQuantity = quantity;
     }
 
     @Ignore
-    public Ingredients(String name, String quantity) {
+    public Ingredients(long recipesId, String name, String quantity) {
         mId = null;
+        mRecipesId = recipesId;
         mName = name;
         mQuantity = quantity;
     }
@@ -39,6 +44,14 @@ public class Ingredients {
 
     public void setId(Integer id) {
         mId = id;
+    }
+
+    public long getRecipesId() {
+        return mRecipesId;
+    }
+
+    public void setRecipesId(long recipesId) {
+        mRecipesId = recipesId;
     }
 
     public String getName() {

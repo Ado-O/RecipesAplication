@@ -35,8 +35,8 @@ public class FavoriteRepository {
     /**
      * add
      */
-    public void addFavorite(int RecipesId){
-        mFavoriteLocalDataSource.addFavorite(RecipesId);
+    public void addFavorite(long respiseId) {
+        mFavoriteLocalDataSource.addFavorite(respiseId);
     }
 
     /**
@@ -51,7 +51,7 @@ public class FavoriteRepository {
      * Callback
      */
     public interface GetFavoriteRecipesCallback {
-        void onSuccess(List<Recipe> suggesteds);
+        void onSuccess(List<Recipe> recipes);
 
         void onError();
     }
