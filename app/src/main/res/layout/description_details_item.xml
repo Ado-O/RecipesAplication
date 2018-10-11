@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="recipe"
+            type="com.example.adoo.recipesaplication.data.Recipe" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text='@{recipe.name, default="ssssssssss"}'
+            android:textColor="@color/darkTextHigh"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_kcal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:text='@{recipe.calorie+"kcal * "+recipe.carbs+"g Carbohydrates * "+recipe.protein+"g protein * "+recipe.fat+"g fat", default="ssssssssssssssssssssssssssssssssssssssssssssssssssss"}'
+            android:textColor="@color/darkTextDisabled"
+            android:textSize="12dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <!--TODO meak tag with ...-->
+        <android.support.design.chip.ChipGroup
+            android:id="@+id/cg_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            app:descTags="@{recipe.tag}"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_kcal"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/backgroundTextColor"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="15dp"
+            android:text="@{recipe.info}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cg_main" />
+
+        <com.example.adoo.recipesaplication.main.CustomTextView
+            android:id="@+id/iv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/backgroundTextColor"
+            android:drawablePadding="5dip"
+            android:padding="10dp"
+            app:drawableStartCompat="@drawable/ic_timer_black"
+            app:duration="@{recipe.time}"
+            app:layout_constraintEnd_toStartOf="@+id/iv_serves"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_info" />
+
+        <com.example.adoo.recipesaplication.main.CustomTextView
+            android:id="@+id/iv_serves"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/backgroundTextColor"
+            android:padding="10dp"
+            android:text='@{"servers "+recipe.serves}'
+            app:drawableStartCompat="@drawable/ic_group_black"
+            app:layout_constraintEnd_toStartOf="@+id/iv_medium"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_time"
+            app:layout_constraintTop_toBottomOf="@id/tv_info" />
+
+        <com.example.adoo.recipesaplication.main.CustomTextView
+            android:id="@+id/iv_medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/backgroundTextColor"
+            android:drawablePadding="5dip"
+            android:padding="10dp"
+            android:text="@{recipe.level}"
+            app:drawableStartCompat="@drawable/ic_letter_m"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_serves"
+            app:layout_constraintTop_toBottomOf="@id/tv_info" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

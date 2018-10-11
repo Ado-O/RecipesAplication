@@ -8,7 +8,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 @Entity(tableName = "ingredients_table")
-public class Ingredients {
+public class Ingredients implements Parcelable{
 
     @ColumnInfo(name = "_id")
     @PrimaryKey(autoGenerate = true)
@@ -22,21 +22,6 @@ public class Ingredients {
 
     @ColumnInfo(name = "quantity")
     private String mQuantity;
-
-    public Ingredients(Integer id, long recipesId,String name, String quantity) {
-        mId = id;
-        mRecipesId = recipesId;
-        mName = name;
-        mQuantity = quantity;
-    }
-
-    @Ignore
-    public Ingredients(long recipesId, String name, String quantity) {
-        mId = null;
-        mRecipesId = recipesId;
-        mName = name;
-        mQuantity = quantity;
-    }
 
     public Integer getId() {
         return mId;
@@ -70,4 +55,59 @@ public class Ingredients {
         mQuantity = quantity;
     }
 
+    public Ingredients(Integer id, long recipesId,String name, String quantity) {
+        mId = id;
+        mRecipesId = recipesId;
+        mName = name;
+        mQuantity = quantity;
+    }
+
+    @Ignore
+    public Ingredients(long recipesId, String name, String quantity) {
+        mId = null;
+        mRecipesId = recipesId;
+        mName = name;
+        mQuantity = quantity;
+    }
+
+    protected Ingredients(Parcel in) {
+        if (in.readByte() == 0) {
+            mId = null;
+        } else {
+            mId = in.readInt();
+        }
+        mRecipesId = in.readLong();
+        mName = in.readString();
+        mQuantity = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (mId == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(mId);
+        }
+        dest.writeLong(mRecipesId);
+        dest.writeString(mName);
+        dest.writeString(mQuantity);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Ingredients> CREATOR = new Creator<Ingredients>() {
+        @Override
+        public Ingredients createFromParcel(Parcel in) {
+            return new Ingredients(in);
+        }
+
+        @Override
+        public Ingredients[] newArray(int size) {
+            return new Ingredients[size];
+        }
+    };
 }

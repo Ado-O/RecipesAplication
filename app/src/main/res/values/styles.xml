@@ -20,4 +20,12 @@
         <item name="android:textColor">@drawable/text_color_chip_state_list</item>
     </style>
 
+    <style name="colorToolbar" parent="Theme.AppCompat.Light">
+        <item name="android:textColorSecondary">@color/whiteColor</item>
+    </style>
+    
+    <style name="changeIconLike">
+        <item name="android:src">@drawable/change_icon_like</item>
+    </style>
+
 </resources>

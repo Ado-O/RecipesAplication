@@ -1,4 +1,4 @@
-package com.example.adoo.recipesaplication;
+package com.example.adoo.recipesaplication.main;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;
@@ -7,6 +7,9 @@ import android.view.MotionEvent;
 
 public class CustomViewPager extends ViewPager {
 
+    /**
+     * we use this customViewPager for block slide
+     */
     private boolean enabled;
 
     public CustomViewPager(Context context, AttributeSet attrs) {

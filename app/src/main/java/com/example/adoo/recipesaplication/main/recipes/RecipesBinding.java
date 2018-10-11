@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 
 import com.bumptech.glide.Glide;
+import com.example.adoo.recipesaplication.main.description.DescriptionAdapter;
 
 import java.util.List;
 
@@ -17,9 +18,6 @@ public class RecipesBinding {
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:loadImage"})
     public static void setImage(ImageView view, String img){
-        //img
-        Log.e(TAG, img);
-        Log.e(TAG, "hi");
 
         Glide.with(view.getContext())
                 .load(img)
@@ -35,5 +33,4 @@ public class RecipesBinding {
             ((RecipesAdapter)recyclerView.getAdapter()).setItems(recipeItems);
         }
     }
-
 }

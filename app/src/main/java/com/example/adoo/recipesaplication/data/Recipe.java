@@ -4,11 +4,14 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(tableName="recipe_table")
-public class Recipe {
+public class Recipe implements Parcelable {
 
     @ColumnInfo(name = "_id")
     @PrimaryKey
@@ -48,13 +51,13 @@ public class Recipe {
     private boolean mLike;
 
     @Ignore
-    private List<Ingredients> mIngredients;
+    private List<Ingredients> mIngredients = new ArrayList<>();
 
     @Ignore
-    private List<Directions> mDirections;
+    private List<Directions> mDirections = new ArrayList<>();
 
     @Ignore
-    private List<Tag> mTag;
+    private List<Tag> mTag = new ArrayList<>();
 
     public Recipe(long id, String name, String image, String info, int time,
                   int calorie, int carbs, int fat, int protein, String level,
@@ -192,4 +195,57 @@ public class Recipe {
         mTag = tag;
     }
 
+    protected Recipe(Parcel in) {
+        mId = in.readLong();
+        mName = in.readString();
+        mImage = in.readString();
+        mInfo = in.readString();
+        mTime = in.readInt();
+        mCalorie = in.readInt();
+        mCarbs = in.readInt();
+        mFat = in.readInt();
+        mProtein = in.readInt();
+        mLevel = in.readString();
+        mServes = in.readInt();
+        mLike = in.readByte() != 0;
+        in.readList(this.mDirections, Directions.class.getClassLoader());
+        in.readList(this.mIngredients, Ingredients.class.getClassLoader());
+        in.readList(this.mTag, Tag.class.getClassLoader());
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(mId);
+        dest.writeString(mName);
+        dest.writeString(mImage);
+        dest.writeString(mInfo);
+        dest.writeInt(mTime);
+        dest.writeInt(mCalorie);
+        dest.writeInt(mCarbs);
+        dest.writeInt(mFat);
+        dest.writeInt(mProtein);
+        dest.writeString(mLevel);
+        dest.writeInt(mServes);
+        dest.writeByte((byte) (mLike ? 1 : 0));
+        dest.writeList(mDirections);
+        dest.writeList(mIngredients);
+        dest.writeList(mTag);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Recipe> CREATOR = new Creator<Recipe>() {
+        @Override
+        public Recipe createFromParcel(Parcel in) {
+            return new Recipe(in);
+        }
+
+        @Override
+        public Recipe[] newArray(int size) {
+            return new Recipe[size];
+        }
+    };
 }

@@ -4,9 +4,11 @@ import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 @Entity(tableName="directions_table")
-public class Directions {
+public class Directions implements Parcelable {
 
     @ColumnInfo(name = "_id")
     @PrimaryKey(autoGenerate = true)
@@ -54,5 +56,42 @@ public class Directions {
     public void setDes(String des) {
         mDes = des;
     }
+    protected Directions(Parcel in) {
+        if (in.readByte() == 0) {
+            mId = null;
+        } else {
+            mId = in.readInt();
+        }
+        mRecipesId = in.readLong();
+        mDes = in.readString();
+    }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        if (mId == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(mId);
+        }
+        dest.writeLong(mRecipesId);
+        dest.writeString(mDes);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Directions> CREATOR = new Creator<Directions>() {
+        @Override
+        public Directions createFromParcel(Parcel in) {
+            return new Directions(in);
+        }
+
+        @Override
+        public Directions[] newArray(int size) {
+            return new Directions[size];
+        }
+    };
 }

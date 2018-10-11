@@ -5,7 +5,6 @@ import android.support.design.chip.Chip;
 import android.support.design.chip.ChipGroup;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Tag;
@@ -33,16 +32,13 @@ public class MainBinding {
             for (Tag tag : items) {
 
                 Chip chip = (Chip) inflater.inflate(
-                        R.layout.tag, chipGroup, false
+                        R.layout.filter_tag, chipGroup, false
                 );
 
-                chip.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                chip.setOnClickListener(v -> {
 
-                        if (listener != null) {
-                            listener.onClick(tag);
-                        }
+                    if (listener != null) {
+                        listener.onClick(tag);
                     }
                 });
 

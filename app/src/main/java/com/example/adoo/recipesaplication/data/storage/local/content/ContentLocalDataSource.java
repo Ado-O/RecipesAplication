@@ -57,7 +57,7 @@ public class ContentLocalDataSource {
             }
 
             /**
-             * add TagResponse -> tag
+             * add TagResponse -> filter_tag
              */
             mContentDao.insertTag(RemoteToLocal.tagConverter(tagsResponses));
 

@@ -1,4 +1,4 @@
-package com.example.adoo.recipesaplication.other;
+package com.example.adoo.recipesaplication.main.search;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,16 +10,16 @@ import android.view.ViewGroup;
 
 import com.example.adoo.recipesaplication.R;
 
-public class TwoFragment extends Fragment {
+public class SearchFragment extends Fragment {
 
-    public static TwoFragment newInstance() {
-        return new TwoFragment();
+    public static SearchFragment newInstance() {
+        return new SearchFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.two_frag, container, false);
+        View view = inflater.inflate(R.layout.search_frag, container, false);
 
         return view;
     }

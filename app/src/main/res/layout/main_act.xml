@@ -22,40 +22,7 @@
         android:layout_height="match_parent"
         tools:context=".main.MainActivity">
 
-        <!-- AppBarLayout with Toolbar -->
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/abl_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFFFFF">
-
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/tb_main"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:layout_scrollFlags="scroll|enterAlways"
-                   />
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none"
-                    >
-
-                    <android.support.design.chip.ChipGroup
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_margin="5dp"
-                        app:tags="@{recipesViewModel.mTags}"
-                        app:listener="@{listener}"
-                        app:singleSelection="true"
-                        />
-                </HorizontalScrollView>
-
-
-        </android.support.design.widget.AppBarLayout>
-
-                <com.example.adoo.recipesaplication.CustomViewPager
+                <com.example.adoo.recipesaplication.main.CustomViewPager
                     android:id="@+id/vp_main"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
