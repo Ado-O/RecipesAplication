@@ -11,7 +11,9 @@ import android.support.v4.app.FragmentActivity;
 
 import com.example.adoo.recipesaplication.Injection;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
+import com.example.adoo.recipesaplication.data.storage.SuggestedRepository;
 import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
+import com.example.adoo.recipesaplication.main.search.SearchViewModel;
 
 public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     @SuppressLint("StaticFieldLeak")
@@ -20,6 +22,7 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
     private final Application mApplication;
 
     private final RecipesRepository mRecipesRepository;
+    private final SuggestedRepository mSuggestedRepository;
 
     public static ViewModelFactory getInstance(Application application) {
 
@@ -28,7 +31,8 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
                 if (INSTANCE == null) {
                     INSTANCE = new ViewModelFactory(
                             application,
-                            Injection.provideRecipesRepository(application)
+                            Injection.provideRecipesRepository(application),
+                            Injection.provideSuggestedRepository(application)
                     );
                 }
             }
@@ -41,16 +45,21 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
         INSTANCE = null;
     }
 
-    private ViewModelFactory(Application application, RecipesRepository recipesRepository) {
+    private ViewModelFactory(Application application,
+                             RecipesRepository recipesRepository,
+                             SuggestedRepository suggestedRepository) {
         mApplication = application;
 
         mRecipesRepository = recipesRepository;
+        mSuggestedRepository = suggestedRepository;
     }
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
         if (modelClass.isAssignableFrom(RecipesViewModel.class)) {
             return (T) new RecipesViewModel(mApplication, mRecipesRepository);
+        }else if (modelClass.isAssignableFrom(SearchViewModel.class)) {
+            return (T) new SearchViewModel(mApplication, mSuggestedRepository, mRecipesRepository);
         }
         throw new IllegalArgumentException("Unknown ViewModel class: " + modelClass.getName());
     }

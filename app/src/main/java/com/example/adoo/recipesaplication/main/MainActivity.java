@@ -1,15 +1,19 @@
 package com.example.adoo.recipesaplication.main;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.adoo.recipesaplication.Injection;
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
+import com.example.adoo.recipesaplication.main.search.SearchActivity;
 import com.example.adoo.recipesaplication.other.ThreeFragment;
-import com.example.adoo.recipesaplication.main.search.SearchFragment;
+import com.example.adoo.recipesaplication.main.search.SuggestedFragment;
 import com.example.adoo.recipesaplication.main.recipes.RecipesFragment;
 
 import java.util.ArrayList;
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private MainActBinding mMainActBinding;
     private RecipesViewModel mRecipesViewModel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMainActBinding = DataBindingUtil.setContentView(this, R.layout.main_act);
         mRecipesViewModel = ViewModelFactory.obtainViewModel(this, RecipesViewModel.class);
+
 
         //setup
         setupPager();
@@ -51,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Fragment> arrayList = new ArrayList<>();
         arrayList.add(RecipesFragment.newInstance());
-        arrayList.add(SearchFragment.newInstance());
+        arrayList.add(SuggestedFragment.newInstance());
         arrayList.add(ThreeFragment.newInstance());
 
         mAdapter = new MainAdapter(getSupportFragmentManager(), arrayList);

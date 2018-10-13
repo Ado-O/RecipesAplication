@@ -73,13 +73,7 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
                 LinearLayoutManager.VERTICAL,
                 false));
         mRecipesFragBinding.rvRecipes.smoothScrollToPosition(0);
-        //TODO scrolling on bot
         mRecipesFragBinding.rvRecipes.setAdapter(mRecipesAdapter);
-    }
-
-    @Override
-    public void recyclerViewListClicked(View v, Recipe recipe) {
-        mRecipesViewModel.getOpenRecipeEvent().setValue(recipe);
     }
 
     /**
@@ -94,6 +88,11 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
             mRecipesViewModel.getRecipes();
             id = 0;
         }
+    }
+
+    @Override
+    public void recyclerViewListClicked(View v, Recipe recipe) {
+        mRecipesViewModel.getOpenRecipeEvent().setValue(recipe);
     }
 
     @Override

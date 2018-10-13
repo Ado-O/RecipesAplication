@@ -19,6 +19,9 @@ public class DescriptionBinding {
 
     private static final String TAG = DescriptionBinding.class.getSimpleName();
 
+    /*********
+     * add tag with use ChipGroup
+     *********/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:descTags"})
     public static void setLayout(ChipGroup chipGroup, List tags) {
@@ -39,6 +42,9 @@ public class DescriptionBinding {
         }
     }
 
+    /**********
+     * convert number in minute
+     *********/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:duration"})
     public static void setNumber(TextView textView, int number) {
@@ -50,6 +56,9 @@ public class DescriptionBinding {
         textView.setText(String.valueOf(addMinuit));
     }
 
+    /**********
+     *add list with use RecyclerView adapter
+     *********/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:itemDesc"})
     public static void setItemDesc(RecyclerView recyclerView, List recipeItems) {
@@ -58,15 +67,21 @@ public class DescriptionBinding {
             ((DescriptionAdapter) recyclerView.getAdapter()).setItems(recipeItems);
         }
     }
-
+    /**********
+     *create number list in direction layout
+     *********/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:textCount"})
     public static void setTextCount(TextView textView, String directionItems) {
 
-        final Random random = new Random();
-        int d4Roll = random.nextInt(5)+1;
-        textView.setText(Integer.toString(d4Roll));
+        List<Integer> number = new ArrayList<>();
 
+        for (int i = 0; i < directionItems.length(); i++){
+            Log.e(TAG, i+"for");
+            number.add(i);
         }
+
+        Log.e(TAG, number.size()+"size");
     }
+}
 

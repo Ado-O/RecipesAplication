@@ -16,7 +16,7 @@ public interface SuggestedDao {
             "ON recipe_table._id = suggested_table.recipe_id ")
     List<Recipe> getSuggestedRecipes();
 
-    @Query("SELECT * FROM recipe_table WHERE name=:title")
+    @Query("SELECT * FROM recipe_table WHERE name LIKE :title || '%'")
     List<Recipe> getSearchRecipes(String title);
 
 }

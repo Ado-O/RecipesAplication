@@ -51,4 +51,7 @@ public interface ContentDao {
      **********/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertSuggested(List<Suggested> suggesteds);
+
+    @Query("DELETE FROM suggested_table WHERE recipe_id=:recipesId")
+    void clearSuggested(long recipesId);
 }

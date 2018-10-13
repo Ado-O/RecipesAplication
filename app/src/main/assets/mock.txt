@@ -85,9 +85,48 @@
 			"ingredients": [{
 				"name": "Ingredient 1",
 				"amount": "300g"
+			},{
+				"name": "Ingredient 2",
+				"amount": "400g"
+			}],
+			"directions": ["Some dir 1", "Some dir 1"],
+			"tags": [1, 2]
+		},{
+			"id": 4,
+			"name": "Tagine",
+			"image_url": "https://static1.squarespace.com/static/560ad766e4b0bd9a7a2bdab8/t/5b2e42ea758d46fa66d2b210/1524882721288/tagine.jpg?format=1500w",
+			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+			"time": 3000,
+			"calorie": 600,
+			"carbs": 30,
+			"fats": 30,
+			"proteins": 50,
+			"level": "EASY",
+			"servings": 2,
+			"ingredients": [{
+				"name": "Ingredient 1",
+				"amount": "300g"
 			}],
 			"directions": ["Some dir 1"],
 			"tags": [1]
+		},{
+			"id": 5,
+			"name": "South African Poultry",
+			"image_url": "http://www.sapoultry.co.za/images/recipes/51.jpg",
+			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+			"time": 3000,
+			"calorie": 600,
+			"carbs": 30,
+			"fats": 30,
+			"proteins": 50,
+			"level": "EASY",
+			"servings": 2,
+			"ingredients": [{
+				"name": "Ingredient 1",
+				"amount": "300g"
+			}],
+			"directions": ["Some dir 1"],
+			"tags": [1, 2, 3]
 		}],
 		"suggested": [
 			1, 2, 3, 1

@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.description.DescriptionActivity"></activity>
+        <activity android:name=".main.description.DescriptionActivity" />
+        <activity android:name=".main.search.SearchActivity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.example.adoo.recipesaplication.data.storage.local.suggested;
 
+import android.util.Log;
+
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Suggested;
 import com.example.adoo.recipesaplication.data.storage.SuggestedRepository;
@@ -36,6 +38,7 @@ public class SuggestedLocalDataSource {
 
             List<Recipe> recipes = mSuggestedDao.getSuggestedRecipes();
 
+            Log.e(TAG, String.valueOf(recipes.size()));
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(recipes));
         });
     }

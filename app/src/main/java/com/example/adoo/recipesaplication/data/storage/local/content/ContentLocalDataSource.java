@@ -54,6 +54,9 @@ public class ContentLocalDataSource {
                         r.getId(),
                         r.getTags()
                 ));
+
+                mContentDao.clearSuggested(r.getId());
+
             }
 
             /**
