@@ -3,26 +3,14 @@ package com.example.adoo.recipesaplication.main.search;
 import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
-import android.view.WindowManager;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.databinding.SearchActBinding;
-import com.example.adoo.recipesaplication.main.MainActivity;
-import com.example.adoo.recipesaplication.main.MainAdapter;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
-import com.example.adoo.recipesaplication.main.recipes.RecipesFragment;
-import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
-import com.example.adoo.recipesaplication.other.ThreeFragment;
 import com.example.adoo.recipesaplication.util.ActivityUtils;
 import com.example.adoo.recipesaplication.util.ViewModelFactory;
-
-import java.util.ArrayList;
 
 public class SearchActivity extends AppCompatActivity {
 

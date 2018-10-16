@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.databinding.DescriptionDetailsItemBinding;
+import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 public class DetailsViewHolder extends RecyclerView.ViewHolder {
 

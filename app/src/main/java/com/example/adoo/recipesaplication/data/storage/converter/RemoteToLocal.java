@@ -50,13 +50,12 @@ public class RemoteToLocal {
     /***************
      * Ingredients
      **************/
-    public static List<Ingredients> ingredientsConverter(List<RecipeResponse>recipeResponse,
-                                                         List<IngredientsResponse> ingredientsResponses) {
+    public static List<Ingredients> ingredientsConverter(List<RecipeResponse> recipeResponse) {
         List<Ingredients> ingredients = new ArrayList<>();
 
-        for (RecipeResponse mid : recipeResponse) {
-            for (IngredientsResponse i : ingredientsResponses) {
-                ingredients.add(new Ingredients(mid.getId(), i.getName(), i.getAmount()));
+        for (RecipeResponse recipe : recipeResponse) {
+            for (IngredientsResponse i : recipe.getIngredients()) {
+                ingredients.add(new Ingredients(recipe.getId(), i.getName(), i.getAmount()));
             }
         }
         return ingredients;
@@ -65,17 +64,16 @@ public class RemoteToLocal {
     /*************
      * Directions
      ************/
-    public static List<Directions> directionsConverter(List<RecipeResponse> recipeResponse,
-                                                       List<String> description) {
+    public static List<Directions> directionsConverter(List<RecipeResponse> recipeResponse) {
         List<Directions> directions = new ArrayList<>();
 
-        for (RecipeResponse mid : recipeResponse) {
-            for (String des : description) {
-                directions.add(new Directions(mid.getId(), des));
+        for (RecipeResponse recipe : recipeResponse) {
+            for (String des : recipe.getDirections()) {
+                directions.add(new Directions(recipe.getId(), des));
             }
         }
         return directions;
-}
+    }
 
     /*************
      * RecipesTag

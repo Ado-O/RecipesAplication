@@ -1,30 +1,33 @@
 package com.example.adoo.recipesaplication.data.storage.local.recipes;
 
-import android.util.Log;
-
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
+import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteDao;
 import com.example.adoo.recipesaplication.util.AppExecutors;
 
 import java.util.List;
 
 public class RecipesLocalDataSource {
-        private static final String TAG = RecipesLocalDataSource.class.getSimpleName();
+    private static final String TAG = RecipesLocalDataSource.class.getSimpleName();
 
     private static RecipesLocalDataSource sInstance = null;
 
     private final AppExecutors mAppExecutors;
     private final RecipesDao mRecipesDao;
+    private final FavoriteDao mFavoriteDao;
 
-    public RecipesLocalDataSource(AppExecutors appExecutors, RecipesDao recipesDao) {
+    public RecipesLocalDataSource(AppExecutors appExecutors, RecipesDao recipesDao, FavoriteDao favoriteDao) {
         mAppExecutors = appExecutors;
         mRecipesDao = recipesDao;
+        mFavoriteDao = favoriteDao;
     }
 
-    public static RecipesLocalDataSource getInstance(AppExecutors appExecutors, RecipesDao recipesDao) {
+    public static RecipesLocalDataSource getInstance(AppExecutors appExecutors,
+                                                     RecipesDao recipesDao,
+                                                     FavoriteDao favoriteDao) {
         if (sInstance == null) {
-            sInstance = new RecipesLocalDataSource(appExecutors, recipesDao);
+            sInstance = new RecipesLocalDataSource(appExecutors, recipesDao, favoriteDao);
         }
         return sInstance;
     }
@@ -41,6 +44,7 @@ public class RecipesLocalDataSource {
                 r.setDirections(mRecipesDao.getRecipesDescription(r.getId()));
                 r.setIngredients(mRecipesDao.getIngredients(r.getId()));
                 r.setTag(mRecipesDao.getRecipesTag(r.getId()));
+                r.setLike(mFavoriteDao.isFavorite(r.getId()) != null);
             }
 
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(recipes));
@@ -55,7 +59,6 @@ public class RecipesLocalDataSource {
 
             List<Tag> tags = mRecipesDao.getTags();
 
-            Log.e("tags-LocalData", String.valueOf(tags.size())+" ....");
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(tags));
         });
     }

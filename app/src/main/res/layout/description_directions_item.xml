@@ -7,6 +7,7 @@
         <variable
             name="directions"
             type="com.example.adoo.recipesaplication.data.Directions" />
+
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -17,7 +18,6 @@
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:textCount="@{directions.des}"
             android:textColor="@color/clickColor"
             android:layout_marginLeft="20dp"
             app:layout_constraintLeft_toLeftOf="parent"

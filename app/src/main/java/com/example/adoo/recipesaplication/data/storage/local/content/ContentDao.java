@@ -22,14 +22,29 @@ public interface ContentDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertRecipes(List<Recipe> recipes);
 
+    @Query("DELETE FROM recipe_table")
+    void clearRecipe();
+
+    /************
+     *Ingredients
+     ************/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertIngredients(List<Ingredients> ingredients);
+
+    @Query("DELETE FROM ingredients_table")
+    void clearIngredients();
 
     @Query("DELETE FROM ingredients_table WHERE recipes_id=:recipesId")
     void clearIngredients(long recipesId);
 
+    /***********
+     *Directions
+     ***********/
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertDirections(List<Directions> directions);
+
+    @Query("DELETE FROM directions_table")
+    void clearDirections();
 
     @Query("DELETE FROM directions_table WHERE recipes_id=:recipesId")
     void clearDirections(long recipesId);

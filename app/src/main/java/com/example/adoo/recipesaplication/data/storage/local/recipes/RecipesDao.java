@@ -26,10 +26,10 @@ public interface RecipesDao {
     /*********
      * List<>
      ********/
-    @Query("SELECT * FROM directions_table WHERE recipes_id=:id")
+    @Query("SELECT * FROM directions_table WHERE recipes_id =:id")
     List<Directions> getRecipesDescription(long id);
 
-    @Query("SELECT * FROM ingredients_table WHERE recipes_id=:id")
+    @Query("SELECT * FROM ingredients_table WHERE recipes_id = :id")
     List<Ingredients> getIngredients(long id);
 
     @Query("SELECT tag_table.* FROM tag_table " +
@@ -47,4 +47,5 @@ public interface RecipesDao {
             "ON recipe_table._id = recipes_tag_table.recipes_id " +
             "WHERE recipes_tag_table.tag_id = :filteredTag")
     List<Recipe> getFilterTag(long filteredTag);
+
 }

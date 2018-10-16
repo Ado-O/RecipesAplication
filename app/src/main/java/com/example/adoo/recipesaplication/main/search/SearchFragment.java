@@ -12,11 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.databinding.SearchFragBinding;
+import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
 import com.example.adoo.recipesaplication.main.recipes.RecipesAdapter;
 import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
@@ -32,6 +34,7 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     private SearchFragBinding mBinding;
     private SearchViewModel mSearchViewModel;
     private SearchAdapter mSearchAdapter;
+    private FavoritesViewModel mFavoritesViewModel;
     private String title = "";
 
     public static SearchFragment newInstance(int id) {
@@ -49,10 +52,11 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = SearchFragBinding.inflate(inflater, container, false);
 
+        mFavoritesViewModel = ViewModelFactory.obtainViewModel(getActivity(), FavoritesViewModel.class);
+
         mSearchViewModel = ViewModelFactory.obtainViewModel(getActivity(), SearchViewModel.class);
         mSearchViewModel.startRecipes(title);
         mBinding.setViewModel(mSearchViewModel);
-
 
         setupRv();
         setupBackArrow();
@@ -88,7 +92,6 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
@@ -115,4 +118,20 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     public void recyclerViewListClicked(View v, Recipe recipe) {
         mSearchViewModel.getOpenRecipeEvent().setValue(recipe);
     }
+
+    @Override
+    public void favoritesCLickListener(View view, Recipe recipe) {
+
+        if (!recipe.isLike()){
+            view.setBackgroundResource(R.drawable.ic_like_hart_clik);
+            recipe.setLike(true);
+            mFavoritesViewModel.addFavorite(recipe.getId());
+        }else{
+            view.setBackgroundResource(R.drawable.ic_like_hart);
+            recipe.setLike(false);
+            mFavoritesViewModel.deleteFavorite(recipe.getId());
+        }
+    }
+
+
 }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Directions;
+import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Tag;
 
 import java.util.ArrayList;
@@ -72,16 +73,13 @@ public class DescriptionBinding {
      *********/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:textCount"})
-    public static void setTextCount(TextView textView, String directionItems) {
+    public static void setTextCount(TextView textView, int directionId) {
 
-        List<Integer> number = new ArrayList<>();
+        String number = directionId + ".";
 
-        for (int i = 0; i < directionItems.length(); i++){
-            Log.e(TAG, i+"for");
-            number.add(i);
-        }
+            textView.setText(number);
 
-        Log.e(TAG, number.size()+"size");
+      //  Log.e(TAG, String.valueOf(directionId));
     }
 }
 

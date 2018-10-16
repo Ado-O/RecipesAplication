@@ -1,20 +1,21 @@
 package com.example.adoo.recipesaplication.main;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ImageView;
 
 import com.example.adoo.recipesaplication.Injection;
 import com.example.adoo.recipesaplication.R;
+import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.Tag;
+import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
-import com.example.adoo.recipesaplication.main.search.SearchActivity;
-import com.example.adoo.recipesaplication.other.ThreeFragment;
+import com.example.adoo.recipesaplication.main.favorite.FavoritesFragment;
 import com.example.adoo.recipesaplication.main.search.SuggestedFragment;
 import com.example.adoo.recipesaplication.main.recipes.RecipesFragment;
+import com.example.adoo.recipesaplication.databinding.RecipesItemBinding;
 
 import java.util.ArrayList;
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private MainAdapter mAdapter;
     private MainActBinding mMainActBinding;
     private RecipesViewModel mRecipesViewModel;
-
+    private FavoritesViewModel mFavoritesViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         mMainActBinding = DataBindingUtil.setContentView(this, R.layout.main_act);
         mRecipesViewModel = ViewModelFactory.obtainViewModel(this, RecipesViewModel.class);
-
+        mFavoritesViewModel = ViewModelFactory.obtainViewModel(this, FavoritesViewModel.class);
 
         //setup
         setupPager();
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Fragment> arrayList = new ArrayList<>();
         arrayList.add(RecipesFragment.newInstance());
         arrayList.add(SuggestedFragment.newInstance());
-        arrayList.add(ThreeFragment.newInstance());
+        arrayList.add(FavoritesFragment.newInstance());
 
         mAdapter = new MainAdapter(getSupportFragmentManager(), arrayList);
         mMainActBinding.vpMain.setAdapter(mAdapter);
@@ -96,9 +97,24 @@ public class MainActivity extends AppCompatActivity {
      */
     public void setupEvent() {
 
+        /**
+         * recipes
+         */
         mRecipesViewModel.getOpenRecipeEvent().observe(MainActivity.this, recipe ->
                 DescriptionActivity.startActivity(MainActivity.this, recipe)
         );
+
+        /**
+         * favorite
+         */
+        mFavoritesViewModel.getOpenRecipeEvent().observe(MainActivity.this, recipe ->
+                DescriptionActivity.startActivity(MainActivity.this, recipe)
+        );
+
+        mFavoritesViewModel.getOpenFavoritesEvent().observe(MainActivity.this, recipe ->
+                mFavoritesViewModel.deleteFavorite(recipe.getId())
+        );
+
     }
 
 }

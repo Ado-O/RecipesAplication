@@ -28,7 +28,7 @@ public class RecipesViewModel extends AndroidViewModel {
     public final ObservableBoolean mError = new ObservableBoolean(false);
 
     private final SingleLiveEvent<Recipe> mOpenRecipesEvent = new SingleLiveEvent<>();
-    private final SingleLiveEvent<Tag> mOpenTagEvent = new SingleLiveEvent<>();
+    private final SingleLiveEvent<Recipe> mFavoritesEvent = new SingleLiveEvent<>();
 
     public RecipesViewModel(@NonNull Application application,
                             RecipesRepository recipesRepository) {
@@ -111,5 +111,6 @@ public class RecipesViewModel extends AndroidViewModel {
     }
 
     public SingleLiveEvent<Recipe> getOpenRecipeEvent() { return mOpenRecipesEvent; }
-    public SingleLiveEvent<Tag> getOpenTagEvent(){ return mOpenTagEvent; }
+    public SingleLiveEvent<Recipe> getOpenFavoritesEvent(){ return mFavoritesEvent; }
+
 }

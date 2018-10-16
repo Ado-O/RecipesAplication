@@ -13,6 +13,7 @@ import com.example.adoo.recipesaplication.databinding.DescriptionDetailsItemBind
 import com.example.adoo.recipesaplication.databinding.DescriptionDirectionsItemBinding;
 import com.example.adoo.recipesaplication.databinding.DescriptionHeaderItemBinding;
 import com.example.adoo.recipesaplication.databinding.DescriptionIngredientsItemBinding;
+import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

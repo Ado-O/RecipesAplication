@@ -5,10 +5,14 @@ import android.support.design.chip.Chip;
 import android.support.design.chip.ChipGroup;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.example.adoo.recipesaplication.R;
+import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.util.FilterClickListener;
+import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.util.List;
 
@@ -22,11 +26,7 @@ public class MainBinding {
 
         chipGroup.removeAllViews();
 
-        Log.e(TAG, "hi");
-
         if (items != null) {
-
-            Log.e("tags", String.valueOf(items.size()));
 
             LayoutInflater inflater = LayoutInflater.from(chipGroup.getContext());
             for (Tag tag : items) {
@@ -46,6 +46,6 @@ public class MainBinding {
                 chipGroup.addView(chip);
             }
         }
-
     }
+
 }

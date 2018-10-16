@@ -57,6 +57,7 @@
         android:id="@+id/rv_recipes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="1dp"
         android:paddingBottom="56dp"
         app:recipesItem="@{recipesViewModel.mRecipes}"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />

@@ -7,7 +7,9 @@ import android.widget.ImageView;
 
 
 import com.bumptech.glide.Glide;
+import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.main.description.DescriptionAdapter;
+import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.util.List;
 
@@ -28,9 +30,10 @@ public class RecipesBinding {
     @BindingAdapter({"app:recipesItem"})
     public static void setRecipesItem(RecyclerView recyclerView, List recipeItems){
 
-        Log.e(TAG, String.valueOf(recipeItems.size()));
         if(recipeItems!=null && recipeItems.size() > 0){
             ((RecipesAdapter)recyclerView.getAdapter()).setItems(recipeItems);
         }
     }
+
+
 }
