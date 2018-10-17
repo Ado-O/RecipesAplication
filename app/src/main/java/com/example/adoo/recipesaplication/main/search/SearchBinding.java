@@ -14,6 +14,9 @@ public class SearchBinding {
 
     private static final String TAG = SearchBinding.class.getSimpleName();
 
+    /*************************
+     * add list with use RecyclerView adapter
+     ************************/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:suggestedItem"})
     public static void setSuggestedItem(RecyclerView recyclerView, List suggested) {
@@ -23,6 +26,9 @@ public class SearchBinding {
         }
     }
 
+    /*************************
+     * add list with use RecyclerView adapter
+     ************************/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:searchItem"})
     public static void setSearchItem(RecyclerView recyclerView, List searchItem) {

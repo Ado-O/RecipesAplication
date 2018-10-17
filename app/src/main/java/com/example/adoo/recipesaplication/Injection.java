@@ -16,6 +16,7 @@ import com.example.adoo.recipesaplication.data.storage.remote.content.ContentRem
 import com.example.adoo.recipesaplication.util.AppExecutors;
 
 public class Injection {
+
     public static AppDatabase provideAppDatabase(Context context) {
         return AppDatabase.getInstance(context.getApplicationContext());
     }

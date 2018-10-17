@@ -3,8 +3,12 @@ package com.example.adoo.recipesaplication.main.favorite;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,32 +44,76 @@ public class FavoritesFragment extends Fragment implements RecyclerViewClickList
         mFavoritesViewModel.start();
         mBinding.setViewModel(mFavoritesViewModel);
 
-
         setupRv();
         return mBinding.getRoot();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mFavoritesViewModel.getFavorite();
+    }
+
+    /*************************
+     * add layoutManger in RecycleViewAdapter
+     **********************/
     public void setupRv() {
 
         mFavoritesAdapter = new FavoritesAdapter(getActivity(), FavoritesFragment.this);
         mBinding.rvFavorites.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mBinding.rvFavorites.smoothScrollToPosition(0);
         mBinding.rvFavorites.setAdapter(mFavoritesAdapter);
 
     }
 
-
+    /************************
+     * RecycleViewClickListener
+     ***********************/
     @Override
     public void recyclerViewListClicked(View v, Recipe recipe) {
+
+        //send listener data in DescriptionLayout
         mFavoritesViewModel.getOpenRecipeEvent().setValue(recipe);
     }
 
     @Override
     public void favoritesCLickListener(View imageView, Recipe recipe) {
-        if (mFavoritesViewModel.mRecipes.size() == 0){
+
+        //if size recipes 0 = close recycleView
+        if (mFavoritesViewModel.mRecipes.size() == 1){
             mBinding.rvFavorites.setVisibility(View.GONE);
         }
+
+        //send listener data in favorite_table db for delete that row
         mFavoritesViewModel.deleteFavorite(recipe.getId());
+
+        //get everting from favorite_table db
         mFavoritesViewModel.getFavorite();
+
+        //snackbar - UNDO
+        Snackbar snackbar = Snackbar
+                .make(imageView.getRootView(), "Removed from Favorite", Snackbar.LENGTH_SHORT)
+                .setAction("UNDO", view -> {
+
+                    mBinding.rvFavorites.setVisibility(View.VISIBLE);
+                    mFavoritesViewModel.addFavorite(recipe.getId());
+                    mFavoritesViewModel.getFavorite();
+
+                    Snackbar snackbar1 = Snackbar.make(imageView.getRootView(), "Recipe is restored!", Snackbar.LENGTH_SHORT);
+                    snackbar1.show();
+                });
+
+        //margine snackbar
+        View snackBarView = snackbar.getView();
+        CoordinatorLayout.LayoutParams params = new CoordinatorLayout.LayoutParams(
+                CoordinatorLayout.LayoutParams.MATCH_PARENT,
+                CoordinatorLayout.LayoutParams.WRAP_CONTENT);
+
+        params.setMargins(0, 750, 0, 0);
+
+        snackBarView.setLayoutParams(params);
+
+        snackbar.show();
     }
 
 }

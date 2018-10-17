@@ -20,6 +20,12 @@ public class MainBinding {
 
     private static final String TAG = MainBinding.class.getSimpleName();
 
+    /******************
+     * in RecipesFragment we relase all tag from tag_table db and add setOnClickListener
+     * @param chipGroup - parent and he have chip - tag
+     * @param items - all tag in List</>
+     * @param listener - interface wich he gave onClick
+     ****************/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:tags", "app:listener"})
     public static void setTags(ChipGroup chipGroup, List<Tag> items, FilterClickListener listener) {

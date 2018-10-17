@@ -10,7 +10,6 @@ public class MainAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> mFragment;
 
-    //constructor
     public MainAdapter(FragmentManager fm, List<Fragment> fragment) {
         super(fm);
         mFragment = fragment;

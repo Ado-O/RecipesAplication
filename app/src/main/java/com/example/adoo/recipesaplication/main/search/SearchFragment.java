@@ -65,23 +65,28 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
         return mBinding.getRoot();
     }
 
-    public void setupRv() {
-
-        mSearchAdapter = new SearchAdapter(getActivity(), SearchFragment.this);
-        mBinding.rvEditSearch.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mBinding.rvEditSearch.setAdapter(mSearchAdapter);
-
-    }
-    /**
+    /**************************
      * OnClickListener for the toolbar back button
-     */
+     *************************/
     private void setupBackArrow() {
         mBinding.ivArrow.setOnClickListener(v -> getActivity().onBackPressed());
     }
 
-    /**
+    /*************************
+     * add layoutManger in RecycleViewAdapter
+     **********************/
+    public void setupRv() {
+
+        mSearchAdapter = new SearchAdapter(getActivity(), SearchFragment.this);
+        mBinding.rvEditSearch.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mBinding.rvEditSearch.smoothScrollToPosition(0);
+        mBinding.rvEditSearch.setAdapter(mSearchAdapter);
+
+    }
+
+    /***********
      * edit Text
-     */
+     ***********/
     public void setupEditText() {
 
         //editText - TextWatcher
@@ -114,14 +119,21 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
 
     }
 
+    /************************
+     * RecycleViewClickListener
+     ***********************/
     @Override
     public void recyclerViewListClicked(View v, Recipe recipe) {
+
+        //send listener data in DescriptionLayout
         mSearchViewModel.getOpenRecipeEvent().setValue(recipe);
     }
 
     @Override
     public void favoritesCLickListener(View view, Recipe recipe) {
 
+        // if Like from recipes_table false = add icon, set like = true and in
+        // favorite_table data od id
         if (!recipe.isLike()){
             view.setBackgroundResource(R.drawable.ic_like_hart_clik);
             recipe.setLike(true);

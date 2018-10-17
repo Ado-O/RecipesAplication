@@ -34,9 +34,6 @@ public interface ContentDao {
     @Query("DELETE FROM ingredients_table")
     void clearIngredients();
 
-    @Query("DELETE FROM ingredients_table WHERE recipes_id=:recipesId")
-    void clearIngredients(long recipesId);
-
     /***********
      *Directions
      ***********/
@@ -45,9 +42,6 @@ public interface ContentDao {
 
     @Query("DELETE FROM directions_table")
     void clearDirections();
-
-    @Query("DELETE FROM directions_table WHERE recipes_id=:recipesId")
-    void clearDirections(long recipesId);
 
     /*****
      *Tag

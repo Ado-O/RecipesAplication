@@ -17,6 +17,9 @@ public class RecipesBinding {
 
     private static final String TAG = RecipesBinding.class.getSimpleName();
 
+    /*********************
+     * call image throw Glide
+     *********************/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:loadImage"})
     public static void setImage(ImageView view, String img){
@@ -26,6 +29,9 @@ public class RecipesBinding {
                 .into(view);
     }
 
+    /*************************
+     * add list with use RecyclerView adapter
+     ************************/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:recipesItem"})
     public static void setRecipesItem(RecyclerView recyclerView, List recipeItems){

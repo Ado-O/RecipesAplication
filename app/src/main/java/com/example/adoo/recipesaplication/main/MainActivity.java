@@ -4,18 +4,15 @@ import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.example.adoo.recipesaplication.Injection;
 import com.example.adoo.recipesaplication.R;
-import com.example.adoo.recipesaplication.data.Recipe;
-import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
 import com.example.adoo.recipesaplication.main.favorite.FavoritesFragment;
+import com.example.adoo.recipesaplication.main.search.SearchViewModel;
 import com.example.adoo.recipesaplication.main.search.SuggestedFragment;
 import com.example.adoo.recipesaplication.main.recipes.RecipesFragment;
-import com.example.adoo.recipesaplication.databinding.RecipesItemBinding;
 
 import java.util.ArrayList;
 
@@ -51,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /**
+    /***************************
      * Setting up the listView & its adapter
-     */
+     **************************/
     private void setupPager() {
 
         ArrayList<Fragment> arrayList = new ArrayList<>();
@@ -65,12 +62,11 @@ public class MainActivity extends AppCompatActivity {
         mMainActBinding.vpMain.setAdapter(mAdapter);
 
         mMainActBinding.vpMain.setPagingEnabled(false);
-
     }
 
-    /**
+    /***********************
      * bottomNavigationView
-     */
+     **********************/
     private void setupBottomNavigationView() {
         mMainActBinding.bottomNavigation.setOnNavigationItemSelectedListener(
                 item -> {
@@ -79,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                             item.setChecked(true);
                             mMainActBinding.vpMain.setCurrentItem(0, false);
                             break;
-                        case R.id.action_search:
+                        case R.id.action_suggested:
                             item.setChecked(true);
                             mMainActBinding.vpMain.setCurrentItem(1, false);
                             break;
@@ -92,27 +88,19 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    /**
-     * add clickListener
-     */
+    /*************************
+     * add clickListener open DescriptionActivity
+     **********************/
     public void setupEvent() {
 
-        /**
-         * recipes
-         */
+         //recipes
         mRecipesViewModel.getOpenRecipeEvent().observe(MainActivity.this, recipe ->
                 DescriptionActivity.startActivity(MainActivity.this, recipe)
         );
 
-        /**
-         * favorite
-         */
+         //favorite
         mFavoritesViewModel.getOpenRecipeEvent().observe(MainActivity.this, recipe ->
                 DescriptionActivity.startActivity(MainActivity.this, recipe)
-        );
-
-        mFavoritesViewModel.getOpenFavoritesEvent().observe(MainActivity.this, recipe ->
-                mFavoritesViewModel.deleteFavorite(recipe.getId())
         );
 
     }

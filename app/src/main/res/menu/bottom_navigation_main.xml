@@ -8,7 +8,7 @@
         android:title="Recipes"
         app:showAsAction="ifRoom"/>
     <item
-        android:id="@+id/action_search"
+        android:id="@+id/action_suggested"
         android:enabled="true"
         android:icon="@drawable/ic_search_black"
         android:title="Search"

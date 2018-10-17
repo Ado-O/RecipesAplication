@@ -38,6 +38,15 @@ public class SuggestedFragment extends Fragment {
         return mBinding.getRoot();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mSearchViewModel.getSuggested();
+    }
+
+    /*************************
+     * add layoutManger - gridLayoutManager in RecycleViewAdapter
+     **********************/
     public void setupData() {
 
         SuggestedAdapter suggestedAdapter = new SuggestedAdapter(getActivity());
@@ -53,8 +62,11 @@ public class SuggestedFragment extends Fragment {
 
     }
 
+    /*****************
+     * onClick on all view toolbar
+     ****************/
     public void setupToolbarOnClick() {
-        mBinding.ivSearch.setOnClickListener(v ->
+        mBinding.tlbSuggested.setOnClickListener(v ->
                 SearchActivity.startActivity(getActivity(), 0));
     }
 }

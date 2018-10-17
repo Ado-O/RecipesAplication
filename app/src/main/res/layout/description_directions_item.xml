@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        
         <variable
             name="directions"
             type="com.example.adoo.recipesaplication.data.Directions" />
@@ -14,12 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
+        <ImageView
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/clickColor"
             android:layout_marginLeft="20dp"
+            android:tint="@color/clickColor"
+            app:srcCompat="@drawable/ic_chevron_right_black"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

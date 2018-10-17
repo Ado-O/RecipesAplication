@@ -12,6 +12,9 @@ public class FavoritesBinding {
 
     private static final String TAG = FavoritesBinding.class.getSimpleName();
 
+    /*************************
+     *add list with use RecyclerView adapter
+     ************************/
     @SuppressWarnings("unchecked")
     @BindingAdapter({"app:favoritesItem"})
     public static void setFavoritesItem(RecyclerView recyclerView, List favoriteItem) {

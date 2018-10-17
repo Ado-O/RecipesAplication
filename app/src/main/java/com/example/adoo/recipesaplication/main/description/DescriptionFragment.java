@@ -1,5 +1,6 @@
 package com.example.adoo.recipesaplication.main.description;
 
+import android.databinding.DataBindingUtil;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,8 +15,10 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.databinding.DescriptionDirectionsItemBinding;
 import com.example.adoo.recipesaplication.databinding.DescriptionFragBinding;
 import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
+import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 import com.example.adoo.recipesaplication.util.ViewModelFactory;
 
@@ -27,8 +30,9 @@ public class DescriptionFragment extends Fragment {
     private static final String TAG = DescriptionFragment.class.getSimpleName();
 
     private DescriptionFragBinding mBinding;
-    private Recipe r;
     private FavoritesViewModel mFavoritesViewModel;
+    private RecipesViewModel mRecipesViewModel;
+    private Recipe r;
 
     public static DescriptionFragment newInstance(Recipe recipe) {
 
@@ -47,46 +51,48 @@ public class DescriptionFragment extends Fragment {
         mBinding = DescriptionFragBinding.inflate(inflater, container, false);
 
         mFavoritesViewModel = ViewModelFactory.obtainViewModel(getActivity(), FavoritesViewModel.class);
+        mRecipesViewModel = ViewModelFactory.obtainViewModel(getActivity(), RecipesViewModel.class);
 
         r = getActivity().getIntent().getExtras().getParcelable("recipe");
 
         mBinding.setRecipes(r);
 
         setupToolbar();
-        setupBackArrow();
         setupImg();
         setupToolbarColor();
         setupData();
+        setupLike();
+
 
         return mBinding.getRoot();
     }
-    /**
+
+    /**********
      * toolbar
-     */
+     *********/
     public void setupToolbar() {
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(mBinding.tlb);
+
+        //back button
+        mBinding.ivArrow.setOnClickListener(v -> {
+            getActivity().onBackPressed();
+        });
+
     }
 
-    /**
-     * OnClickListener for the toolbar back button
-     */
-    private void setupBackArrow() {
-        mBinding.ivArrow.setOnClickListener(v -> getActivity().onBackPressed());
-    }
-
-    /**
-     * add data in description_act
-     */
+    /********
+     * image
+     ********/
     public void setupImg() {
         Glide.with(this)
                 .load(r.getImage())
                 .into(mBinding.ivRecipes);
     }
 
-    /**
+    /***************************
      * change color when scrolling toolbar
-     */
+     **************************/
     public void setupToolbarColor() {
         mBinding.appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
             if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
@@ -103,9 +109,9 @@ public class DescriptionFragment extends Fragment {
         });
     }
 
-    /**
-     * add data in recycleview
-     */
+    /***************************
+     * add data in main recycleview
+     **************************/
     public void setupData() {
 
         List itemList = new ArrayList<>();
@@ -119,7 +125,26 @@ public class DescriptionFragment extends Fragment {
 
         DescriptionAdapter adapter = new DescriptionAdapter(getActivity());
         mBinding.rvList.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mBinding.rvList.smoothScrollToPosition(0);
         mBinding.rvList.setAdapter(adapter);
+    }
+
+    /*************
+     * like onClick
+     *************/
+    public void setupLike(){
+
+        mBinding.ivLike.setOnClickListener(v -> {
+            if (!r.isLike()) {
+                mBinding.ivLike.setBackgroundResource(R.drawable.ic_like_hart_clik);
+                r.setLike(true);
+                mFavoritesViewModel.addFavorite(r.getId());
+            } else {
+                mBinding.ivLike.setBackgroundResource(R.drawable.ic_like_hart);
+                r.setLike(false);
+                mFavoritesViewModel.deleteFavorite(r.getId());
+            }
+        });
     }
 
 }

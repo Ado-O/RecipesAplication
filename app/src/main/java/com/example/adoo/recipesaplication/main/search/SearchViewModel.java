@@ -38,7 +38,7 @@ public class SearchViewModel extends AndroidViewModel {
     }
 
     /********************
-     * suggested recipes
+     * get all recipes from suggested_table
      ********************/
     public void start() {
         if (mRecipes.isEmpty()) {
@@ -46,9 +46,6 @@ public class SearchViewModel extends AndroidViewModel {
         }
     }
 
-    /**
-     * get all recipes from recipes_table
-     */
     public void getSuggested() {
 
         mSuggestedRepository.getSuggestedRecipes(new SuggestedRepository.GetSuggestedRecipesCallback() {
@@ -77,9 +74,9 @@ public class SearchViewModel extends AndroidViewModel {
         }
     }
 
-    /**
+    /********************************
      * get all recipes from recipes_table
-     */
+     *******************************/
     public void getRecipes() {
 
         mRecipesRepository.getRecipes(new RecipesRepository.GetRecipesCallback() {
@@ -97,9 +94,9 @@ public class SearchViewModel extends AndroidViewModel {
         });
     }
 
-    /**
+    /********************************
      * add string and get recipes from recipes_table
-     */
+     *******************************/
     public void getRecipesSearch(String title) {
 
         mSuggestedRepository.getSearchRecipes(title, new SuggestedRepository.GetSearchCallback() {

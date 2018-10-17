@@ -9,7 +9,8 @@ import com.example.adoo.recipesaplication.util.AppExecutors;
 import java.util.List;
 
 public class ContentLocalDataSource {
-        private static final String TAG = ContentLocalDataSource.class.getSimpleName();
+
+    private static final String TAG = ContentLocalDataSource.class.getSimpleName();
 
     private static ContentLocalDataSource sInstance = null;
 
@@ -35,10 +36,12 @@ public class ContentLocalDataSource {
             List<RecipeResponse> recipeResponse = baseResponse.getData().getRecipes();
             List<TagsResponse> tagsResponses = baseResponse.getData().getTags();
 
+            /**
+             * clear
+             */
             mContentDao.clearRecipe();
-
-              mContentDao.clearDirections();
-              mContentDao.clearIngredients();
+            mContentDao.clearDirections();
+            mContentDao.clearIngredients();
 
             /**
              * add recipeResponses -> recipes
@@ -46,7 +49,6 @@ public class ContentLocalDataSource {
             mContentDao.insertRecipes(RemoteToLocal.recipesConverter(recipeResponse));
             mContentDao.insertIngredients(RemoteToLocal.ingredientsConverter(recipeResponse));
             mContentDao.insertDirections(RemoteToLocal.directionsConverter(recipeResponse));
-
 
             /**
              * add recipeResponses -> recipes_tags
@@ -60,7 +62,6 @@ public class ContentLocalDataSource {
                 ));
 
                 mContentDao.clearSuggested(r.getId());
-
             }
 
             /**
@@ -75,7 +76,6 @@ public class ContentLocalDataSource {
 
         });
     }
-
 
 
 }

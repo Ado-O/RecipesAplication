@@ -12,9 +12,10 @@ import com.example.adoo.recipesaplication.R;
 
 public class CustomTextView extends AppCompatTextView {
 
-    /**
-     *this customTextView create for android lv19- drawableStart. drawableEnd etc
-     */
+    /***************************
+     * this customTextView create for
+     *   android lv19- drawableStart. drawableEnd etc
+     **************************/
     public CustomTextView(Context context) {
         super(context);
     }

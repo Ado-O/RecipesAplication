@@ -25,7 +25,6 @@ public class FavoritesViewModel extends AndroidViewModel {
     public final ObservableBoolean mError = new ObservableBoolean(false);
 
     private final SingleLiveEvent<Recipe> mOpenRecipesEvent = new SingleLiveEvent<>();
-    private final SingleLiveEvent<Recipe> mFavoritesEvent = new SingleLiveEvent<>();
 
     public FavoritesViewModel(@NonNull Application application,
                               FavoriteRepository favoriteRepository) {
@@ -35,7 +34,7 @@ public class FavoritesViewModel extends AndroidViewModel {
     }
 
     /********************
-     *add favorite recipes
+     * add favorite recipes
      *********************/
     public void addFavorite(long respiseId) {
         mFavoriteRepository.addFavorite(respiseId);
@@ -43,7 +42,7 @@ public class FavoritesViewModel extends AndroidViewModel {
 
 
     /****************************
-     *add all from favorite_table
+     * add all from favorite_table
      ***************************/
     public void start() {
         if (mRecipes.isEmpty()) {
@@ -69,12 +68,11 @@ public class FavoritesViewModel extends AndroidViewModel {
     }
 
     /*****************
-     *delete favorite
+     * delete favorite
      ****************/
     public void deleteFavorite(long id){
         mFavoriteRepository.getRemoveFavorite(id);
     }
 
     public SingleLiveEvent<Recipe> getOpenRecipeEvent() { return mOpenRecipesEvent; }
-    public SingleLiveEvent<Recipe> getOpenFavoritesEvent(){ return mFavoritesEvent; }
 }

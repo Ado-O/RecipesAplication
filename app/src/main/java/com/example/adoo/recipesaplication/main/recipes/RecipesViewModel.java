@@ -28,7 +28,6 @@ public class RecipesViewModel extends AndroidViewModel {
     public final ObservableBoolean mError = new ObservableBoolean(false);
 
     private final SingleLiveEvent<Recipe> mOpenRecipesEvent = new SingleLiveEvent<>();
-    private final SingleLiveEvent<Recipe> mFavoritesEvent = new SingleLiveEvent<>();
 
     public RecipesViewModel(@NonNull Application application,
                             RecipesRepository recipesRepository) {
@@ -37,6 +36,10 @@ public class RecipesViewModel extends AndroidViewModel {
         mRecipesRepository = recipesRepository;
     }
 
+    /*************************
+     * get all recipes from recipes_table
+     * when is add data in filterTag we resive that data
+     **************************/
     public void start(long filterTag) {
         if (mRecipes.isEmpty()) {
             getRecipes();
@@ -45,9 +48,6 @@ public class RecipesViewModel extends AndroidViewModel {
         }
     }
 
-    /**
-     * get all recipes from recipes_table
-     */
     public void getRecipes() {
 
         mRecipesRepository.getRecipes(new RecipesRepository.GetRecipesCallback() {
@@ -65,16 +65,15 @@ public class RecipesViewModel extends AndroidViewModel {
         });
     }
 
+    /***************************
+     * with selected id get all from recipes_table but
+     **************************/
     public void startTag() {
         if (mTags.isEmpty()) {
             getTags();
         }
     }
 
-    /**
-     * get all from recipes_table but with selected long id
-     * @param filterTag -> long
-     */
     public void getFilterItem(long filterTag) {
         mRecipesRepository.getRecipesTag(filterTag, new RecipesRepository.GetRecipesTagCallback() {
             @Override
@@ -91,9 +90,9 @@ public class RecipesViewModel extends AndroidViewModel {
         });
     }
 
-    /**
+    /*************************
      * get all from tag_table
-     */
+     ************************/
     public void getTags() {
         mRecipesRepository.getTag(new RecipesRepository.GetTagCallback() {
             @Override
@@ -111,6 +110,5 @@ public class RecipesViewModel extends AndroidViewModel {
     }
 
     public SingleLiveEvent<Recipe> getOpenRecipeEvent() { return mOpenRecipesEvent; }
-    public SingleLiveEvent<Recipe> getOpenFavoritesEvent(){ return mFavoritesEvent; }
 
 }

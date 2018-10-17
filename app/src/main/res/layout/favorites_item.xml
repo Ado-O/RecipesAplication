@@ -15,6 +15,10 @@
             type="com.example.adoo.recipesaplication.data.Recipe" />
     </data>
 
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,8 +61,9 @@
                 android:id="@+id/like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
                 android:onClick="@{(view)-> listener.favoritesCLickListener(view, recipes)}"
                 app:srcCompat="@drawable/ic_like_hart_clik"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -66,4 +71,5 @@
 
         </android.support.constraint.ConstraintLayout>
     </android.support.design.card.MaterialCardView>
+    </android.support.design.widget.CoordinatorLayout>
 </layout>

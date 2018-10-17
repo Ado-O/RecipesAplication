@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.databinding.SearchActBinding;
+import com.example.adoo.recipesaplication.main.MainActivity;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
 import com.example.adoo.recipesaplication.util.ActivityUtils;
 import com.example.adoo.recipesaplication.util.ViewModelFactory;
@@ -31,14 +32,13 @@ public class SearchActivity extends AppCompatActivity {
         mSearchActBinding = DataBindingUtil.setContentView(this, R.layout.search_act);
         mSearchViewModel = ViewModelFactory.obtainViewModel(this, SearchViewModel.class);
 
-
         setupFragment();
-        setupEvent();
+        setupDescription();
     }
 
-    /**
+    /*********
      * Fragment
-     */
+     *********/
     private void setupFragment() {
 
         SearchFragment searchFragment = (SearchFragment) getSupportFragmentManager().findFragmentById(mSearchActBinding.fragSearch.getId());
@@ -50,10 +50,7 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * add clickListener
-     */
-    public void setupEvent() {
+    public void setupDescription() {
 
         mSearchViewModel.getOpenRecipeEvent().observe(SearchActivity.this, recipe ->
                 DescriptionActivity.startActivity(SearchActivity.this, recipe)

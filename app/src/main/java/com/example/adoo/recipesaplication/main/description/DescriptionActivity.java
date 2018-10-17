@@ -30,7 +30,6 @@ public class DescriptionActivity extends AppCompatActivity  {
     private static final String TAG = DescriptionActivity.class.getSimpleName();
 
     private DescriptionActBinding mDescriptionActBinding;
-    private FavoritesViewModel mFavoritesViewModel;
     private Recipe r;
 
     public static void startActivity(Activity activity, Recipe recipe) {
@@ -47,15 +46,15 @@ public class DescriptionActivity extends AppCompatActivity  {
         setContentView(R.layout.description_act);
 
         mDescriptionActBinding = DataBindingUtil.setContentView(this, R.layout.description_act);
-        mFavoritesViewModel = ViewModelFactory.obtainViewModel(this, FavoritesViewModel.class);
 
         r = getIntent().getExtras().getParcelable("recipe");
 
         setupDataFrag();
     }
-    /**
+
+    /************************
      * send data in fragment
-     */
+     ***********************/
     public void setupDataFrag() {
 
         DescriptionFragment descriptionFragment = (DescriptionFragment) getSupportFragmentManager().findFragmentById(

@@ -19,9 +19,6 @@ import java.util.List;
 
 public class SearchAdapter extends RecyclerView.Adapter {
 
-    private final int DETAILS = 1;
-    private final int NORESULT = 2;
-
     private List<Recipe> mList=new ArrayList<>();
     private LayoutInflater mInflater;
     private RecyclerViewClickListener mListener;

@@ -7,9 +7,10 @@ import android.view.MotionEvent;
 
 public class CustomViewPager extends ViewPager {
 
-    /**
-     * we use this customViewPager for block slide
-     */
+    /***************************
+     * this customViewPager use for
+     *   blocking slide fragment
+     **************************/
     private boolean enabled;
 
     public CustomViewPager(Context context, AttributeSet attrs) {

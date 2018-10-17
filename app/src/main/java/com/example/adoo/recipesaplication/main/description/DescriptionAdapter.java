@@ -32,6 +32,9 @@ public class DescriptionAdapter extends RecyclerView.Adapter {
         mInflater = LayoutInflater.from(context);
     }
 
+    /***************
+     * add position
+     **************/
     @Override
     public int getItemViewType(int position) {
         if (mItems.get(position) instanceof Recipe) {
@@ -46,7 +49,6 @@ public class DescriptionAdapter extends RecyclerView.Adapter {
             return -1;
         }
     }
-
 
     @NonNull
     @Override
