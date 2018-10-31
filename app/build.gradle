@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.adoo.recipesaplication"
-        minSdkVersion 15
+        applicationId "com.recipe.android.recipesaplication"
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -62,5 +62,14 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "com.android.support.test:runner:$android_support_test_version"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
+
+    //image circle
+    implementation "de.hdodenhof:circleimageview:$hdodenhof_version"
+
+    implementation 'com.android.billingclient:billing:1.1'
+
+    implementation 'com.airbnb.android:lottie:2.6.1'
+
+    implementation 'com.github.castorflex.verticalviewpager:library:19.0.1'
 
 }

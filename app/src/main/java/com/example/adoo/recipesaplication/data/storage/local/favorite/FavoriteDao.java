@@ -4,7 +4,7 @@ import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 
-import com.example.adoo.recipesaplication.data.Favorite;
+import com.example.adoo.recipesaplication.data.Favorites;
 import com.example.adoo.recipesaplication.data.Recipe;
 
 import java.util.List;
@@ -17,13 +17,13 @@ public interface FavoriteDao {
             "ON recipe_table._id = favorite_table.recipe_id ")
     List<Recipe> getFavoriteRecipes();
 
-   @Insert
-    void addFavorite(Favorite favorite);
+    @Insert
+    void addFavorite(Favorites favorite);
 
     @Query("DELETE FROM favorite_table WHERE recipe_id = :id")
     void removeFavorite(long id);
 
     @Query("SELECT * FROM favorite_table WHERE recipe_id = :recipeId")
-    Favorite isFavorite(long recipeId);
+    Favorites isFavorite(long recipeId);
 
 }

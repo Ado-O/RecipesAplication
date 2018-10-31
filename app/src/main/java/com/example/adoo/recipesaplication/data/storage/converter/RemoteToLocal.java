@@ -1,17 +1,16 @@
 package com.example.adoo.recipesaplication.data.storage.converter;
 
-import android.util.Log;
-
 import com.example.adoo.recipesaplication.data.Directions;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
-import com.example.adoo.recipesaplication.data.Suggested;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.remote.response.BaseResponse;
+import com.example.adoo.recipesaplication.data.storage.remote.response.DirectionsResponse;
 import com.example.adoo.recipesaplication.data.storage.remote.response.IngredientsResponse;
 import com.example.adoo.recipesaplication.data.storage.remote.response.RecipeResponse;
 import com.example.adoo.recipesaplication.data.storage.remote.response.TagsResponse;
+import com.example.adoo.recipesaplication.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,30 +26,36 @@ public class RemoteToLocal {
         List<Recipe> recipes = new ArrayList<>();
 
         for (RecipeResponse r : recipesResponse) {
-
             recipes.add(
                     new Recipe(
                             r.getId(),
                             r.getName(),
                             r.getImageUrl(),
-                            r.getInfo(),
                             r.getTime(),
+                            r.getServings(),
+                            r.getLevel(),
                             r.getCalorie(),
                             r.getCarbs(),
-                            r.getFats(),
                             r.getProteins(),
-                            r.getLevel(),
-                            r.getServings()
+                            r.getFats()
                     )
             );
+            //if sub get only 5 recipes
+            if (MainActivity.IS_SUB) {
+                if (r.getId() == 6) {
+                    break;
+                }
+            }
         }
+
         return recipes;
     }
 
     /***************
      * Ingredients
      **************/
-    public static List<Ingredients> ingredientsConverter(List<RecipeResponse> recipeResponse) {
+    public static List<Ingredients> ingredientsConverter
+    (List<RecipeResponse> recipeResponse) {
         List<Ingredients> ingredients = new ArrayList<>();
 
         for (RecipeResponse recipe : recipeResponse) {
@@ -68,8 +73,8 @@ public class RemoteToLocal {
         List<Directions> directions = new ArrayList<>();
 
         for (RecipeResponse recipe : recipeResponse) {
-            for (String des : recipe.getDirections()) {
-                directions.add(new Directions(recipe.getId(), des));
+            for (DirectionsResponse des : recipe.getDirections()) {
+                directions.add(new Directions(recipe.getId(), des.getNumber(), des.getDirections()));
             }
         }
         return directions;
@@ -108,21 +113,6 @@ public class RemoteToLocal {
             );
         }
         return tags;
-    }
-
-    /************
-     * Suggested
-     ************/
-    public static List<Suggested> suggestedConverter(BaseResponse baseResponse) {
-
-        List<Suggested> suggesteds = new ArrayList<>();
-
-        for (int recipeid : baseResponse.getData().getSuggested()) {
-            suggesteds.add(new Suggested(recipeid));
-
-        }
-        return suggesteds;
-
     }
 
 }

@@ -12,16 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainActivity">
+        <activity
+            android:name=".main.MainActivity"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".main.description.DescriptionActivity"
-            android:launchMode="singleInstance" />
-        <activity android:name=".main.search.SearchActivity" />
+        <activity android:name=".main.description.DescriptionActivity" />
+        <activity android:name=".main.subscribe.SubscribeActivity"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,10 @@
             type="com.example.adoo.recipesaplication.util.RecyclerViewClickListener" />
 
         <variable
+            name="recipesViewModel"
+            type="com.example.adoo.recipesaplication.main.recipes.RecipesViewModel" />
+
+        <variable
             name="recipes"
             type="com.example.adoo.recipesaplication.data.Recipe" />
     </data>
@@ -36,7 +40,8 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:loadImage="@{recipes.image}" />
+                app:loadImage="@{recipes.id}"
+                />
 
             <TextView
                 android:id="@+id/tv_name"
@@ -63,7 +68,7 @@
                 android:onClick="@{(view)-> listener.favoritesCLickListener(view, recipes)}"
                 android:background='@{recipes.like ? @drawable/ic_like_hart_clik : @drawable/ic_like_hart}'
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent" />
+                app:layout_constraintRight_toRightOf="parent" /> e
 
         </android.support.constraint.ConstraintLayout>
     </android.support.design.card.MaterialCardView>

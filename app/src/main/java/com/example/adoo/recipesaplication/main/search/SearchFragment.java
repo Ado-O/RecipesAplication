@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -21,11 +22,15 @@ import com.example.adoo.recipesaplication.databinding.SearchFragBinding;
 import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
 import com.example.adoo.recipesaplication.main.recipes.RecipesAdapter;
 import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
+import com.example.adoo.recipesaplication.main.subscribe.SubscribeActivity;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 import com.example.adoo.recipesaplication.util.ViewModelFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import static com.example.adoo.recipesaplication.main.MainActivity.hideKeyboard;
 
 public class SearchFragment extends Fragment implements RecyclerViewClickListener {
 
@@ -37,14 +42,8 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     private FavoritesViewModel mFavoritesViewModel;
     private String title = "";
 
-    public static SearchFragment newInstance(int id) {
-        SearchFragment searchfragment = new SearchFragment();
-        Bundle b = new Bundle();
-        b.putInt("id", id);
-
-        searchfragment.setArguments(b);
-
-        return searchfragment;
+    public static SearchFragment newInstance() {
+        return new SearchFragment();
     }
 
     @Nullable
@@ -59,18 +58,12 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
         mBinding.setViewModel(mSearchViewModel);
 
         setupRv();
-        setupBackArrow();
+        setupClear();
         setupEditText();
 
         return mBinding.getRoot();
     }
 
-    /**************************
-     * OnClickListener for the toolbar back button
-     *************************/
-    private void setupBackArrow() {
-        mBinding.ivArrow.setOnClickListener(v -> getActivity().onBackPressed());
-    }
 
     /*************************
      * add layoutManger in RecycleViewAdapter
@@ -79,9 +72,33 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
 
         mSearchAdapter = new SearchAdapter(getActivity(), SearchFragment.this);
         mBinding.rvEditSearch.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mBinding.rvEditSearch.smoothScrollToPosition(0);
         mBinding.rvEditSearch.setAdapter(mSearchAdapter);
 
+    }
+
+    /**************************
+     * onCLick right icon in edit text
+     *************************/
+    public void setupClear() {
+
+        mBinding.etSimple.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= mBinding.etSimple.getRight() - mBinding.etSimple.getTotalPaddingRight()) {
+
+                        mBinding.etSimple.setText(null);
+                        hideKeyboard(getActivity());
+                        mBinding.setErrorBoolean(false);
+                        mBinding.etSimple.setCompoundDrawablesWithIntrinsicBounds(
+                                R.drawable.ic_search_black, 0, 0, 0);
+
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
     /***********
@@ -103,21 +120,19 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
             public void afterTextChanged(Editable s) {
                 mSearchViewModel.getRecipesSearch(s.toString());
 
-                if (mSearchViewModel.mRecipes.size() == 0){
-                    mBinding.rvEditSearch.setVisibility(View.GONE);
-                    mBinding.ivNoResultFind.setImageResource(R.drawable.ic_local_dining_color);
-                    mBinding.tvNoResultFind.setText("SORRY, NO RESULT FIND");
-                    mBinding.tvNoResultFindDes.setText("Use the search bar, or click on the tags below to find the recipe. Enjoy!");
-                }else{
-                    mBinding.rvEditSearch.setVisibility(View.VISIBLE);
-                    mBinding.ivNoResultFind.setImageResource(0);
-                    mBinding.tvNoResultFind.setText("");
-                    mBinding.tvNoResultFindDes.setText("");
+                if (!s.toString().isEmpty()) {
+                    mBinding.etSimple.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.ic_search_black, 0, R.drawable.ic_close_black, 0);
+                    mBinding.setErrorBoolean(true);
+                } else {
+                    mBinding.etSimple.setCompoundDrawablesWithIntrinsicBounds(
+                            R.drawable.ic_search_black, 0, R.drawable.ic_close_black, 0);
+                    mBinding.setErrorBoolean(false);
                 }
             }
         });
-
     }
+
 
     /************************
      * RecycleViewClickListener
@@ -130,20 +145,7 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     }
 
     @Override
-    public void favoritesCLickListener(View view, Recipe recipe) {
-
-        // if Like from recipes_table false = add icon, set like = true and in
-        // favorite_table data od id
-        if (!recipe.isLike()){
-            view.setBackgroundResource(R.drawable.ic_like_hart_clik);
-            recipe.setLike(true);
-            mFavoritesViewModel.addFavorite(recipe.getId());
-        }else{
-            view.setBackgroundResource(R.drawable.ic_like_hart);
-            recipe.setLike(false);
-            mFavoritesViewModel.deleteFavorite(recipe.getId());
-        }
+    public void favoritesCLickListener(View v, Recipe recipe) {
     }
-
 
 }

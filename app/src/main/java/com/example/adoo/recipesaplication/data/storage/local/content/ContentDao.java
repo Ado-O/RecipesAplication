@@ -9,7 +9,6 @@ import com.example.adoo.recipesaplication.data.Directions;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
-import com.example.adoo.recipesaplication.data.Suggested;
 import com.example.adoo.recipesaplication.data.Tag;
 
 import java.util.List;
@@ -55,12 +54,4 @@ public interface ContentDao {
     @Query("DELETE FROM recipes_tag_table WHERE recipes_id=:recipesId")
     void clearTags(long recipesId);
 
-    /**********
-     *Suggested
-     **********/
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertSuggested(List<Suggested> suggesteds);
-
-    @Query("DELETE FROM suggested_table WHERE recipe_id=:recipesId")
-    void clearSuggested(long recipesId);
 }

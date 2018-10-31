@@ -15,10 +15,6 @@
             type="com.example.adoo.recipesaplication.data.Recipe" />
     </data>
 
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
     <android.support.design.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +36,8 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:loadImage="@{recipes.image}" />
+                app:loadImage="@{recipes.id}"
+                />
 
             <TextView
                 android:id="@+id/tv_name"
@@ -58,18 +55,17 @@
                 app:layout_constraintLeft_toLeftOf="parent" />
 
             <ImageView
-                android:id="@+id/like"
+                android:id="@+id/like_recipes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:padding="8dp"
+                android:padding="10dp"
                 android:onClick="@{(view)-> listener.favoritesCLickListener(view, recipes)}"
-                app:srcCompat="@drawable/ic_like_hart_clik"
+                android:background='@{recipes.like ? @drawable/ic_like_hart_clik : @drawable/ic_like_hart}'
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.design.card.MaterialCardView>
-    </android.support.design.widget.CoordinatorLayout>
 </layout>

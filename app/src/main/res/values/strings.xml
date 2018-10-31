@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RecipesAplication</string>
+    <string name="appBase64"></string>
+
 </resources>

@@ -7,31 +7,34 @@
         <variable
             name="directions"
             type="com.example.adoo.recipesaplication.data.Directions" />
-
+        
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <TextView
             android:id="@+id/tv_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:tint="@color/clickColor"
-            app:srcCompat="@drawable/ic_chevron_right_black"
+            android:textColor="@color/clickColor"
+            android:text='@{directions.number+"."}'
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:paddingBottom="20dp"
-            android:text='@{directions.des, default="ssssss"}'
+            android:text='@{directions.directions, default="ssssss"}'
             android:textColor="@color/darkTextMedium"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_id" />
 
     </android.support.constraint.ConstraintLayout>

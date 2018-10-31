@@ -1,135 +1,4015 @@
 {
 	"data": {
 		"tags": [{
-			"id": 1,
-			"name": "meat"
-		}, {
-			"id": 2,
-			"name": "sugar-free"
-		}, {
-			"id": 3,
-			"name": "vegeterian"
-		}, {
-			"id": 4,
-			"name": "rice"
-		}],
+				"id": 1,
+				"name": "easy"
+			},
+			{
+				"id": 2,
+				"name": "lunch"
+			},
+			{
+				"id": 3,
+				"name": "medium"
+			},
+			{
+				"id": 4,
+				"name": "sweets"
+			},
+			{
+				"id": 5,
+				"name": "low calories"
+			},
+			{
+				"id": 6,
+				"name": "quick and easy"
+			},
+			{
+				"id": 7,
+				"name": "drink"
+			},
+			{
+				"id": 8,
+				"name": "dinner"
+			},
+			{
+				"id": 9,
+				"name": "meat"
+			},
+			{
+				"id": 10,
+				"name": "fat burning"
+			},
+			{
+				"id": 11,
+				"name": "snack"
+			},
+			{
+				"id": 12,
+				"name": "eggless"
+			},
+			{
+				"id": 13,
+				"name": "Keto diet"
+			},
+			{
+				"id": 14,
+				"name": "just eat"
+			},
+			{
+				"id": 15,
+				"name": "breakfast"
+			},
+			{
+				"id": 16,
+				"name": "salad"
+			},
+			{
+				"id": 17,
+				"name": "gain weight"
+			},
+			{
+				"id": 18,
+				"name": "chicken"
+			},
+			{
+				"id": 19,
+				"name": "vegetarian"
+			},
+			{
+				"id": 20,
+				"name": "pasta"
+			},
+			{
+				"id": 21,
+				"name": "sweers"
+			},
+			{
+				"id": 22,
+				"name": "hard"
+			},
+			{
+				"id": 23,
+				"name": "gluten free"
+			},
+			{
+				"id": 24,
+				"name": "spicy"
+			},
+			{
+				"id": 25,
+				"name": "soup"
+			}
+		],
+
 		"recipes": [{
-			"id": 1,
-			"name": "Cereal with fruti jogurt",
-			"image_url": "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/frying-pan-pizza-easy-recipe-collection.jpg",
-			"info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
-			"time": 2000,
-			"calorie": 200,
-			"carbs": 20,
-			"fats": 10,
-			"proteins": 20,
-			"level": "MEDIUM",
-			"servings": 2,
-			"ingredients": [{
-				"name": "Ingredient 1",
-				"amount": "300g"
-			}, {
-				"name": "Ingredient 2",
-				"amount": "400g"
-			},{
-				"name": "Ingredient 3",
-				"amount": "200g"
-			},{
-				"name": "Ingredient 4",
-				"amount": "50g"
-			}],
-			"directions": ["Some dir 1", "Some dir 1", "Some dir 1", "Some dir 1"],
-			"tags": [1, 2]
-		},{
-			"id": 2,
-			"name": "American Diner",
-			"image_url": "https://www.snagaslip.com/blog/wp-content/uploads/turkey.jpg",
-			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only ",
-			"time": 4000,
-			"calorie": 400,
-			"carbs": 30,
-			"fats": 40,
-			"proteins": 80,
-			"level": "ADVANCE",
-			"servings": 4,
-			"ingredients": [{
-				"name": "Ingredient 1",
-				"amount": "300g"
-			}, {
-				"name": "Ingredient 2",
-				"amount": "400g"
-			},{
-				"name": "Ingredient 3",
-				"amount": "900g"
-			},{
-				"name": "Ingredient 4",
-				"amount": "40g"
-			},{
-				"name": "Ingredient 5",
-				"amount": "900g"
-			}],
-			"directions": ["Some dir 1", "Some dir 1", "Some dir 1", "Some dir 1", "Some dir 1"],
-			"tags": [1, 2, 3, 4]
-		},{
-			"id": 3,
-			"name": "Recipe 3",
-			"image_url": "https://www.rhiansrecipes.com/wp-content/uploads/2017/08/fullsizeoutput_3f2a-1024x683.jpeg",
-			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-			"time": 3000,
-			"calorie": 600,
-			"carbs": 30,
-			"fats": 30,
-			"proteins": 50,
-			"level": "EASY",
-			"servings": 2,
-			"ingredients": [{
-				"name": "Ingredient 1",
-				"amount": "300g"
-			},{
-				"name": "Ingredient 2",
-				"amount": "400g"
-			}],
-			"directions": ["Some dir 1", "Some dir 1"],
-			"tags": [1, 2]
-		},{
-			"id": 4,
-			"name": "Tagine",
-			"image_url": "https://static1.squarespace.com/static/560ad766e4b0bd9a7a2bdab8/t/5b2e42ea758d46fa66d2b210/1524882721288/tagine.jpg?format=1500w",
-			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-			"time": 3000,
-			"calorie": 600,
-			"carbs": 30,
-			"fats": 30,
-			"proteins": 50,
-			"level": "EASY",
-			"servings": 2,
-			"ingredients": [{
-				"name": "Ingredient 1",
-				"amount": "300g"
-			}],
-			"directions": ["Some dir 1"],
-			"tags": [1]
-		},{
-			"id": 5,
-			"name": "South African Poultry",
-			"image_url": "http://www.sapoultry.co.za/images/recipes/51.jpg",
-			"info": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-			"time": 3000,
-			"calorie": 600,
-			"carbs": 30,
-			"fats": 30,
-			"proteins": 50,
-			"level": "EASY",
-			"servings": 2,
-			"ingredients": [{
-				"name": "Ingredient 1",
-				"amount": "300g"
-			}],
-			"directions": ["Some dir 1"],
-			"tags": [1, 2, 3]
-		}],
-		"suggested": [
-			1, 2, 3
+				"id": 1,
+				"name": "Homemade Creamy Macaroni and Cheese",
+				"image": "",
+				"time": "Ready In 50 min",
+				"servers": 4,
+				"level": "medium",
+				"calorie": "858 cals",
+				"carbohydrates": "66.7 g",
+				"protein": "37.7 g",
+				"fat": "48.7 g",
+				"Ingredients": [{
+					"name": "uncooked elbow macaroni",
+					"amount": "8 ounces"
+				}, {
+					"name": "shredded sharp Cheddar cheesei",
+					"amount": "256 g"
+				}, {
+					"name": "grated Parmesan cheese",
+					"amount": "64 g"
+				}, {
+					"name": "milk",
+					"amount": "0,6 l"
+				}, {
+					"name": "butter",
+					"amount": "32 g"
+				}, {
+					"name": "all-purpose flour",
+					"amount": "2 1/2 tablespoons"
+				}, {
+					"name": "butter",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "bread crumbs",
+					"amount": "64 g"
+				}, {
+					"name": "paprika",
+					"amount": "1 pinch"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Cook macaroni according to the package directions. Drain."
+				}, {
+					"number": "2",
+					"directions": "In a saucepan, melt butter or margarine over medium heat. Stir in enough flour to make a roux. Add milk to roux slowly, stirring constantly. Stir in cheeses, and cook over low heat until cheese is melted and the sauce is a little thick. Put macaroni in large casserole dish, and pour sauce over macaroni. Stir well"
+				}, {
+					"number": "3",
+					"directions": "Melt butter or margarine in a skillet over medium heat. Add breadcrumbs and brown. Spread over the macaroni and cheese to cover. Sprinkle with a little paprika."
+				}, {
+					"number": "4",
+					"directions": "Bake at 350 degrees F (175 degrees C) for 30 minutes. Serve."
+				}],
+				"tags": [1, 2]
+			},
+			{
+				"id": 2,
+				"name": "Good Old Fashioned Pancakes",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 8,
+				"level": "medium",
+				"calorie": "158 cals",
+				"carbohydrates": "21.7 g",
+				"protein": "4.5 g",
+				"fat": "5.9 g",
+				"Ingredients": [{
+					"name": "all-purpose flour",
+					"amount": "64 gcups"
+				}, {
+					"name": "baking powder",
+					"amount": "3 1/2 teaspoons"
+				}, {
+					"name": "salt",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "white sugar",
+					"amount": "1 tablespoon"
+				}, {
+					"name": "milk",
+					"amount": "0,2 l"
+				}, {
+					"name": "egg",
+					"amount": "1"
+				}, {
+					"name": "butter, melted",
+					"amount": "3 tablespoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In a large bowl, sift together the flour, baking powder, salt and sugar. Make a well in the center and pour in the milk, egg and melted butter; mix until smooth."
+				}, {
+					"number": "2",
+					"directions": "Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot."
+				}],
+				"tags": [3, 4, 5]
+			},
+			{
+				"id": 3,
+				"name": "Best Green Juice Recipe",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "126 cals",
+				"carbohydrates": "0 mg",
+				"protein": "2.4 g",
+				"fat": "7.4 g",
+				"Ingredients": [{
+					"name": "Gala apple - peeled, cored, and chopped",
+					"amount": "1"
+				}, {
+					"name": "leaves kale, chopped",
+					"amount": "4"
+				}, {
+					"name": "fresh coconut meat ",
+					"amount": "128 g"
+				}, {
+					"name": "cucumber, chopped",
+					"amount": "1/2"
+				}, {
+					"name": "stalk celery, chopped ",
+					"amount": "1"
+				}, {
+					"name": "spinach",
+					"amount": "64 g"
+				}, {
+					"name": "coconut water",
+					"amount": "128 g"
+				}, {
+					"name": "almond milk",
+					"amount": "64g"
+				}, {
+					"name": "water",
+					"amount": "64 g"
+				}, {
+					"name": "lemon, juiced",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place apple, kale, coconut meat, cucumber, celery, and spinach in a blender; top with coconut water, almond milk, water, and lemon juice. Blend on high for 30 seconds to 1 minute."
+				}],
+				"tags": [6, 7, 5]
+			},
+			{
+				"id": 4,
+				"name": "Grilled Honey Mustard Chicken",
+				"image": "",
+				"time": "Ready In 35 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "266 cals",
+				"carbohydrates": "22 g",
+				"protein": "24.7 g",
+				"fat": "8.3 g",
+				"Ingredients": [{
+					"name": "Dijon mustard",
+					"amount": "48 g"
+				}, {
+					"name": "honey",
+					"amount": "32 g"
+				}, {
+					"name": "mayonnaise ",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "steak sauce",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "skinless, boneless chicken breast halves",
+					"amount": "4"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat the grill for medium heat. In a shallow bowl, mix the mustard, honey, mayonnaise, and steak sauce. Set aside a small amount of the honey mustard sauce for basting, and dip the chicken into the remaining sauce to coat. Lightly oil the grill grate. Grill chicken over indirect heat for 18 to 20 minutes, turning occasionally, or until juices run clear. Baste occasionally with the reserved sauce during the last 10 minutes. Watch carefully to prevent burning!"
+				}],
+				"tags": [1, 8, 9]
+			},
+			{
+				"id": 5,
+				"name": "Cabbage Fat-Burning Soup",
+				"image": "",
+				"time": "Ready In 45 min",
+				"servers": 5,
+				"level": "easy",
+				"calorie": "90 cals",
+				"carbohydrates": "20.7 g",
+				"protein": "4 g",
+				"fat": "0.5 g",
+				"Ingredients": [{
+					"name": "carrots, chopped",
+					"amount": "4"
+				}, {
+					"name": "onions, chopped",
+					"amount": "2"
+				}, {
+					"name": "cans whole peeled tomatoes, with liquid",
+					"amount": "2 (16 ounce) "
+				}, {
+					"name": "head cabbage, chopped",
+					"amount": "1"
+				}, {
+					"name": "can cut green beans, drained 2 quarts tomato juice",
+					"amount": "1 (15 ounce)"
+				}, {
+					"name": "quarts tomato juice",
+					"amount": "2"
+				}, {
+					"name": "envelope dry onion soup mix",
+					"amount": "1 (1 ounce) "
+				}, {
+					"name": "green bell peppers, diced",
+					"amount": "2"
+				}, {
+					"name": "stalks celery, chopped ",
+					"amount": "10"
+				}, {
+					"name": "can beef broth",
+					"amount": "1 (14 ounce)"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place carrots, onions, tomatoes, cabbage, green beans, peppers, and celery in a large pot. Add onion soup mix, tomato juice, beef broth, and enough water to cover vegetables. Simmer until vegetables are tender. May be stored in the refrigerator for several days."
+				}],
+				"tags": [10, 5]
+			},
+			{
+				"id": 6,
+				"name": "Balsamic Bruschetta",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 8,
+				"level": "easy",
+				"calorie": "194 cals",
+				"carbohydrates": "35.2 g",
+				"protein": "8.3 g",
+				"fat": "2.5 g",
+				"Ingredients": [{
+					"name": "tomatoes, diced",
+					"amount": "8 roma (plum) "
+				}, {
+					"name": "chopped fresh basil",
+					"amount": "48 g"
+				}, {
+					"name": "shredded Parmesan cheese ",
+					"amount": "32 g"
+				}, {
+					"name": "cloves garlic, minced",
+					"amount": "2"
+				}, {
+					"name": "balsamic vinegar",
+					"amount": "1 tablespoon"
+				}, {
+					"name": "olive oil",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "kosher salt",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "freshly ground black pepper",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "loaf French bread, toasted and sliced",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In a bowl, toss together the tomatoes, basil, Parmesan cheese, and garlic. Mix in the balsamic vinegar, olive oil, kosher salt, and pepper. Serve on toasted bread slices."
+				}],
+				"tags": [6, 11]
+			},
+			{
+				"id": 7,
+				"name": "Eggless Coffee Cake",
+				"image": "",
+				"time": "Ready In 35 min",
+				"servers": 6,
+				"level": "medium",
+				"calorie": "407 cals",
+				"carbohydrates": "65.2 g",
+				"protein": "5 g",
+				"fat": "14.8 g",
+				"Ingredients": [{
+					"name": "sifted unbleached all-purpose flour",
+					"amount": "64 g cups"
+				}, {
+					"name": "baking powder",
+					"amount": "2 teaspoon"
+				}, {
+					"name": "baking soda",
+					"amount": "1/2 teaspoon"
+				}, {
+					"name": "salt",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "white sugar",
+					"amount": "96 g"
+				}, {
+					"name": "egg replacer (dry)",
+					"amount": "3 teaspoon"
+				}, {
+					"name": "water",
+					"amount": "4 tablespoons"
+				}, {
+					"name": "sour cream substitute",
+					"amount": "128 g"
+				}, {
+					"name": "vanilla extract",
+					"amount": "1/2 teaspoon"
+				}, {
+					"name": "fresh blueberries",
+					"amount": "32 g"
+				}, {
+					"name": "chopped walnuts (optional)",
+					"amount": "32 g"
+				}, {
+					"name": "white sugar",
+					"amount": "5 tablespoons"
+				}, {
+					"name": "soy margarine",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "ground cinnamon",
+					"amount": "1/2 teaspoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 350 degrees F (175 degrees C). Grease a 9x9 inch baking pan."
+				}, {
+					"number": "2",
+					"directions": "In a large mixing bowl resift flour with the baking powder, baking soda, salt and 3/4 cup of sugar. In a separate bowl combine the egg replacer and water (2 eggs' worth) and mix in sour cream substitute and vanilla. Pour the 'egg' mixture into the flour mixture and beat until smooth. Spread batter in baking pan. Sprinkle blueberries (optional) and/or walnuts (optional) over the batter, and stir slightly so that they stay in the top layer."
+				}, {
+					"number": "3",
+					"directions": "In a small bowl, combine the 5 tablespoons sugar, margarine and cinnamon. Mix with a fork until mixture resembles cornmeal (not smooth). Sprinkle topping over batter."
+				}, {
+					"number": "4",
+					"directions": "Bake in preheated oven for 20 to 25 minutes, or until a toothpick inserted into the center of the cake comes out clean. Cool slightly before serving."
+				}],
+				"tags": [2, 4]
+			},
+			{
+				"id": 8,
+				"name": "The Easiest Lime Grilled Salmon (Eggless)",
+				"image": "",
+				"time": "Ready In 2 h 31 min",
+				"servers": 6,
+				"level": "easy",
+				"calorie": "318 cals",
+				"carbohydrates": "13.2 g",
+				"protein": "20.5 g",
+				"fat": "20.1 g",
+				"Ingredients": [{
+					"name": "pounds salmon fillets lemon pepper to taste garlic powder to taste salt to taste ",
+					"amount": "1 1/2"
+				}, {
+					"name": "soy sauce",
+					"amount": "1/3 cup"
+				}, {
+					"name": "brown sugar",
+					"amount": "1/3 cup"
+				}, {
+					"name": "brown sugar",
+					"amount": "1/3 cup"
+				}, {
+					"name": "brown sugar",
+					"amount": "1/4 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Season salmon fillets with lemon pepper, garlic powder, and salt."
+				}, {
+					"number": "2",
+					"directions": "In a small bowl, stir together soy sauce, brown sugar, water, and vegetable oil until sugar is dissolved. Place fish in a large resealable plastic bag with the soy sauce mixture, seal, and turn to coat. Refrigerate for at least 2 hours."
+				}, {
+					"number": "3",
+					"directions": "Preheat grill for medium heat."
+				}, {
+					"number": "4",
+					"directions": "Lightly oil grill grate. Place salmon on the preheated grill, and discard marinade. Cook salmon for 6 to 8 minutes per side, or until the fish flakes easily with a fork."
+				}],
+				"tags": [12, 3, 2]
+			},
+			{
+				"id": 9,
+				"name": "Dreamy, Creamy Cauliflower Tortillas (Keto Diet)",
+				"image": "",
+				"time": "Ready In 41 min",
+				"servers": 6,
+				"level": "medium",
+				"calorie": "45 cals",
+				"carbohydrates": "5.3 g",
+				"protein": "3.8 g",
+				"fat": "1.6 g",
+				"Ingredients": [{
+					"name": "head cauliflower, finely grated",
+					"amount": "1"
+				}, {
+					"name": "eggs salt",
+					"amount": "2"
+				}, {
+					"name": "pinch ground black pepper",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 400 degrees F (200 degrees C). Line a baking sheet with parchment paper."
+				}, {
+					"number": "2",
+					"directions": "Place cauliflower in a microwave-safe bowl. Microwave at maximum power until tender, about 4 minutes. Place on a kitchen towel and squeeze out all liquid; transfer to a bowl."
+				}, {
+					"number": "3",
+					"directions": "Whisk eggs, salt, and black pepper in a bowl. Add to the cauliflower in batches; stir well. Shape cauliflower mixture into 3-inch tortillas on the prepared baking sheet."
+				}, {
+					"number": "4",
+					"directions": "Bake in the preheated oven until set, about 20 minutes. Let cool slightly."
+				}, {
+					"number": "5",
+					"directions": "Heat a skillet over medium heat. Cook tortillas until golden brown, about 1 minute. Flip and cook for 1 minute more."
+				}],
+				"tags": [13, 3, 8, 5]
+			},
+			{
+				"id": 10,
+				"name": "Keto cinnamon coffee",
+				"image": "",
+				"time": "Ready In 4 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "136 cals",
+				"carbohydrates": "1 g",
+				"protein": "1 g",
+				"fat": "14 g",
+				"Ingredients": [{
+					"name": "ground coffee",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "ground cinnamon",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "water",
+					"amount": "2 cups"
+				}, {
+					"name": "heavy whipping cream",
+					"amount": "1/3 cups"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Mix ground coffee and cinnamon. Add piping hot water and brew as usual."
+				}, {
+					"number": "2",
+					"directions": "Whip the cream using a whisk or a mixer until medium stiff peaks form."
+				}, {
+					"number": "3",
+					"directions": "Serve the coffee in a tall mug (a glass mug is fun if you have it) and add the whipped cream on top. Finish with a small sprinkle of ground cinnamon."
+				}],
+				"tags": [1, 13, 7, 5]
+			},
+			{
+				"id": 11,
+				"name": "Iced tea",
+				"image": "",
+				"time": "Ready In 4 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "35 cals",
+				"carbohydrates": "9 g",
+				"protein": "0 g",
+				"fat": "0.1 g",
+				"Ingredients": [{
+					"name": "cold water",
+					"amount": "2 cups"
+				}, {
+					"name": "tea bag",
+					"amount": "1"
+				}, {
+					"name": "ice cubes",
+					"amount": "1 cup"
+				}, {
+					"name": "Flavorings of your choice, such as sliced lemon or fresh mint",
+					"amount": "0"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine the tea, flavoring and half of the cold water in a pitcher and leave it in the refrigerator for 1-2 hours."
+				}, {
+					"number": "2",
+					"directions": "Remove the tea bag and the flavoring. Replace with new, fresh flavoring if you so desire. Add the rest of the cold water and serve with lots of ice cubes. Ahhh... the simple pleasures!"
+				}],
+				"tags": [6, 7, 5]
+			},
+			{
+				"id": 12,
+				"name": "Keto Zucchini Breakfast Hash",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "423 cals",
+				"carbohydrates": "6.6g",
+				"protein": "17.4g",
+				"fat": "35.5g",
+				"Ingredients": [{
+					"name": "medium zucchini (200 g/ 7.1 oz)",
+					"amount": "1"
+				}, {
+					"name": "slices bacon (60 g/ 2.1 oz)",
+					"amount": "2"
+				}, {
+					"name": "small white onion (30 g/ 1.1 oz) or 1 clove garli",
+					"amount": "½ "
+				}, {
+					"name": "ghee or coconut oil",
+					"amount": "1 tbps"
+				}, {
+					"name": "freshly chopped parsley or chives",
+					"amount": "1 tbps"
+				}, {
+					"name": "salt 1 large egg, free-range or organic on topt",
+					"amount": "¼ tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Peel and finely chop the onion (or garlic) and slice the bacon.Sweat the onion over a medium heat and add the bacon. Stir frequently and cook until lightly browned. "
+				}, {
+					"number": "2",
+					"directions": "Meanwhile, dice the zucchini into medium pieces. Add the zucchini to the pan and cook for 10 - 15 minutes.When done, remove from the heat and add chopped parsley.!"
+				}, {
+					"number": "3",
+					"directions": " Top with a fried egg or avocado. Enjoy!"
+				}],
+				"tags": [1, 13, 15]
+			},
+			{
+				"id": 13,
+				"name": "Yogurt with Blueberries & Honey",
+				"image": "",
+				"time": "Ready In 4 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "274 cals",
+				"carbohydrates": "28 g",
+				"protein": "16 g",
+				"fat": "4 g",
+				"Ingredients": [{
+					"name": "nonfat plain Greek yogurt",
+					"amount": "128 g"
+				}, {
+					"name": "blueberries",
+					"amount": "64 g"
+				}, {
+					"name": "honey",
+					"amount": "1 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine all ingredients above and enjoy!"
+				}],
+				"tags": [6, 14]
+			},
+			{
+				"id": 14,
+				"name": "White Bean & Avocado Toast",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "330 cals",
+				"carbohydrates": "156.4g",
+				"protein": "51.9g",
+				"fat": "19.2g",
+				"Ingredients": [{
+					"name": "slice whole-wheat bread, toasted",
+					"amount": "1"
+				}, {
+					"name": "avocado, mashed",
+					"amount": "1/2"
+				}, {
+					"name": "cupwhite beans, mashed",
+					"amount": "1/4"
+				}, {
+					"name": "Salt and pepper",
+					"amount": "0"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Pulse the garlic and beans and about half of the basil in a food processor until finely minced and crumbly."
+				}, {
+					"number": "2",
+					"directions": "Cut the remaining basil into ribbons and chop the artichokes. Toss the bean mixture with the lemon, basil olive oil, salt and pepper, and artichoke hearts.!"
+				}, {
+					"number": "3",
+					"directions": "To serve, toast bread and top with a quarter of the spinach, followed by a quarter of the bean mix. Enjoy!"
+				}],
+				"tags": [6, 14, 15]
+			},
+			{
+				"id": 15,
+				"name": "Oatmeal",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "291 cals",
+				"carbohydrates": "62 g",
+				"protein": "6 g",
+				"fat": "5 g",
+				"Ingredients": [{
+					"name": "old fashioned or steel cut oatmeal",
+					"amount": "1 cup"
+				}, {
+					"name": "almond milk",
+					"amount": "2 cups"
+				}, {
+					"name": "apple thinly sliced then cut into thirds (basically thin bite sized pieces)",
+					"amount": "1"
+				}, {
+					"name": "cinnamon",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "maple syrup (optional)",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "unsweetened apple sauce ( if you have the little cups earch is ½ cup)",
+					"amount": "1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In a medium sauce pan combine the almond milk, oatmeal, cinnamon and maple syrup, heat on low until most of the milk is absorbed (stir as needed), once most of the milk is absorbed add in the apple sauce and stir together. If you like your apples soft add them in now too, if you like some crunch wait until you are about to serve to stir in"
+				}, {
+					"number": "2",
+					"directions": "Once all the apple sauce and milk is absorbed, about 15-20 minutes total, remove from heat and serve.!"
+				}],
+				"tags": [15]
+			},
+			{
+				"id": 16,
+				"name": "Stuffed Sweet Potato with Hummus Dressing",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "472 cals",
+				"carbohydrates": "85 g",
+				"protein": "21 g",
+				"fat": "7 g",
+				"Ingredients": [{
+					"name": "sweet potato, scrubbed",
+					"amount": "1 large"
+				}, {
+					"name": "chopped kale",
+					"amount": "75 g"
+				}, {
+					"name": "canned black beans, rinsed",
+					"amount": "128 g"
+				}, {
+					"name": "water",
+					"amount": "2 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Prick sweet potato all over with a fork. Microwave on High until cooked through, 7 to 10 minutes. "
+				}, {
+					"number": "2",
+					"directions": "Meanwhile, wash kale and drain, allowing water to cling to the leaves. Place in a medium saucepan; cover and cook over medium-high heat, stirring once or twice, until wilted. Add beans; add a tablespoon or two of water if the pot is dry. Continue cooking, uncovered, stirring occasionally, until the mixture is steaming hot, 1 to 2 minutes. "
+				}, {
+					"number": "3",
+					"directions": "Split the sweet potato open and top with the kale and bean mixture. Combine hummus and 2 tablespoons water in a small dish. Add additional water as needed to reach desired consistency. Drizzle the hummus dressing over the stuffed sweet potato."
+				}],
+				"tags": [3, 2]
+			},
+			{
+				"id": 17,
+				"name": "Peanut-Butter Banana Toast",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "307 cals",
+				"carbohydrates": "45g",
+				"protein": "4g",
+				"fat": "9g",
+				"Ingredients": [{
+					"name": "whole wheat bread",
+					"amount": "2 slices"
+				}, {
+					"name": "large ripe banana",
+					"amount": "1"
+				}, {
+					"name": "honey, to tase",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "peanut butter, to taste",
+					"amount": "1/4"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Toast bread to your liking."
+				}, {
+					"number": "2",
+					"directions": "Divide peanut butter and spread on toast."
+				}, {
+					"number": "3",
+					"directions": "Drizzle honey over the peanut butter. "
+				}, {
+					"number": "4",
+					"directions": "Cut bananas length wise and lay across peanut butter. Heat in microwave for 10 seconds. Enjoy with a glass of milk."
+				}],
+				"tags": [6, 14, 15]
+			},
+			{
+				"id": 18,
+				"name": "Roasted cinnamon pears",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 3,
+				"level": "easy",
+				"calorie": "396 cals",
+				"carbohydrates": "30g",
+				"protein": "1g",
+				"fat": "3g",
+				"Ingredients": [{
+					"name": "peats extra light olive oil spray",
+					"amount": "4"
+				}, {
+					"name": "caster sugar",
+					"amount": "1 teaspoons"
+				}, {
+					"name": "ground cinnamon low-fat ice-cream, to serve extra cinnamon, for sprinkling (optional)",
+					"amount": "1 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 180°C. Peel pears and cut into quarters. Remove cores. Place in a large roasting pan lined with baking paper. Spray with oil. ."
+				}, {
+					"number": "2",
+					"directions": "Remove the tea bag and the flavoring. Replace with new, fresh flavoring if you so desire. Add the rest of the cold water and serve with lots of ice cubes. Ahhh... the simple pleasures!"
+				}, {
+					"number": "3",
+					"directions": "Add combined sugar and cinnamon. Toss to coat. Roast for 20 minutes or until pears are tender and golden. "
+				}, {
+					"number": "4",
+					"directions": "Serve roasted pears with low-fat ice-cream and sprinkle with extra cinnamon, if desired."
+				}],
+				"tags": [1, 8, 9]
+			},
+			{
+				"id": 19,
+				"name": "Fig and Goat",
+				"image": "",
+				"time": "Ready In10 m",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "340 cals",
+				"carbohydrates": "32 g",
+				"protein": "10 g",
+				"fat": "21 g",
+				"Ingredients": [{
+					"name": "mixed salad greens",
+					"amount": "256 g"
+				}, {
+					"name": "dried figs, stemmed and sliced ",
+					"amount": "4"
+				}, {
+					"name": "fresh goat cheese, crumbled",
+					"amount": "1 ounce"
+				}, {
+					"name": "slivered almonds, preferably toasted",
+					"amount": "1 1/2 teaspoons"
+				}, {
+					"name": "extra-virgin olive oil",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "balsamic vinegar",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "honey",
+					"amount": "1/2 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine greens, figs, goat cheese and almonds in a medium bowl."
+				}, {
+					"number": "2",
+					"directions": "Stir together oil, vinegar, honey, salt and pepper.!"
+				}, {
+					"number": "3",
+					"directions": "Just before serving, drizzle the dressing over the salad and toss."
+				}],
+				"tags": [6, 14, 2]
+			},
+			{
+				"id": 20,
+				"name": "Citrus Poached Salmon with Asparagus",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 4,
+				"level": "medium",
+				"calorie": "206 cals",
+				"carbohydrates": "4 g",
+				"protein": "24 g",
+				"fat": "10 g",
+				"Ingredients": [{
+					"name": "4-ounce fresh or frozen skinless salmon fillets",
+					"amount": "4"
+				}, {
+					"name": "lemon",
+					"amount": "1"
+				}, {
+					"name": "orange",
+					"amount": "1"
+				}, {
+					"name": "water",
+					"amount": "0.2 l"
+				}, {
+					"name": "asparagus spears, woody bases removed",
+					"amount": "1 pound"
+				}, {
+					"name": "snipped fresh parsley",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "melted butter",
+					"amount": "1 teaspoons"
+				}, {
+					"name": "salt",
+					"amount": "1/4 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Thaw fish, if frozen. Rinse fish; pat dry with paper towels."
+				}, {
+					"number": "2",
+					"directions": "Finely shred 1 teaspoon peel from lemon; set aside. Squeeze juice from the lemon and orange; combine juices."
+				}, {
+					"number": "3",
+					"directions": "Measure ¼ cup juice for dressing and set aside. Pour the remaining juice into a large skillet; add water. Bring to boiling. Add salmon; reduce heat to medium. Simmer, covered, for 4 minutes. Lay asparagus atop salmon."
+				}, {
+					"number": "4",
+					"directions": "Simmer 4 to 8 minutes more or until fish begins to flake when tested with a fork and asparagus is crisp tender. Meanwhile, in a small bowl combine reserved¼ cup juices, snipped parsley, butter, reserved lemon peel, salt and pepper."
+				}, {
+					"number": "5",
+					"directions": "To serve, drizzle dressing mixture over salmon and asparagus. Garnish with additional fresh parsley leaves, if desired."
+				}],
+				"tags": [6, 14, 8]
+			},
+			{
+				"id": 21,
+				"name": "Greek Yogurt with Fruit & Nuts",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "93 cals",
+				"carbohydrates": "10 g",
+				"protein": "8 g",
+				"fat": "3 g",
+				"Ingredients": [{
+					"name": "dried apricots, roughly chopped",
+					"amount": "3"
+				}, {
+					"name": "plain nonfat Greek yogurt",
+					"amount": "⅓ cup"
+				}, {
+					"name": "chopped walnuts",
+					"amount": "11/2 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place yogurt in a bowl. Stir in apricots and sprinkle with walnuts."
+				}],
+				"tags": [6, 14, 15, 5]
+			},
+			{
+				"id": 22,
+				"name": "Warm Cinnamon Apples",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 3,
+				"level": "easy",
+				"calorie": "128 cals",
+				"carbohydrates": "29.2g",
+				"protein": "0.3g",
+				"fat": "2g",
+				"Ingredients": [{
+					"name": "McIntosh apples peeled and sliced(about 2 lb.)",
+					"amount": "4"
+				}, {
+					"name": "firmly packed light brown sugar",
+					"amount": "1/2"
+				}, {
+					"name": "ground cinnamon",
+					"amount": "1 teaspoons"
+				}, {
+					"name": "water",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "butter",
+					"amount": "1 teaspoons"
+				}, {
+					"name": "ground nutmeg",
+					"amount": "1/4 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Toss together first 4 ingredients in a large zip-top plastic bag, tossing to coat apples. "
+				}, {
+					"number": "2",
+					"directions": "Cook apple mixture, 2 Tbsp. water, and 1 Tbsp. butter in a medium saucepan over medium heat, stirring occasionally, 8 to 10 minutes or until apples are tender."
+				}],
+				"tags": [1, 4, 5]
+			},
+			{
+				"id": 23,
+				"name": "Balsamic Berry Vinaigrette Winter Salad",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 6,
+				"level": "easy",
+				"calorie": "90 cals",
+				"carbohydrates": "8 g",
+				"protein": "3 g",
+				"fat": "5 g",
+				"Ingredients": [{
+					"name": "balsamic vinegar",
+					"amount": "¼ cup"
+				}, {
+					"name": "plain fat-free Greek yogurt",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "sugar-free strawberry preserves ",
+					"amount": "1 tablespoons"
+				}, {
+					"name": "olive oil ",
+					"amount": "1½ teaspoons"
+				}, {
+					"name": "Dijon-style mustard",
+					"amount": "1 teaspoons"
+				}, {
+					"name": "clove garlic, minced",
+					"amount": "1"
+				}, {
+					"name": "kosher salt",
+					"amount": "1/4 teaspoons"
+				}, {
+					"name": "black pepper",
+					"amount": "1/8 teaspoons"
+				}, {
+					"name": "fresh baby spinach",
+					"amount": "3 cups"
+				}, {
+					"name": "tom romaine lettuce",
+					"amount": "3 cups"
+				}, {
+					"name": "small cooking apple, such as Braebum or Gala, thinly sliced",
+					"amount": "1"
+				}, {
+					"name": "crumbled blue, feta, or goat cheese (chèvre) (2 oz.)",
+					"amount": "½ cup"
+				}, {
+					"name": "pomegranate seeds",
+					"amount": "½ cup"
+				}, {
+					"name": "chopped walnuts, toasted",
+					"amount": "¼ cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "For vinaigrette, in a small bowl whisk together vinegar, yogurt, preserves, oil, mustard, garlic, salt and pepper. In an extra-large serving bowl, combine spinach, romaine, apple, cheese, pomegranate seeds and walnuts."
+				}, {
+					"number": "2",
+					"directions": "Drizzle with half of the vinaigrette; toss to coat. Pass the remaining vinaigrette.."
+				}],
+				"tags": [6, 14, 2, 16]
+			},
+			{
+				"id": 24,
+				"name": "Green Salad with Pita Bread & Hummus",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "374 cals",
+				"carbohydrates": "53 g",
+				"protein": "14 g",
+				"fat": "14 g",
+				"Ingredients": [{
+					"name": "mixed salad greens",
+					"amount": "256 g"
+				}, {
+					"name": "sliced cucumber",
+					"amount": "64 g"
+				}, {
+					"name": "grated carrot",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "extra-virgin olive oil",
+					"amount": "11/2 teaspoons"
+				}, {
+					"name": "balsamic vinegar Pinch of salt Pinch of ground pepper",
+					"amount": "11/2 teaspoons"
+				}, {
+					"name": "whole-wheat pita bread, toasted",
+					"amount": "1 61/2-inche"
+				}, {
+					"name": "humus",
+					"amount": "1/4"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Arrange greens, cucumber and carrot on a large plate. Drizzle with oil and vinegar. Sprinkle with salt and pepper. Serve with pita and hummus."
+				}],
+				"tags": [6, 14, 2]
+			},
+			{
+				"id": 25,
+				"name": "Roasted Veggie & Quinoa Salad",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "225 cals",
+				"carbohydrates": "39 g",
+				"protein": "10 g",
+				"fat": "18 g",
+				"Ingredients": [{
+					"name": "mixed salad greens",
+					"amount": "2 cups"
+				}, {
+					"name": "roasted root vegetables ½ cup cooked quinoa",
+					"amount": "1 cup"
+				}, {
+					"name": "vinaigrette",
+					"amount": "1-2 tablespoons"
+				}, {
+					"name": "crumbled feta cheese",
+					"amount": "1 tablespoons"
+				}, {
+					"name": "sunflower seeds",
+					"amount": "1 tablespoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine greens, roasted vegetables and quinoa;drizzle with vinaigrette.Top the salad with feta and sunflower seeds."
+				}],
+				"tags": [6, 14, 8, 16]
+			},
+			{
+				"id": 26,
+				"name": "Baby Kale Breakfast Salad with Bacon & Egg",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "262 cals",
+				"carbohydrates": "28 g",
+				"protein": "13 g",
+				"fat": "8 g",
+				"Ingredients": [{
+					"name": "minced garlic Pinch of salt",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "extra - virgin olive oil",
+					"amount": "1 tablespoons"
+				}, {
+					"name": "red - wine vinegar Pinch of ground pepper",
+					"amount": "2 teaspoon"
+				}, {
+					"name": "lightly packed baby kale",
+					"amount": "3 cups"
+				}, {
+					"name": "piece cooked bacon,chopped",
+					"amount": "1"
+				}, {
+					"name": "fried or poached large egg",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Mash garlic and salt together with the side of a chef's knife or a fork to form a paste."
+				}, {
+					"number": "2",
+					"directions": "Whisk the garlic paste, oil, vinegar and pepper together in a medium bowl.Add kale;toss to coat.Serve the kale salad topped with bacon and egg."
+				}],
+				"tags": [1, 13, 2, 5, 16]
+			},
+			{
+				"id": 27,
+				"name": "Vegetable Weight-Loss Soup",
+				"image": "",
+				"time": "Ready In 1 h",
+				"servers": 5,
+				"level": "medium",
+				"calorie": "225 cals",
+				"carbohydrates": "28 g",
+				"protein": "13 g",
+				"fat": "8 g",
+				"Ingredients": [{
+					"name": "extra - virgin olive oil",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "medium onion",
+					"amount": "1"
+				}, {
+					"name": "medium carrots, chopped",
+					"amount": "2"
+				}, {
+					"name": "stalks celery, chopped",
+					"amount": "2"
+				}, {
+					"name": "fresh green beans cut into ½-inch pieces",
+					"amount": "12 ounces"
+				}, {
+					"name": "cloves garlic, minced",
+					"amount": "2"
+				}, {
+					"name": "no - salt - added chicken broth or low - sodium vegetable broth",
+					"amount": "8 cups"
+				}, {
+					"name": "cans low - sodium cannellini or other white beans, rinsed",
+					"amount": "2(15 ounce) "
+				}, {
+					"name": "chopped kale",
+					"amount": "4 cups"
+				}, {
+					"name": "medium zucchini, chopped",
+					"amount": "2"
+				}, {
+					"name": "Roma tomatoes, seeded and chopped",
+					"amount": "4"
+				}, {
+					"name": "red - wine vinegar¾ teaspoon salt½ teaspoon ground pepper",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "prepared pesto",
+					"amount": "8 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Heat oil in a large pot over medium - high heat.Addonion, carrot, celery, green beans and garlic ."
+				}, {
+					"number": "2",
+					"directions": "Cook, stirring frequently, until the vegetables begin to soften, about 10 minutes.Add broth and bring to a boil."
+				}, {
+					"number": "3",
+					"directions": "Reduce heat to a simmer and cook, stirring occasionally, until the vegetables are soft, about 10 minutes more. Add white beans, kale, zucchini, tomatoes, vinegar, salt and pepper.Increase heat to return to a simmer;cook until the zucchini and kale have softened, about 10 minutes.Top each serving of soup with 1 teaspoon pesto."
+				}],
+				"tags": [10, 5, 2]
+			},
+			{
+				"id": 28,
+				"name": "Egg Salad",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "600 cals",
+				"carbohydrates": "16 g",
+				"protein": "74 g",
+				"fat": "30 g",
+				"Ingredients": [{
+					"name": "eggs",
+					"amount": "2"
+				}, {
+					"name": "mayoonnaise + some 1/2 tps. mustard",
+					"amount": "2 tbsp"
+				}, {
+					"name": "mustard",
+					"amount": "½ tsp"
+				}, {
+					"name": "dill relish {We never buy relish, so I just chop up two large dill pickle into tiny pieces}",
+					"amount": "2 tsp"
+				}, {
+					"name": "slices bread banana",
+					"amount": "4"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Scramble your eggs over low heat so as not to dry them out.Once fully cooked, combine eggs, 2 Tbsp.mayonnaise, mustard and relish in a small bowl, mixing well."
+				}, {
+					"number": "2",
+					"directions": "Toast your bread and lightly spread some mayonnaise on one side of two pieces."
+				}, {
+					"number": "3",
+					"directions": "Place half of your egg mixture on one of the slices and top with a non - mayo slice. Serve warm.After meal eat banana"
+				}],
+				"tags": [6, 14, 15, 17, 16]
+			},
+			{
+				"id": 29,
+				"name": "Peanut Butter Smoothie",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "335 cals",
+				"carbohydrates": "34.1 g",
+				"protein": "12.8 g",
+				"fat": "18.8 g",
+				"Ingredients": [{
+					"name": "bananas, broken into chunks",
+					"amount": "2"
+				}, {
+					"name": "milk",
+					"amount": "2 cup"
+				}, {
+					"name": "peanut butter",
+					"amount": "½ cup"
+				}, {
+					"name": "honey, or to taste",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "ice cubes",
+					"amount": "2 cups"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place bananas, milk, peanut butter, honey, and ice cubes in a blender; blend until smooth, about 30 seconds."
+				}],
+				"tags": [6, 14, 15, 17]
+			},
+			{
+				"id": 30,
+				"name": "Peppered Shrimp Alfredo",
+				"image": "",
+				"time": "Ready In 50 min",
+				"servers": 6,
+				"level": "medium",
+				"calorie": "707 cals",
+				"carbohydrates": "50.6 g",
+				"protein": "28.4 g",
+				"fat": "45 g",
+				"Ingredients": [{
+					"name": "penne pasta",
+					"amount": "12 ounces"
+				}, {
+					"name": "butter",
+					"amount": "¼ cup"
+				}, {
+					"name": "extra – virgin olive oil",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "onion, diced",
+					"amount": "1"
+				}, {
+					"name": "cloves garlic, minced",
+					"amount": "2"
+				}, {
+					"name": "red bell pepper, diced",
+					"amount": "1"
+				}, {
+					"name": "pound portobello mushrooms, diced",
+					"amount": "1/2"
+				}, {
+					"name": "pound medium shrimp, peeled and deveined",
+					"amount": "1"
+				}, {
+					"name": "jar Alfredo sauce",
+					"amount": "1(15 ounce)"
+				}, {
+					"name": "grated Romano cheese",
+					"amount": "1/2 cup"
+				}, {
+					"name": "cream",
+					"amount": "1/2 cup"
+				}, {
+					"name": "cayenne pepper, or more to taste Salt and pepper to taste",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "chopped parsley",
+					"amount": "1/4 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Bring a large pot of lightly salted water to a boil.Add pasta and cook for 8 to 10 minutes or until al dente;drain.Meanwhile, melt butter together with the olive oil in a saucepan over medium heat. Stir in onion, and cook until softened and translucent, about 2 minutes. Stir in garlic, red pepper, and mushroom. Cook over medium - high heat until soft, about 2 minutes more."
+				}, {
+					"number": "2",
+					"directions": " Stir in the shrimp, and cook until firm and pink, then pour in Alfredo sauce, Romano cheese, and cream; bring to a simmer stirring constantly until thickened, about 5 minutes."
+				}, {
+					"number": "3",
+					"directions": "Season with cayenne, salt, and pepper to taste. Stir drained pasta into the sauce, and serve sprinkled with chopped parsley."
+				}],
+				"tags": [3, 2]
+			},
+			{
+				"id": 31,
+				"name": "Basic Turkey",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "863 cals",
+				"carbohydrates": "102.4g",
+				"protein": "49g",
+				"fat": "29.2g",
+				"Ingredients": [{
+					"name": "White rice 100 grams",
+					"amount": "2 cup"
+				}, {
+					"name": "Turkey breast meat",
+					"amount": "198 grams"
+				}, {
+					"name": "BroccoliFrozen, chopped, unprepared 234 grams",
+					"amount": "½ cup"
+				}, {
+					"name": "Light whipping cream Fluid, fluid (yields 2 cups whipped) 79.7 grams",
+					"amount": "1/3 cup"
+				}, {
+					"name": "Pepper Spices, black",
+					"amount": "1 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Prepare rice as per package directions."
+				}, {
+					"number": "2",
+					"directions": "Heat a pan over medium heat and fry turkey, until cooked through, no longer pink, and juices run clear.Put broccoli in microwave for 4 - 8 minutes, until tender."
+				}, {
+					"number": "3",
+					"directions": "Toss all together in the pan, pour cream over top, and season as desired. Bring to a boil and reduce to a simmer until cream is slightly thickened.Serve over rice and enjoy!"
+				}],
+				"tags": [1, 9, 2]
+			},
+			{
+				"id": 32,
+				"name": "Turkey Wrap",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "775.9 cals",
+				"carbohydrates": "49.1g",
+				"protein": "43.3g",
+				"fat": "45.5g",
+				"Ingredients": [{
+					"name": "Tortillas 24 grams",
+					"amount": "1"
+				}, {
+					"name": "Sliced turkey, 4 slice rectangle",
+					"amount": "116 grams"
+				}, {
+					"name": "Leettuce, 4 leaf outer",
+					"amount": "112 grams"
+				}, {
+					"name": "Avocados 1 fruit",
+					"amount": "136 grams"
+				}, {
+					"name": "Tomatoes 1 medium sliced cheese 84 grams 4 slice",
+					"amount": "123 grams"
+				}, {
+					"name": "Hummus 2 tbsp",
+					"amount": "30 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Slather hummus onto tortilla."
+				}, {
+					"number": "2",
+					"directions": "Layer with turkey, lettuce, avocado, tomato, and cheese."
+				}, {
+					"number": "3",
+					"directions": "Roll up and enjoy!"
+				}],
+				"tags": [1, 9, 2]
+			},
+			{
+				"id": 33,
+				"name": "Protein Banana Egg Pancakes",
+				"image": "",
+				"time": "Ready In 12 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "345.2 cals",
+				"carbohydrates": "29.8g",
+				"protein": "31.3g",
+				"fat": "11.7g",
+				"Ingredients": [{
+					"name": "Banana Raw 118 grams",
+					"amount": "1"
+				}, {
+					"name": "Eggs extra large 12 grams",
+					"amount": "2"
+				}, {
+					"name": "Whey protein powder Any flavor 100% whey protein",
+					"amount": "2/3 scoop(30 g)"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Mash the ripe banana"
+				}, {
+					"number": "2",
+					"directions": "Beat the eggs and stir in the banana and protein powder."
+				}, {
+					"number": "3",
+					"directions": "Pour onto lightly oiled frying pan.Flip when bubbles begin to appear.Cook until both sides are evenly golden brown."
+				}],
+				"tags": [6, 14, 11, 17, 4]
+			},
+			{
+				"id": 34,
+				"name": "Veggie Detox",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "317 cals",
+				"carbohydrates": "73g",
+				"protein": "9.4g",
+				"fat": "2.4g",
+				"Ingredients": [{
+					"name": "Beets Raw 1",
+					"amount": "82 grams"
+				}, {
+					"name": "Celery Raw 2 stalk, medium",
+					"amount": "8 grams"
+				}, {
+					"name": "Parsley Spices – ½ cup",
+					"amount": "12.8 grams"
+				}, {
+					"name": "Lemon juice Raw 2 - tsp",
+					"amount": "10.2 grams"
+				}, {
+					"name": "Carrots Raw 5 medium",
+					"amount": "305 grams"
+				}, {
+					"name": "Pears Asian, raw 2 fruit",
+					"amount": "244 grams"
+				}, {
+					"name": "Ginger root Raw 1 slices",
+					"amount": "2.2 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Peel ginger and cut one 3 / 4 - inch piece.Cut pears into wedges. Trim and scrub beet, then cut carrots and celery into 2 to 3 - inch pieces."
+				}, {
+					"number": "2",
+					"directions": "Push pears and ginger through juice extractor.Working in batches, push carrots, celery, beet, and parsley through juice extractor.Stir in lemon juice. Divide between two 8 - ounce glasses and serve."
+				}],
+				"tags": [1, 13, 7]
+			},
+			{
+				"id": 35,
+				"name": "Blueberry Smoothie Bowl",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "214 cals",
+				"carbohydrates": "47.5 g",
+				"protein": "2.8 g",
+				"fat": "2.5 g",
+				"Ingredients": [{
+					"name": "frozen + 1 regular banana¼ cup milk",
+					"amount": "1"
+				}, {
+					"name": "Medjool dates½ cup frozen blueberries",
+					"amount": "2"
+				}, {
+					"name": "rolled oats",
+					"amount": "1/8 cup"
+				}, {
+					"name": "chia seeds Optional toppings: shredded coconut, fresh strawberries, chopped unsalted almonds and rolled oats",
+					"amount": "2 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place all ingredients in a blender and blend until smooth.Add your favorite toppings."
+				}],
+				"tags": [6, 7, 15, 11]
+			},
+			{
+				"id": 36,
+				"name": "Chicken sausage and peppers",
+				"image": "",
+				"time": "Ready In 35 min",
+				"servers": 3,
+				"level": "easy",
+				"calorie": "335 cals",
+				"carbohydrates": "20 g",
+				"protein": "36 g",
+				"fat": "14 g",
+				"Ingredients": [{
+					"name": "olive oil",
+					"amount": "1 tablespoon"
+				}, {
+					"name": "pound chicken sausage",
+					"amount": "1"
+				}, {
+					"name": "red onion, sliced",
+					"amount": "1"
+				}, {
+					"name": "bell peppers, cut into strips",
+					"amount": "2"
+				}, {
+					"name": "Worcestershire sauce",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "marinara sauce¼ cup basil",
+					"amount": "1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Heat oil in a large skillet; add sausage and brown on all sides. Add onions and peppers; season with salt and pepper and cook for 5 minutes over medium - high heat. Add Worcestershire and tomato sauce and cook for an additional 5 minutes or until sausage is cooked through and vegetables are tender."
+				}, {
+					"number": "2",
+					"directions": "Garnish with fresh basil and serve."
+				}],
+				"tags": [1, 8, 9, 18, 2]
+			},
+			{
+				"id": 37,
+				"name": "Asparagus and white beans with cilantro pesto",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "301.4 cals",
+				"carbohydrates": "0.6 g",
+				"protein": "31.2 g",
+				"fat": "14.8 g",
+				"Ingredients": [{
+					"name": "loosely packed cilantro leaves, chopped",
+					"amount": "1 cup"
+				}, {
+					"name": "clove garlic",
+					"amount": "1"
+				}, {
+					"name": "grated Parmesan cheese",
+					"amount": "1/4 cup"
+				}, {
+					"name": "extra virgin olive oil",
+					"amount": "1/4 cup"
+				}, {
+					"name": "fresh lime juice Dash of sea salt and pepper For the beans and vegetables",
+					"amount": "1 tablespoon"
+				}, {
+					"name": "cups canned white beans, drained, and rinsed",
+					"amount": "2 cup"
+				}, {
+					"name": "pound asparagus, chopped",
+					"amount": "1"
+				}, {
+					"name": "cherry tomatoes, sliced",
+					"amount": "1 cup"
+				}, {
+					"name": "coconut oil ",
+					"amount": "1 Tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "To prepare the pesto, place ingredients in blender or food processor and blend until well combined."
+				}, {
+					"number": "2",
+					"directions": "To prepare beans and vegetables, melt coconut oil in sauté pan.Add chopped asparagus and sauté until softened.Then add beans and cook until heated through, about 5 minutes. Then add cherry tomatoes and cook for a few minutes more.Add pesto and stir well.Cook everything together for a few minutes and serve."
+				}],
+				"tags": [1, 2, 19]
+			},
+			{
+				"id": 38,
+				"name": "Sweet and Nutty Energy Bites",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 3,
+				"level": "rasy",
+				"calorie": "183 cals",
+				"carbohydrates": "16.8 g",
+				"protein": "4.4 g",
+				"fat": "12 g",
+				"Ingredients": [{
+					"name": "rolled oats½ cup nut butter of choice (I use almond butter)",
+					"amount": "1 cup"
+				}, {
+					"name": "honey",
+					"amount": "⅓ cup"
+				}, {
+					"name": "unsweetened corn flakes",
+					"amount": "1 cup"
+				}, {
+					"name": "chia seeds½ cup dried cherries",
+					"amount": "3 tbsp"
+				}, {
+					"name": "vanilla extract",
+					"amount": "1 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine all ingredients in a bowl and mix well. Scoop 1 tbsp of the mixture at a time and form balls.Use a small ice cream scooper to create the optimal bite - size portion."
+				}, {
+					"number": "2",
+					"directions": "Once all bites are formed, refrigerate them for 1 hour. After an hour, remove and enjoy! These bites are a simple and portable snack you can make ahead of time, store in plastic bags and take with you whenever you need something quick!."
+				}],
+				"tags": [1, 4, 5, 11]
+			},
+			{
+				"id": 39,
+				"name": "Very Easy Pancakes",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "247 cals",
+				"carbohydrates": "33.5 g",
+				"protein": "6.8 g",
+				"fat": "9.6 g",
+				"Ingredients": [{
+					"name": "all - purpose flour",
+					"amount": "1 cup"
+				}, {
+					"name": "white sugar",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "baking powder",
+					"amount": "2 teaspoon"
+				}, {
+					"name": "salt",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "egg, beaten",
+					"amount": "1"
+				}, {
+					"name": "milk",
+					"amount": "1 cup"
+				}, {
+					"name": "vegetable oil",
+					"amount": "2 tablespoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In a large bowl, mix flour, sugar, baking powder and salt. Make a well in the center, and pour in milk, egg and oil. Mix until smooth."
+				}, {
+					"number": "2",
+					"directions": "Heat a lightly oiled griddle or frying pan over medium high heat. Pour or scoop the batter onto the griddle, using approximately 1 / 4 cup for each pancake. Brown on both sides and serve hot."
+
+				}],
+				"tags": [1, 4, 15, 11]
+			},
+			{
+				"id": 40,
+				"name": "Alfredo Sauce",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "648 cals",
+				"carbohydrates": "10 g",
+				"protein": "25.1 g",
+				"fat": "57.1 g",
+				"Ingredients": [{
+					"name": "butter 1(8 ounce) package cream cheese",
+					"amount": "1/2 cup"
+				}, {
+					"name": "garlic powder",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "milk",
+					"amount": "2 cups"
+				}, {
+					"name": "grated Parmesan cheese",
+					"amount": "6 ounces"
+				}, {
+					"name": "ground black pepper",
+					"amount": "1/8 teaspoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Melt butter in a medium, non-stick saucepan over medium heat. Add cream cheese and garlic powder, stirring with wire whisk until smooth. Add milk, a little at a time, whisking to smooth out lumps. "
+				}, {
+					"number": "2",
+					"directions": "Stir in Parmesan and pepper. Remove from heat when sauce reaches desired consistency. Sauce will thicken rapidly, thin with milk if cooked too long. Toss with hot pasta to serve."
+				}],
+				"tags": [6, 2, 20]
+			},
+			{
+				"id": 41,
+				"name": "Mexican Pizza",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "614 cals",
+				"carbohydrates": "64.7 g",
+				"protein": "19.6 g",
+				"fat": "30.9 g",
+				"Ingredients": [{
+					"name": "vegetable oil",
+					"amount": "2 cups"
+				}, {
+					"name": "large flour tortillas",
+					"amount": "4"
+				}, {
+					"name": "salsa",
+					"amount": "1 cup"
+				}, {
+					"name": "shredded Cheddar cheese",
+					"amount": "1 cup"
+				}, {
+					"name": "freshly grated Parmesan cheese ",
+					"amount": "1/4 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 350 degrees F(175 degrees C).Heat vegetable oil in a large skillet over medium - high heat until hot; fry tortillas, one at a time, until golden brown, 2 to 3 minutes per side."
+				}, {
+					"number": "2",
+					"directions": "Transfer fried tortillas using tongs to a baking sheet.Spread salsa onto each fried tortilla;top with Cheddar cheese and Parmesan cheese. Bake in the preheated oven until cheese is melted, about 8 minute."
+				}],
+				"tags": [24, 2, 17]
+			},
+			{
+				"id": 42,
+				"name": "Last Minute Chicken Dinner",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "533 cals",
+				"carbohydrates": "58.2 g",
+				"protein": "39.6 g",
+				"fat": "16.3 g",
+				"Ingredients": [{
+					"name": "vegetable oil",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "potatoes, thinly sliced",
+					"amount": "4"
+				}, {
+					"name": "boneless skinless chicken breasts, cut into cubes",
+					"amount": "1 pound"
+				}, {
+					"name": "can condensed cream of chicken soup",
+					"amount": "1(10.75 ounce)"
+				}, {
+					"name": "milk 1 onion, chopped",
+					"amount": "1/2 cup"
+				}, {
+					"name": "garlic powder",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "frozen broccoli, carrots and cauliflower combination",
+					"amount": "2 cups"
+				}, {
+					"name": "dried parsley",
+					"amount": "1/2 teaspoon"
+				}, {
+					"name": "dried marjoram",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "dried basil",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "grated Parmesan cheese",
+					"amount": "1/3 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Heat oil in large frying pan over medium high heat.Cook potatoes, stirring frequently until tender - crisp. Stir in chicken, and cook until no longer pink. Reduce heat to medium"
+				}, {
+					"number": "2",
+					"directions": "Stir in condensed soup, milk, onion, and garlic powder. Arrange vegetables on top, and sprinkle with parsley, marjoram and basil."
+				}, {
+					"number": "3",
+					"directions": "Cover, and simmer over low heat until chicken is cooked through, and vegetables are tender, about 5 minutes. Remove from heat, and stir in Parmesan."
+				}],
+				"tags": [1, 17, 9, 18, 8]
+			},
+			{
+				"id": 43,
+				"name": "Yummy Grilled Tuna And Cheese",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "1072.2 cals",
+				"carbohydrates": "58.2 g",
+				"protein": "69.7 g",
+				"fat": "60.4 g",
+				"Ingredients": [{
+					"name": "slices bread",
+					"amount": "4"
+				}, {
+					"name": "butter or 1 1/2 tablespoons margarine, soft",
+					"amount": "1 1/2 tablespoons"
+				}, {
+					"name": "slices cheese",
+					"amount": "2"
+				}, {
+					"name": "solid white tuna, drained and flaked",
+					"amount": "150 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Spread both sides of the bread thinly with butter.Place the cheese on the bread and then the tuna. Grill for 2 minutes on each side or until the bread is golden brown. Serve or refrigerate and eat later(they are still nice cold)."
+				}],
+				"tags": [6, 2, 9]
+			},
+			{
+				"id": 44,
+				"name": "Broiled Salmon",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "695.6 cals",
+				"carbohydrates": "3.9g",
+				"protein": "38.8g",
+				"fat": "78.9g",
+				"Ingredients": [{
+					"name": "Atlantic salmonFish, wild, raw 1 fillet",
+					"amount": "396 grams"
+				}, {
+					"name": "Lemon juiceCanned or bottled 3 tbsp",
+					"amount": "45 grams"
+				}, {
+					"name": "GarlicRaw1 clove",
+					"amount": "3 grams"
+				}, {
+					"name": "Olive oilSalad or cooking 1 tbsp",
+					"amount": "13.5 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Cut salmon in half or buy two 1 / 2 fillets ."
+				}, {
+					"number": "2",
+					"directions": "Preheat broiler on high and place an all stainless stell skillet or cast iron pan under the heat for about 10 minutes to get it very hot.Pan should be 5 to 7 inches from the ehat source"
+				}, {
+					"number": "3",
+					"directions": "while pan is heating, chop or press garlic and let sit for 5 minutes"
+				}, {
+					"number": "4",
+					"directions": "Rub salmon with 2 tsp fresh lemon juice, salt, and pepper.(you can broil with skin on, just takes a minute or two longer.Skin peels off after cooking"
+				}, {
+					"number": "5",
+					"directions": "Using a hot pad,pull pan away from heat and place Salmon on hot pan, skin side down. Return to broiler.Keep in mind that it is cooking rapidly on both sides so it will be done very quickly, usually in 7 minutes, depending on thickness. Test with a fork for done - ness. It will flake easily when it is cooked.Salmon is best when it is still pink inside."
+				}, {
+					"number": "6",
+					"directions": "Dress with olive oil, 1 tbsp lemon juice, garlic and salt and pepper to taste."
+				}],
+				"tags": [9, 2, 3, 17]
+			},
+			{
+				"id": 45,
+				"name": "The Beginner Breakfast",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "607.5 cals",
+				"carbohydrates": "17 g",
+				"protein": "28 g",
+				"fat": "48 g",
+				"Ingredients": [{
+					"name": "Pam cooking sprayOil,original 1 spray, about 1 / 3 second 0 .30 grams EggWhole, fresh eggs2 medium88 grams",
+					"amount": "1"
+				}, {
+					"name": "SpinachRaw1 cupsNotes: finely chopped SaltTable1 dash0 .40 gramsNotes: To taste",
+					"amount": "30 grams"
+				}, {
+					"name": "PepperSpices, black 1 dash Notes: To taste Cheddar cheese 2 oz",
+					"amount": "0.10 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Whisk the eggs, add the spinach, salt and pepper."
+				}, {
+					"number": "2",
+					"directions": "Heat a pan coated with oil spray over medium, add the mixture."
+				}, {
+					"number": "3",
+					"directions": "Cook until the eggs are almost completely set.Carefully flip it and add the cheese on top, cover the pan so the cheese melts. Move to a plate and serve.Enjoy!"
+				}],
+				"tags": [6, 17, 15]
+			},
+			{
+				"id": 46,
+				"name": "Veggie & chicken salad",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "355.3 cals",
+				"carbohydrates": "21.1g",
+				"protein": "19.4g",
+				"fat": "15.7g",
+				"Ingredients": [{
+					"name": "Chicken breast Broilers or fryers, meat only, raw 2 oz 56.7 grams Lettuce Romaine or cos, raw 1 cup shredded",
+					"amount": "47 grams"
+				}, {
+					"name": "Tomatoes Red, ripe, raw, year round average 1 large whole",
+					"amount": "182 grams"
+				}, {
+					"name": "Red bell pepper Sweet,raw 1 small",
+					"amount": "74 grams"
+				}, {
+					"name": "Carrots Raw 1 medium",
+					"amount": "61 grams"
+				}, {
+					"name": "Parmesan cheese Shredded 1 tbsp",
+					"amount": "5 grams"
+				}, {
+					"name": "Flaxseed Seeds, ground 7 grams",
+					"amount": "1 tbsp"
+				}, {
+					"name": "Olive oil Salad or cooking 9 grams",
+					"amount": "2 tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "To cook chicken, first pound out chicken breast a bit to the same thickness by carefully using a kitchen mallet or the back of a heavy jar. Cook in a nonstick pan over medium heat with about a tsp of olive oil,about 4 minutes per side or until cooked through completely without any pink in the middle. Chop chicken into small pieces."
+				}, {
+					"number": "2",
+					"directions": "Mix 1 cup romaine lettuce, 1 chopped tomato, 1 chopped small bell pepper, 1 medium chopped carrot, 1 Tbsp grated Parmesan cheese, 1 Tbsp ground flaxseed, and 3 Tbsp 94 % fat - free Italian dressing or 1 tsp of olive oil."
+				}, {
+					"number": "3",
+					"directions": "Store in the fridge."
+				}, {
+					"number": "4",
+					"directions": "Eat on multigrain bread or by itself"
+				}],
+				"tags": [1, 2, 9, 18, 16]
+			},
+			{
+				"id": 47,
+				"name": "Oatmeal Cottage Cheese Pancakes",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "511.7 cals",
+				"carbohydrates": "35.9g",
+				"protein": "31.3g",
+				"fat": "3.9g",
+				"Ingredients": [{
+					"name": "Oatmeal Cereals, Quaker, dry rolled oats 40 grams",
+					"amount": "1/2 cup"
+				}, {
+					"name": "Cottage cheese Low fat, 2 % milk fat,(not packed) 226 grams",
+					"amount": "1 cup"
+				}, {
+					"name": "Vanilla extract  4.4 grams",
+					"amount": "1 tsp"
+				}, {
+					"name": "Egg white Raw, fresh eggs 264 grams",
+					"amount": "6"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Blend all ingredients in blender."
+				}, {
+					"number": "2",
+					"directions": "Spray skillet with cooking spray and cook just like silver dollar pancakes, a few small ones at a time."
+				}, {
+					"number": "3",
+					"directions": "Top with your favorite pancake topping!"
+				}],
+				"tags": [6, 15]
+			},
+			{
+				"id": 48,
+				"name": "Paleo Avocado Tuna Salad",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "363.5 cals",
+				"carbohydrates": "16g",
+				"protein": "30.5g",
+				"fat": "22.4g",
+				"Ingredients": [{
+					"name": "Avocados California, raw, without skin and seed 136 grams",
+					"amount": "1"
+				}, {
+					"name": "Lemon juice Raw  yields 47 grams Onions Raw 1 tbsp chopped 10 grams",
+					"amount": "1"
+				}, {
+					"name": "Tuna Fish,light, canned in water, drained solids 5 oz 142 grams Salt 1 dash 0.40 grams",
+					"amount": "0"
+				}, {
+					"name": " Lemon juice Raw  yields 47 grams Onions Raw1 tbsp chopped 10 grams",
+					"amount": "1"
+				}, {
+					"name": " PepperSpices, black 0.10 grams",
+					"amount": "1"
+				}],
+				"Directions": [{
+						"number": "1",
+						"directions": "Cut the avocado in half and scoop the middle of both avocado halves into a bowl, leaving a shell of avocado flesh about¼ - inch thick on each half."
+					},
+					{
+						"number": "2",
+						"directions": " Add lemon juice and onion to the avocado in the bowl and mash together.Add drained tuna, salt and pepper, and stir to combine. Taste and adjust if needed."
+					},
+					{
+						"number": "3",
+						"directions": "Fill avocado shells with tuna salad and serve."
+					}
+				],
+				"tags": [6, 16, 9]
+			},
+			{
+				"id": 49,
+				"name": "The Beginner Dinner",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "419.9 cals",
+				"carbohydrates": "4g",
+				"protein": "53.9g",
+				"fat": "20g",
+				"Ingredients": [{
+					"name": "Tomatoes Red, ripe, raw, year round average cherry tomatoes 37.3 grams",
+					"amount": "¼ cup"
+				}, {
+					"name": "Olives Ripe, 33.6 grams",
+					"amount": "1/4 cup"
+				}, {
+					"name": "Capers Canned, drained 6.8 grams",
+					"amount": "¾ tbsp"
+				}, {
+					"name": "Olive oil Salad or cooking 10.1 grams",
+					"amount": "3 / 4 tbsp "
+				}, {
+					"name": "Chicken breast Broilers or fryers, meat only, raw breast,bone and skin removed 236 grams",
+					"amount": "1"
+				}, {
+					"name": "Salt Table dash 0.40 gramss",
+					"amount": "1"
+				}, {
+					"name": "Pepper Spices, black dash 0.10 grams",
+					"amount": "1"
+				}],
+				"Directions": [{
+						"number": "1",
+						"directions": "Preheat oven to 475 F.Slice olives, rinse capers, and toss together with the tomatoes and 1 tbsp of olive oil in a bowl."
+					},{
+						"number": "2",
+						"directions": "Season chicken breasts with salt and pepper to taste.Heat a large oven - proof skillet over high heat(you will be sticking the pan in the oven).Add 1 tbsp olive oil to the pan and quickly sear the chicken on both sides. Change to medium - high heat and add last 1 tbsp of oil and continue to cook until deep golden brown(~4 min)."
+					}, {
+						"number": "3",
+						"directions": "Flip chicken, then add tomato mixture to skillet.Transfer skillet to oven and roast chicken until cooked through and tomatoes have softened(around 15 - 18 min)."
+					}, {
+						"number": "4",
+						"directions": "Transfer to serving plates and spoon tomato mixture over top to serve."
+					}
+				],
+				"tags": [8, 17, 3]
+			},
+			{
+				"id": 50,
+				"name": "Veggie breakfast muffins",
+				"image": "",
+				"time": "Ready In 25 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "107 cals",
+				"carbohydrates": "1.5 g",
+				"protein": "10 g",
+				"fat": "6 g",
+				"Ingredients": [{
+					"name": "eggs 1 bell pepper",
+					"amount": "12"
+				}, {
+					"name": "scallion",
+					"amount": "1"
+				}, {
+					"name": "cherry tomatoes",
+					"amount": "7-8"
+				}, {
+					"name": "handful of baby spinach Low - fat grated pizza cheese Salt & pepper ",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Wash and dice the vegetables."
+				}, {
+					"number": "2",
+					"directions": "Grease the muffin pan."
+				}, {
+					"number": "3",
+					"directions": "Distribute the vegetables and the cheese evenly in the muffin pan."
+				}, {
+					"number": "4",
+					"directions": "Break the eggs in a bowl and whisk them with a fork. Now pour the whisked egg over the vegetable - cheese mixture. Don’ t forget to season with salt & pepper."
+				}, {
+					"number": "5",
+					"directions": " Bake the breakfast muffins at 200° C(400° F) for 15 minutes."
+				}],
+				"tags": [1, 19, 15]
+			},
+			{
+				"id": 51,
+				"name": "Fluffy Protein Pancake",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "340 cals",
+				"carbohydrates": "27 g",
+				"protein": "27 g",
+				"fat": "13 g",
+				"Ingredients": [{
+					"name": "eggs",
+					"amount": "2"
+				}, {
+					"name": "rolled oats",
+					"amount": "40 g"
+				}, {
+					"name": "low-fat cottage cheese vanilla (ground)",
+					"amount": "75 g"
+				}, {
+					"name": "cinnamon",
+					"amount": "1/4 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Mix all the ingredients in a blender until smooth. ."
+				}, {
+					"number": "2",
+					"directions": "Heat some coconut oil in a pan and cook the pancakes until golden brown. You can top them with all your favorite things; maple syrup for example."
+				}],
+				"tags": [1, 21, 17]
+			},
+			{
+				"id": 52,
+				"name": "Colorful glass noodle salad with veggies",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "390 cals",
+				"carbohydrates": "74 g",
+				"protein": "18 g",
+				"fat": "13 g",
+				"Ingredients": [{
+					"name": "glass noodless",
+					"amount": "50 g"
+				}, {
+					"name": "handful of carrot sticks",
+					"amount": "1"
+				}, {
+					"name": "cucumber",
+					"amount": "1/2"
+				}, {
+					"name": "red bell pepper",
+					"amount": "1"
+				}, {
+					"name": "handful of bean sprouts",
+					"amount": "1"
+				}, {
+					"name": "chill paste Juice of 11/2 limes",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "agave nectar Fresh cilantro (to taste)",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "peanuts (unsalted)",
+					"amount": "1 Tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place the glass noodles in a bowl and add boiling water to cover them. Let them soak for 5 minutes.  ."
+				}, {
+					"number": "2",
+					"directions": "Cut the cucumber into thin ribbons using a vegetable peeler and the bell pepper into strips using a knife."
+				}, {
+					"number": "3",
+					"directions": "Mix the chili paste, lime juice and agave nectar in a mason jar for the dressing. "
+				}, {
+					"number": "4",
+					"directions": "Then you can layer the salad: glass noodles, carrot sticks, cucumber, bell pepper, bean sprouts, cilantro and peanuts. ."
+				}, {
+					"number": "5",
+					"directions": "Put the lid on and you have one delicious glass noodle salad to go!"
+				}],
+				"tags": [1, 19, 2]
+			},
+			{
+				"id": 53,
+				"name": "Strawberry Banana Oatmeal Smoothie",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "380 cals",
+				"carbohydrates": "70 g",
+				"protein": "8 g",
+				"fat": "8 g",
+				"Ingredients": [{
+					"name": "oat milk",
+					"amount": "180 ml"
+				}, {
+					"name": "strawberries",
+					"amount": "120 g"
+				}, {
+					"name": "banana",
+					"amount": "1"
+				}, {
+					"name": "rolled oats",
+					"amount": "2 Tbsp"
+				}, {
+					"name": "honey Vanilla powder (to taste)",
+					"amount": "1 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Peel the banana. Rinse the strawberries and remove the stems. ."
+				}, {
+					"number": "2",
+					"directions": "Blend the fruit with the rest of the ingredients."
+				}],
+				"tags": [1, 21, 17, 7]
+			},
+			{
+				"id": 54,
+				"name": "Broccoli and Shrimp Stir-Fry",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 2,
+				"level": "medium",
+				"calorie": "380 cals",
+				"carbohydrates": "11 g",
+				"protein": "38 g",
+				"fat": "11 g",
+				"Ingredients": [{
+					"name": "vegetable oil (canola or coconut oil)",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "shrimps",
+					"amount": "350 g"
+				}, {
+					"name": "broccoli",
+					"amount": "350g"
+				}, {
+					"name": "sesame seeds",
+					"amount": "1 tsp"
+				}, {
+					"name": "spring onion (chopped) Ingredients for the sauce:",
+					"amount": "1"
+				}, {
+					"name": "ginger ",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "garlic clove ",
+					"amount": "1"
+				}, {
+					"name": "soy sauce",
+					"amount": "2 Tbsp"
+				}, {
+					"name": "oyster sauce",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "rice vinegar",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "cane sugar",
+					"amount": "1 tsp"
+				}, {
+					"name": "sesame oil",
+					"amount": "1 tsp"
+				}, {
+					"name": "cornstarch",
+					"amount": "1 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Grate the ginger and press the garlic clove. Combine both with the rest of the ingredients for the sauce in a bowl. Heat the oil in a pan. "
+				}, {
+					"number": "2",
+					"directions": "Add the shrimps and stir-fry for a couple of minutes. Then add the broccoli. "
+				}, {
+					"number": "3",
+					"directions": "When the vegetables are tender (about 5 minutes), pour the sauce over the top. Mix everything well"
+				}, {
+					"number": "4",
+					"directions": "Sprinkle the broccoli and shrimp stir-fry with sesame seeds and chopped spring onions. Serve with rice."
+				}],
+				"tags": [1, 19, 2]
+			},
+			{
+				"id": 55,
+				"name": "Banana Pancakes with Oats",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "516 cals",
+				"carbohydrates": "55 g",
+				"protein": "21 g",
+				"fat": "22 g",
+				"Ingredients": [{
+					"name": "ripe banana",
+					"amount": "1"
+				}, {
+					"name": "eggs",
+					"amount": "2"
+				}, {
+					"name": "rolled oats",
+					"amount": "2 Tbsp"
+				}, {
+					"name": "cinnamon",
+					"amount": "½ tsp"
+				}, {
+					"name": "rolled oats",
+					"amount": "2 Tbsp"
+				}, {
+					"name": "cinnamon",
+					"amount": "½ tsp"
+				}, {
+					"name": "coconut oil",
+					"amount": "1 tsp"
+				}, {
+					"name": "peanut butter for garnish (optional) Extra banana slices for garnish (optional)",
+					"amount": "2 tsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Mix the banana, eggs, rolled oats and cinnamon in a food processor. ."
+				}, {
+					"number": "2",
+					"directions": "Heat the coconut oil in a pan and cook the pancakes for 1-2 minutes on each side until golden brown. "
+				}, {
+					"number": "3",
+					"directions": "Garnish the pancakes with banana slices and some peanut butter."
+				}],
+				"tags": [6, 21, 17, 15]
+			},
+			{
+				"id": 56,
+				"name": "Green Pineapple Smoothie",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "155 cals",
+				"carbohydrates": "34 g",
+				"protein": "1 g",
+				"fat": "2 g",
+				"Ingredients": [{
+					"name": "pineapple",
+					"amount": "100 g"
+				}, {
+					"name": "leafy greens",
+					"amount": "30 g"
+				}, {
+					"name": "apple",
+					"amount": "1"
+				}, {
+					"name": "maca powder Juice of ½ lemon",
+					"amount": "½ tsp"
+				}, {
+					"name": "water",
+					"amount": "200 ml"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Dice the pineapple.  ."
+				}, {
+					"number": "2",
+					"directions": "Quarter the apples and remove the cores. "
+				}, {
+					"number": "3",
+					"directions": "Put all the ingredients in a blender and blend until smooth."
+				}],
+				"tags": [6, 21, 7, 5, 14]
+			},
+			{
+				"id": 57,
+				"name": "Greek Chickpea Salad",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "287 cals",
+				"carbohydrates": "13 g",
+				"protein": "11 g",
+				"fat": "20 g",
+				"Ingredients": [{
+					"name": "chickpeas (cooked)",
+					"amount": "265 g"
+				}, {
+					"name": "handful of parsley",
+					"amount": "1"
+				}, {
+					"name": "cherry tomatoes",
+					"amount": "150 g"
+				}, {
+					"name": "red onion",
+					"amount": "1"
+				}, {
+					"name": "feta",
+					"amount": "150 g"
+				}, {
+					"name": "handful of pitted black olives",
+					"amount": "1"
+				}, {
+					"name": "cucumber Juice of ½ lemon",
+					"amount": "1/2"
+				}, {
+					"name": "olive oil Salt & pepper (to taste)",
+					"amount": "2 Tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Dice the cherry tomatoes, cucumber, onion and olives. Chop the parsley.  ."
+				}, {
+					"number": "2",
+					"directions": "Mix the vegetables with the chickpeas in a bowl. "
+				}, {
+					"number": "3",
+					"directions": "Cut the feta into small cubes and add to the mixture. "
+				}, {
+					"number": "4",
+					"directions": "Drizzle the olive oil and lemon juice over the salad. Season it with salt and pepper and mix well.."
+				}],
+				"tags": [1, 15, 16]
+			},
+			{
+				"id": 58,
+				"name": "Spicy Shakshuka Breakfast",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 2,
+				"level": "medium",
+				"calorie": "255 cals",
+				"carbohydrates": "14 g",
+				"protein": "14 g",
+				"fat": "15 g",
+				"Ingredients": [{
+					"name": "diced tomatoes (channed)",
+					"amount": "400 g"
+				}, {
+					"name": "bell pepper",
+					"amount": "1"
+				}, {
+					"name": "olive oil",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "onion",
+					"amount": "1"
+				}, {
+					"name": "chill powder",
+					"amount": "1 tsp"
+				}, {
+					"name": "Italian seasoning",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "eggs Salt (to taste)",
+					"amount": "3"
+				}, {
+					"name": "parsley (chopped)",
+					"amount": "1 Tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Dice the onion and bell pepper.  ."
+				}, {
+					"number": "2",
+					"directions": "Heat the oil in a pan and sauté the onion. Then add the bell pepper and sauté for 5 minutes. "
+				}, {
+					"number": "3",
+					"directions": "Add the chili powder, salt and seasoning."
+				}, {
+					"number": "4",
+					"directions": "Next add the diced tomatoes. Let the vegetables simmer for another 5 minutes. ."
+				}, {
+					"number": "5",
+					"directions": "Next add the diced tomatoes. Let the vegetables simmer for another 5 minutes.."
+				}, {
+					"number": "6",
+					"directions": "Reduce the heat and cover the pan with a lid. The eggs take 3-5 minutes to cook. "
+				}, {
+					"number": "7",
+					"directions": "Sprinkle the shakshuka with parsley. Serve with a piece of crusty bread."
+				}],
+				"tags": [24, 15, 3]
+			},
+			{
+				"id": 59,
+				"name": "Post-workout Salad with Steak & Avocado",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 2,
+				"level": "medium",
+				"calorie": "650 cals",
+				"carbohydrates": "35 g",
+				"protein": "38 g",
+				"fat": "33 g",
+				"Ingredients": [{
+					"name": "For the salad rib-eye steak",
+					"amount": "250 g"
+				}, {
+					"name": "vegetable oil (e.g. canola oil)",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "lettuce",
+					"amount": "100 g"
+				}, {
+					"name": "onion (cut in rings)",
+					"amount": "1"
+				}, {
+					"name": "corn",
+					"amount": "150 g"
+				}, {
+					"name": "kidney beans (cooked)",
+					"amount": "200 g"
+				}, {
+					"name": "belle pepper (diced)",
+					"amount": "1"
+				}, {
+					"name": "cherry tomatoes (halved)",
+					"amount": "100 g"
+				}, {
+					"name": "avocado Salt & pepper (to taste)",
+					"amount": "1"
+				}, {
+					"name": "For the dressing bunch of cilantro",
+					"amount": "1"
+				}, {
+					"name": "avocado Juice of 1 lime",
+					"amount": "1"
+				}, {
+					"name": "red wine vinegar",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "olive oil Crushed red pepper flakes (to taste) Salt & pepper(to taste)",
+					"amount": "1 Tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Blend all the ingredients for the dressing in a blender until smooth. ."
+				}, {
+					"number": "2",
+					"directions": "Toss the lettuce, onion, corn, kidney beans, bell pepper, cherry tomatoes and dressing in a bowl. "
+				}, {
+					"number": "3",
+					"directions": "Heat the canola oil in a pan. When the pan is hot, drop the steak in the pan. Season the meat with salt and pepper. Cook the meat on high heat for 2 minutes per side. 4. Top the salad with steak and avocado strips."
+				}],
+				"tags": [16, 9, 17]
+			},
+			{
+				"id": 60,
+				"name": "Blueberry & Kale Smoothie",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "320 cals",
+				"carbohydrates": "41 g",
+				"protein": "10 g",
+				"fat": "10 g",
+				"Ingredients": [{
+					"name": "blueberries",
+					"amount": "50 g"
+				}, {
+					"name": "handful of kale",
+					"amount": "2"
+				}, {
+					"name": "plain yogurt",
+					"amount": "125 g"
+				}, {
+					"name": "almond milk (unsweetened)",
+					"amount": "100 ml"
+				}, {
+					"name": "banana",
+					"amount": "1"
+				}, {
+					"name": "rolled oats",
+					"amount": "1 Tbsp"
+				}, {
+					"name": "chia seeds",
+					"amount": "½ Tbsp"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Blend all the ingredients until creamy."
+				}],
+				"tags": [6, 7, 17]
+			},
+			{
+				"id": 61,
+				"name": "Post-Workout Banana Protein Smoothi",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "225 cals",
+				"carbohydrates": "30g",
+				"protein": "25.3g",
+				"fat": "1.4g",
+				"Ingredients": [{
+					"name": "Water Plain, clean water",
+					"amount": "2 cup"
+				}, {
+					"name": "Banana Raw 1 medium",
+					"amount": "473 grams"
+				}, {
+					"name": "Whey protein powder Any flavor, 100% whey protein 1 scoop (30g) 30 grams",
+					"amount": "118 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine all ingredients in a blender and pulse until smooth. Enjoy! ."
+				}],
+				"tags": [6, 7, 17]
+			},
+			{
+				"id": 62,
+				"name": "Spinach and Oven-Roasted Tomato Omele",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "319 cals",
+				"carbohydrates": "4 g",
+				"protein": "19 g",
+				"fat": "26 g",
+				"Ingredients": [{
+					"name": "Tablespoon olive oil",
+					"amount": "1"
+				}, {
+					"name": "Cup Baby Spinach washed and dried",
+					"amount": "1"
+				}, {
+					"name": "Large Eggs beaten",
+					"amount": "4"
+				}, {
+					"name": "Tomatoes oven-roasted, roughly chopped",
+					"amount": "½ cup"
+				}, {
+					"name": "Feta Cheese crumbled Side Jones Dairy Farm Turkey Sausage Links",
+					"amount": "½ cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Heat olive oil in a small non-stick pan over medium-low heat. Saute spinach for 2-3 minutes or until wilted; add tomatoes; toss to combine.  ."
+				}, {
+					"number": "2",
+					"directions": "Using a spatula, spread vegetables evenly over surface of pan. Pour in beaten eggs and shake pan to distribute evenly. "
+				}, {
+					"number": "3",
+					"directions": "When bottom is set (about 2 minutes), loosen omelet from pan to prevent sticking. Sprinkle cheese evenly on one side; flip omelet. "
+				}, {
+					"number": "4",
+					"directions": "Cook until golden brown; flip and cook for one minute longer. Cut omelet in half using plastic spatula; transfer to two plates; serve hot with a side of gluten-free toast and orange slices."
+				}],
+				"tags": [1, 15, 17]
+			},
+			{
+				"id": 63,
+				"name": "Power Smoothie",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "295.2 cals",
+				"carbohydrates": "41.8 g",
+				"protein": "21.3 g",
+				"fat": "2.9 g",
+				"Ingredients": [{
+					"name": "Spinach fresh",
+					"amount": "2 Cups"
+				}, {
+					"name": "Hodgson Mill Ground Flaxseed",
+					"amount": "1 Tablespoon"
+				}, {
+					"name": "Almond Milk",
+					"amount": "1/2"
+				}, {
+					"name": "Berries frozen",
+					"amount": "1 Cup"
+				}, {
+					"name": "Banana",
+					"amount": "1 "
+				}, {
+					"name": "Nut Butter",
+					"amount": "1 Tablespoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Blend ingredients and serve! "
+				}],
+				"tags": [17, 7]
+			},
+			{
+				"id": 64,
+				"name": "Lasagna Style Pasta Bake",
+				"image": "",
+				"time": "Ready In 1 h 10 min",
+				"servers": 1,
+				"level": "hard",
+				"calorie": "681.3 cals",
+				"carbohydrates": "93.1 g",
+				"protein": "32.1 g",
+				"fat": "42.8 g",
+				"Ingredients": [{
+					"name": "Glution Rotini Pasta",
+					"amount": "2 oz"
+				}, {
+					"name": "Italian Sausage sweet or spicy",
+					"amount": "0.25 lb"
+				}, {
+					"name": "Small Onion minced",
+					"amount": "0.25"
+				}, {
+					"name": "Cloves garlic minced",
+					"amount": "0.75"
+				}, {
+					"name": "Can Tomatoes crushed, 28 ounces",
+					"amount": "0.25"
+				}, {
+					"name": "Tomamo Paste",
+					"amount": "0.50 tablespoon"
+				}, {
+					"name": "Oregano fresh, minced",
+					"amount": "0.50 teaspoon"
+				}, {
+					"name": "Basil fresh, chopped",
+					"amount": "1/16 cup"
+				}, {
+					"name": "Pinch Red Pepper Flages optional",
+					"amount": "0.25"
+				}, {
+					"name": "Ricotta Cheese",
+					"amount": "2 oz"
+				}, {
+					"name": "Mozzarella Cheese greated 1/8 cup Parmesan cheese shredded",
+					"amount": "1/8 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Cook rotini according to package directions. Rinse with cold water and set aside. Warm large skillet over medium-high heat; add sausage. Cook until well browned, using wooden spoon to occasionally break into small pieces.  ."
+				}, {
+					"number": "2",
+					"directions": "Reduce heat to medium; add onion and garlic; cook until translucent. Stir in crushed tomatoes, tomato paste, oregano, basil and red pepper flakes."
+				}, {
+					"number": "3",
+					"directions": "Bring to simmer and cook 10 minutes. Preheat oven to 350°. Spoon 1/4 of sauce into bottom of 9 x 13 lasagna pan. Cover with layer of rotini, using half the pasta. Spoon half the ricotta over rotini. Sprinkle with half the mozzarella. Cover with sauce, using half the remainder."
+				}, {
+					"number": "4",
+					"directions": "Repeat the pasta, ricotta and mozzarella layers. Cover with remaining sauce and sprinkle with Parmesan cheese. Bake for 40-45 minutes until lightly browned on top. Let sit for 5 minutes before cutting into squares."
+				}],
+				"tags": [22, 2, 17]
+			},
+			{
+				"id": 65,
+				"name": "Berries and Hot Cereal",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "288.9 cals",
+				"carbohydrates": "48.4g",
+				"protein": "17.1g",
+				"fat": "12.5g",
+				"Ingredients": [{
+					"name": "Cream of Rice Cereal",
+					"amount": "3/8 cup"
+				}, {
+					"name": "Fat-Free Milk or milk alternative",
+					"amount": "2 cup"
+				}, {
+					"name": "Sugar",
+					"amount": "1/8 cup"
+				}, {
+					"name": "Whipped Cream Cheese Spread(optional)",
+					"amount": "1/6 cup"
+				}, {
+					"name": "Blueberries",
+					"amount": "1/6 cup"
+				}, {
+					"name": "Walnuts",
+					"amount": "7 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Bring milk to boil in medium saucepan on high heat. Gradually add cereal and sugar, stirring constantly until well blended.  ."
+				}, {
+					"number": "2",
+					"directions": "Cook 3 to 5 minutes or until thickened, stirring constantly. Add cream cheese spread; cook until melted and mixture is well blended, stirring frequently."
+				}, {
+					"number": "3",
+					"directions": "Add blueberries and walnuts; stir gently until blended. Serve immediately."
+				}],
+				"tags": [6, 15, 17]
+			},
+			{
+				"id": 66,
+				"name": "Easy Hard-Boiled Eggs",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "71.5 cals",
+				"carbohydrates": "0.4 g",
+				"protein": "6.3 g",
+				"fat": "4.8 g",
+				"Ingredients": [{
+					"name": "dozen Eggs",
+					"amount": "1"
+				}, {
+					"name": "dash Salt",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place one dozen eggs in a large pot of tap-temperature water and add a dash of salt."
+				}, {
+					"number": "2",
+					"directions": "Turn heat to medium and bring water and eggs to a boil."
+				}, {
+					"number": "3",
+					"directions": "Once at a boil, remove the pot from the heat and cover with lid for 12 minutes. "
+				}, {
+					"number": "4",
+					"directions": "Rinse eggs under cool water to prevent the \"green ring\" from forming around the yolk."
+				}],
+				"tags": [6, 15, 17]
+			},
+			{
+				"id": 67,
+				"name": "Tacos or Taco Salad",
+				"image": "",
+				"time": "Ready In 35 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "445.1 cals",
+				"carbohydrates": "27.3g",
+				"protein": "29.9g",
+				"fat": "22.4g",
+				"Ingredients": [{
+					"name": "Ground Beef or protein of your choice",
+					"amount": "0.25 lb"
+				}, {
+					"name": "Taco Mix all natural",
+					"amount": "0.5 tablespoon"
+				}, {
+					"name": "Head Iceberg Lettuce shredded",
+					"amount": "0.25"
+				}, {
+					"name": "Large Tomato chopped",
+					"amount": "0.25"
+				}, {
+					"name": "Avocado sliced or chopped Mission Gluten-Free Tortilla optional Salt to taste",
+					"amount": "0.25"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Brown ground beef or sauté fish in medium frying pan until cooked through. ."
+				}, {
+					"number": "2",
+					"directions": "Drain off fat; add 1/2 cup water and 2 tablespoons taco mix. Bring to boil and simmer 10 minutes or until liquid reduces. "
+				}, {
+					"number": "3",
+					"directions": "While beef is simmering, chop and prep vegetables."
+				}, {
+					"number": "4",
+					"directions": "Place lettuce into 4 medium size bowls; add beef, tomato and avocado. If desired, wrap in tortillas.."
+				}],
+				"tags": [1, 16]
+			},
+			{
+				"id": 68,
+				"name": "Peanut Butter & Banana (Gluten-Free)",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "177.1 cals",
+				"carbohydrates": "31.4g",
+				"protein": "3.8g",
+				"fat": "5.9g",
+				"Ingredients": [{
+					"name": "Medium Banana",
+					"amount": "1"
+				}, {
+					"name": "Peanut Butter",
+					"amount": "2 Tablespoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Slice bananas into 1/2 thick slices and lay out on a cookie sheet. ."
+				}, {
+					"number": "2",
+					"directions": "Spread an even amount of peanut butter over top of the slices and enjoy!"
+				}],
+				"tags": [6, 23, 15]
+			},
+			{
+				"id": 69,
+				"name": "Balsamic Glazed Chicken with Mushrooms (Gluten-Free)",
+				"image": "",
+				"time": "Ready In 35 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "333.5 cals",
+				"carbohydrates": "5.2g",
+				"protein": "54.9g",
+				"fat": "8.9g",
+				"Ingredients": [{
+					"name": "Chicken Breast skinless, boneless",
+					"amount": "0.25 lb"
+				}, {
+					"name": "Chicken Broth low sodium",
+					"amount": "3.75 oz"
+				}, {
+					"name": "Mushrooms sliced",
+					"amount": "3 oz"
+				}, {
+					"name": "Balsamic Glaze",
+					"amount": "0.50 tablespoon"
+				}, {
+					"name": "Living Now Tapioca Flour Slat and Pepper",
+					"amount": "0.25 tablespoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In greased frying pan, brown chicken 7 minutes on each side. Add 1/3 cup broth; simmer 3 minutes or until cooked thoroughly.  ."
+				}, {
+					"number": "2",
+					"directions": "Remove from pan and set aside in a glass dish. Add mushrooms to frying pan; brown slightly. "
+				}, {
+					"number": "3",
+					"directions": "Add remaining broth and balsamic glaze; simmer until mushrooms are cooked. "
+				}, {
+					"number": "4",
+					"directions": "Add tapioca flour and stir constantly for 2 minutes. Pour mushrooms and sauce over chicken; serve with grilled asparagus and Garlic Mashed Cauliflower."
+				}],
+				"tags": [9, 17, 18, 23]
+			},
+			{
+				"id": 70,
+				"name": "Pumpkin Pancakes (Gluten-Free)",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "259.7 cals",
+				"carbohydrates": "37g",
+				"protein": "8.8g",
+				"fat": "9.1g",
+				"Ingredients": [{
+					"name": "Oat flour Partially defranned ",
+					"amount": "39 grams"
+				}, {
+					"name": "Egg Whole, fresh eggs 1/4 extra large",
+					"amount": "14 grams"
+				}, {
+					"name": "Baking powder Leavening agents, low-sodium 1/2 tsp",
+					"amount": "2.5 grams"
+				}, {
+					"name": "Baking soda Leavening agents 1/8 tsp",
+					"amount": "57 grams"
+				}, {
+					"name": "Salt Table 1/8 tsp",
+					"amount": "0.75 grams"
+				}, {
+					"name": "Pumpkin Canned, without salt 1/8 cup",
+					"amount": "30.6 grams"
+				}, {
+					"name": "Honey 1/4 tbsp",
+					"amount": "5.3 grams"
+				}, {
+					"name": "Almond milk Plain 1/4 cup",
+					"amount": "60 grams"
+				}, {
+					"name": "Cinnamon Spices, ground 1/2 tsp",
+					"amount": "1.3 grams"
+				}, {
+					"name": "Nonfat greek yogurt Nonfat, plain 1/4 oz",
+					"amount": "7.1 grams"
+				}, {
+					"name": "Vegetable oil Natreon canola, high stability, non trans, high oleic 1/4 tbsp",
+					"amount": "3.5 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In a large bowl, whisk the oat flour, baking powder, baking soda and salt. Add the remaining pancake ingredients and whisk until just combined and smooth. The batter will thicken slightly while you wait for the griddle pan to heat up.  ."
+				}, {
+					"number": "2",
+					"directions": "Heat a griddle pan or a cast iron skillet over medium heat and grease with oil. Pour the batter into a liquid measuring cup, then pour about ¼ cup's worth for one pancake. Wait until some bubbles start to form on top. Allow to cook for 2 more minutes and then flip the pancakes over. Cook for about 3 more minutes until batter is cooked through. Serve pancakes hot."
+				}],
+				"tags": [23, 3, 8]
+			},
+			{
+				"id": 71,
+				"name": "Spaghetti Carbonara (Gluten-Free)",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "476.8 cals",
+				"carbohydrates": "43.8g",
+				"protein": "22.5g",
+				"fat": "24.7g",
+				"Ingredients": [{
+					"name": "Whole wheat pasta Dry 2 oz",
+					"amount": "56.7 grams"
+				}, {
+					"name": "BaconRaw, cured pork 1 1/3 oz",
+					"amount": "37.8 grams"
+				}, {
+					"name": "ButterUnsalted 1/6 tbsp",
+					"amount": "2.4 grams"
+				}, {
+					"name": "EggWhole, fresh eggs ½ large",
+					"amount": "25 grams"
+				}, {
+					"name": "Parmesan cheese Shredded 4/1 9 cup",
+					"amount": "16.7 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Cook pasta according to directions. ."
+				}, {
+					"number": "2",
+					"directions": "While pasta is cooking, chop bacon into pieces and cook in a skillet until crisp. "
+				}, {
+					"number": "3",
+					"directions": "Drain bacon then return to the pan. Add butter to bacon and and stir until butter is melted. "
+				}, {
+					"number": "4",
+					"directions": "In a small bowl whisk eggs and set aside. ."
+				}, {
+					"number": "5",
+					"directions": "Drain pasta and return to pan. "
+				}, {
+					"number": "6",
+					"directions": "Add bacon mixture, eggs, and cheese to the pasta. Stir to coat pasta and cook over low heat for 2-3 minutes. You want to cook the eggs here, but you have to be careful that you do not overcook them. Serve immediately."
+				}],
+				"tags": [9, 17, 23]
+			},
+			{
+				"id": 72,
+				"name": "Tropical Yogurt Parfait",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "240 cals",
+				"carbohydrates": "50 g",
+				"protein": "7 g",
+				"fat": "3 g",
+				"Ingredients": [{
+					"name": "So Delicious Dairy Free Vanilla Yogurt or plain yogurt",
+					"amount": "0.25"
+				}, {
+					"name": "Gluten-Free Graham Crackerscrushed",
+					"amount": "0.25"
+				}, {
+					"name": "Sliced Star Fruit",
+					"amount": "0.25"
+				}, {
+					"name": "Tropical Fruit diced",
+					"amount": "1/8 cup"
+				}, {
+					"name": "Mixed Berries",
+					"amount": "1/16 cup"
+				}, {
+					"name": "Coconut toasted, shredded",
+					"amount": "1/16 cup"
+				}, {
+					"name": "Martini or Margarita Glasses",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Spoon dollop of yogurt into base of martini or other festive glass; top with sprinkling of gluten-free graham crackers, followed by layer of diced fruit and a few berries. ."
+				}, {
+					"number": "2",
+					"directions": "Repeat pattern until glass is filled, placing star fruit slices in center on top. Sprinkle with 1/4 of toasted coconut. Assemble remaining 3 parfaits."
+				}],
+				"tags": [6, 17, 15]
+			},
+			{
+				"id": 73,
+				"name": "Caprese Panini (Gluten-Free)",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "582 cals",
+				"carbohydrates": "48 g",
+				"protein": "20 g",
+				"fat": "28 g",
+				"Ingredients": [{
+					"name": "Tomato ripe, sliced",
+					"amount": "1/2"
+				}, {
+					"name": "Handful Basil leaves Mozzarella Cheese fresh, sliced",
+					"amount": "1"
+				}, {
+					"name": "Slices Canyon Bakehouse White Bread",
+					"amount": "2"
+				}, {
+					"name": "olive oil 1 Teaspoon Balsamic Vinegar",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "Balsamic Vinegar",
+					"amount": "1 teaspoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Brush 1 tablespoon oil on one side of bread; repeat with other slice. Lay one slice bread oil side down; add layers of basil and tomatoes. ."
+				}, {
+					"number": "2",
+					"directions": "Drizzle vinegar over tomatoes; top with sliced mozzarella. Place other slice of bread on top, oil side up. "
+				}, {
+					"number": "3",
+					"directions": "Cook on panini press or hot grill pan until outside of panini is golden brown. If using a grill pan, heat to medium; place sandwich in preheated pan. "
+				}, {
+					"number": "4",
+					"directions": "Using glass casserole dish or large pot, press down on sandwich for about 30 seconds; leave in place until bread is golden brown. Flip sandwich and repeat. Panini is ready when outside of sandwich is toasted with grill marks and cheese has melted."
+				}],
+				"tags": [1, 23, 2]
+			},
+			{
+				"id": 74,
+				"name": "Sausage Egg Muffins",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 5,
+				"level": "easy",
+				"calorie": "310 cals",
+				"carbohydrates": "3 g",
+				"protein": "16 g",
+				"fat": "26 g",
+				"Ingredients": [{
+					"name": "Eggs",
+					"amount": "5"
+				}, {
+					"name": "Salt",
+					"amount": "5/48 tablespoon"
+				}, {
+					"name": "Pepper",
+					"amount": "5/48 tablespoon"
+				}, {
+					"name": "Jones Dairy Farm Sausagecubed",
+					"amount": "0.42 cup"
+				}, {
+					"name": "Peppers and Onion diced ",
+					"amount": "5/24 cup"
+				}, {
+					"name": "Spinach Leaves chopped",
+					"amount": "5/24 cup"
+				}, {
+					"name": "Shredded Cheddar Cheese(or your favorite cheese)",
+					"amount": "0.83 cup"
+				}, {
+					"name": "Coconut Oil",
+					"amount": "0.42 teaspoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 350°F Grease a 12 count muffin pan with coconut oil Whisk eggs Add salt, pepper, and cheese Divide veggies and sausage evenly into cups and pour eggs over (fill ¾ of each muffin cup) Bake for 20 minutes ."
+				}],
+				"tags": [1, 2, 17]
+			},
+			{
+				"id": 75,
+				"name": "Pork Loin with Garlic and Rosemary",
+				"image": "",
+				"time": "Ready In 1 h 30 min",
+				"servers": 1,
+				"level": "hard",
+				"calorie": "248.1 cals",
+				"carbohydrates": "5.2g",
+				"protein": "20 g",
+				"fat": "8.6 g",
+				"Ingredients": [{
+					"name": "Large Cloves garlic pressed",
+					"amount": "0.4"
+				}, {
+					"name": "Rosemary fresh, chopped",
+					"amount": "0.40"
+				}, {
+					"name": "Slat coarse",
+					"amount": "3/20 teaspoon"
+				}, {
+					"name": "Black Pepper ground",
+					"amount": "1/20 teaspoon"
+				}, {
+					"name": "Pork Loin Roast boneless, well-trimmed Fresh Rosemary Sprigs Mary's Gone Crackers Herb Crackers for garnish",
+					"amount": "¼ lb"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 400°. Line 13 x 9 x 2 roasting pan with foil. Mix first 4 ingredients in bowl. ."
+				}, {
+					"number": "2",
+					"directions": "Rub garlic mixture over pork. Place pork, fat side down, in prepared roasting pan; cook 30 minutes. "
+				}, {
+					"number": "3",
+					"directions": "Turn roast fat side up; continue cooking until thermometer inserted into center of meat registers 155°, about 25 minutes."
+				}, {
+					"number": "4",
+					"directions": "Remove from oven; let stand 10 minutes. Drain juices from roasting pan into small saucepan; set over low heat to keep warm. Cut pork crosswise into 1/3 inch thick slices; arrange on platter. Pour pan juices over meat; garnish with rosemary sprigs, if desired."
+				}],
+				"tags": [22, 8]
+			},
+			{
+				"id": 76,
+				"name": "Mac & Cheese (Gluten-Free)",
+				"image": "",
+				"time": "Ready In 40 min",
+				"servers": 1,
+				"level": "hard",
+				"calorie": "164 cals",
+				"carbohydrates": "23 g",
+				"protein": "7 g",
+				"fat": "5 g",
+				"Ingredients": [{
+					"name": "Gluten-Free Elbow Macaroniuncooked",
+					"amount": "0.50"
+				}, {
+					"name": "Dairy-Free Butter Alternative or butter",
+					"amount": "1/16"
+				}, {
+					"name": "Bob's Red Mill Brown Rice Flour ",
+					"amount": "1/16 cup"
+				}, {
+					"name": "Salt",
+					"amount": "1/8 teaspoon"
+				}, {
+					"name": "Pepper",
+					"amount": "1/16 teaspoon"
+				}, {
+					"name": "Mustard ground",
+					"amount": "1/16 teaspoon"
+				}, {
+					"name": "Onion Powder",
+					"amount": "1/64 teaspoon"
+				}, {
+					"name": "Garlic Powder",
+					"amount": "1/64 teaspoon"
+				}, {
+					"name": "Rice Milk or cow s milk",
+					"amount": "0.50 cup"
+				}, {
+					"name": "Daiva Cheese or cheddar cheese",
+					"amount": "0.50 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Cook macaroni according to package directions. Preheat oven to 350°. Melt margarine in large saucepan over low heat.  ."
+				}, {
+					"number": "2",
+					"directions": "Stir in flour and spices. Cook over low heat, stirring constantly until smooth. Remove from heat and add milk. "
+				}, {
+					"number": "3",
+					"directions": "Return to heat; bring to boiling, stirring constantly for one minute."
+				}, {
+					"number": "4",
+					"directions": "Remove from heat; add cheese and stir until melted. Drain macaroni; gently stir into cheese mixture. Pour into un-greased 2 quart casserole dish and bake uncovered 20-25 minutes."
+				}],
+				"tags": [23, 22, 5]
+			},
+			{
+				"id": 77,
+				"name": "Cinnamon Apple Oatmeal",
+				"image": "",
+				"time": "Ready In 5 min",
+				"servers": null,
+				"level": "easy",
+				"calorie": "312 cals",
+				"carbohydrates": "66 g",
+				"protein": "7 g",
+				"fat": "2.9 g",
+				"Ingredients": [{
+					"name": "old-fashioned or quick-cooking oats",
+					"amount": "1 cup"
+				}, {
+					"name": "apple juice concentrate",
+					"amount": "2/3"
+				}, {
+					"name": "water",
+					"amount": "1 1/3 cups"
+				}, {
+					"name": "cinnamon",
+					"amount": "½ teaspoon"
+				}, {
+					"name": "raisins or currants (optional)",
+					"amount": "½ cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine oats, apple juice concentrate, water, and cinnamon in a saucepan."
+				}, {
+					"number": "2",
+					"directions": "Bring to a simmer, then cover and cook 3 minutes. Remove from heat and stir in raisins or currants, if using. Let stand 3 minutes before serving."
+				}],
+				"tags": [19, 15, 6]
+			},
+			{
+				"id": 78,
+				"name": "Spicy Vegan Lentil Soup",
+				"image": "",
+				"time": "Ready In 55 min",
+				"servers": 4,
+				"level": "medium",
+				"calorie": "340 cals",
+				"carbohydrates": "42 g",
+				"protein": "12 g",
+				"fat": "14 g",
+				"Ingredients": [{
+					"name": "cup extra virgin olive oil 1 medium yellow or white onion, chopped",
+					"amount": "1"
+				}, {
+					"name": "carrots, peeled and chopped",
+					"amount": "2"
+				}, {
+					"name": "garlic cloves, pressed or minced",
+					"amount": "4"
+				}, {
+					"name": "ground cumin",
+					"amount": "2"
+				}, {
+					"name": "curry powder",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "dried thyme",
+					"amount": "1/2 teaspoon"
+				}, {
+					"name": "large can (28 ounces) diced tomatoes, drained ",
+					"amount": "1"
+				}, {
+					"name": "brown or green lentils, picked over and rinsed",
+					"amount": "1 cup"
+				}, {
+					"name": "vegetable broth",
+					"amount": "4 cups"
+				}, {
+					"name": "water",
+					"amount": "2 cups"
+				}, {
+					"name": "salt, more to taste Pinch red pepper flakes Freshly ground black pepper",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "chopped fresh collard greens or kale, tough ribs removed Juice of ½ to 1 medium lemon, to taste",
+					"amount": "1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Warm the olive oil in a large Dutch oven or pot over medium heat. One-fourth cup olive oil may seem like a lot, but it adds a lovely richness and heartiness to this nutritious soup. Once the oil is shimmering, add the chopped onion and carrot and cook, stirring often, until the onion has softened and is turning translucent, about 5 minutes. Add the garlic, cumin, curry powder and thyme."
+				}, {
+					"number": "2",
+					"directions": "Cook until fragrant while stirring constantly, about 30 seconds. Pour in the drained diced tomatoes and cook for a few more minutes, stirring often, in order to enhance their flavor. Pour in the lentils, broth and the water. "
+				}, {
+					"number": "3",
+					"directions": "Add 1 teaspoon salt and a pinch of red pepper flakes. Season generously with freshly ground black pepper. Raise heat and bring the mixture to a boil, then partially cover the pot and reduce heat to maintain a gentle simmer. Cook for 30 minutes, or until the lentils are tender but still hold their shape. "
+				}, {
+					"number": "4",
+					"directions": "Transfer 2 cups of the soup to a blender. Protect your hand from steam with a tea towel placed over the lid and purée the soup until smooth. Pour the puréed soup back into the pot and add the chopped greens. Cook for 5 more minutes, or until the greens have softened to your liking. Remove the pot from heat and stir in the juice of half of a lemon."
+				}, {
+					"number": "5",
+					"directions": "Taste and season with more salt, pepper and/or lemon juice until the flavors really sing. Serve immediately. Leftovers will keep well for about 4 days in the refrigerator, or can be frozen for several months (just defrost before serving)."
+				}],
+				"tags": [24, 19, 25]
+			},
+			{
+				"id": 79,
+				"name": "Barbecue-Style Portobellos",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 2,
+				"level": "easy",
+				"calorie": "132 cals",
+				"carbohydrates": "2.9 g",
+				"protein": "4.7 g",
+				"fat": "1.2 g",
+				"Ingredients": [{
+					"name": "large portobello mushrooms",
+					"amount": "2"
+				}, {
+					"name": "vegetable juice",
+					"amount": "½ cup"
+				}, {
+					"name": "apple seasoned rice vinegar",
+					"amount": "1/4"
+				}, {
+					"name": "chili powder",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "garlic powder",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "black pepper",
+					"amount": "1/4 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Clean mushrooms and remove stems. Cut into 1/2-inch strips."
+				}, {
+					"number": "2",
+					"directions": "Combine vegetable juice, apple juice concentrate, red peppers, soy sauce, vinegar, chili powder, garlic powder, and black pepper in a blender. Process until smooth, then transfer mixture to a nonstick skillet and heat until bubbly. "
+				}, {
+					"number": "3",
+					"directions": "Add mushroom strips, turning to coat evenly with sauce. Cover and cook over medium-high heat, turning occasionally, until mushrooms are tender, about 10 minutes. Serve immediately."
+				}],
+				"tags": [1, 8, 5]
+			},
+			{
+				"id": 80,
+				"name": "Chickpea Salad Rolls",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 4,
+				"level": "easy",
+				"calorie": "163 cals",
+				"carbohydrates": "25.6 g",
+				"protein": "8 g",
+				"fat": "4 g",
+				"Ingredients": [{
+					"name": "cooked or canned chickpeas, rinsed or drained",
+					"amount": "1 ½ cups"
+				}, {
+					"name": "finely chopped or grated carrot",
+					"amount": "½ cup"
+				}, {
+					"name": "finely chopped celery",
+					"amount": "½ cup"
+				}, {
+					"name": "green onions, chopped",
+					"amount": "3"
+				}, {
+					"name": "fat-free or low-fat vegan mayonnaise",
+					"amount": "2-3 tablespoons"
+				}, {
+					"name": "stone-ground mustard",
+					"amount": "1 tablespoon"
+				}, {
+					"name": "salt",
+					"amount": "½ teaspoon"
+				}, {
+					"name": "ground black pepper",
+					"amount": "¼ teaspoon"
+				}, {
+					"name": "green onions, chopped",
+					"amount": "3"
+				}, {
+					"name": "medium tomato, sliced, or 6-8 cherry tomatoes, cut in half",
+					"amount": "1"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Coarsely mash the beans with a fork or potato masher, leaving some chunks. Add the carrot, celery, green onions, mayonnaise, mustard, salt, and pepper. Mix well. Place about one-quarter of the mixture on each lettuce leaf."
+				}, {
+					"number": "2",
+					"directions": "Add one-quarter of the tomato, roll the lettuce around the filling, and serve. Store in a covered container in the refrigerator, leftover Chickpea Salad Rolls (without the lettuce and tomato) will keep for up to 3 days."
+				}],
+				"tags": [16, 1, 5]
+			},
+			{
+				"id": 81,
+				"name": "Chocolate Mousse",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 8,
+				"level": "medium",
+				"calorie": "125 cals",
+				"carbohydrates": "14.1 g",
+				"protein": "6 g",
+				"fat": "6 g",
+				"Ingredients": [{
+					"name": "nondairy milk, such as soy milk or rice milk",
+					"amount": "1 cup"
+				}, {
+					"name": "semisweet chocolate chips 2",
+					"amount": "1 cup"
+				}, {
+					"name": "packages low-fat silken tofu, drained",
+					"amount": "12.3-ounce"
+				}, {
+					"name": "vanilla extract",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "strawberries, sliced",
+					"amount": "10"
+				}, {
+					"name": "mint sprigs for garnish (optional)",
+					"amount": "10"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Place chocolate chips and nondairy milk in a microwave-safe bowl and microwave for 1 minute. Let sit for 2 minutes. Drain excess water from the tofu.  ."
+				}, {
+					"number": "2",
+					"directions": "Place tofu, vanilla, and chocolate chip/nondairy milk mixture in a food processor or blender and process until smooth. Transfer into small individual serving dishes and chill for 2 hours in the refrigerator or 30 minutes in the freezer. Serve topped with strawberries and garnished with mint, if using. "
+				}, {
+					"number": "3",
+					"directions": "Stored in a covered container in the refrigerator, leftover Chocolate Mousse will keep for up to 3 days. Variation: Add a chopped banana to the blender or food processor when you process the tofu and chocolate together."
+				}],
+				"tags": [4, 5]
+			},
+			{
+				"id": 82,
+				"name": "Oatmeal Banana Bites",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 8,
+				"level": "medium",
+				"calorie": "114 cals",
+				"carbohydrates": "22 g",
+				"protein": "3 g",
+				"fat": "2 g",
+				"Ingredients": [{
+					"name": "rolled oats",
+					"amount": "1 cup"
+				}, {
+					"name": "oat flour",
+					"amount": "1 cup"
+				}, {
+					"name": "baking powder",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "sea salt",
+					"amount": "¼ teaspoon"
+				}, {
+					"name": "cinnamon",
+					"amount": "1/2 teaspoon"
+				}, {
+					"name": "freshly grated nutmeg",
+					"amount": "1/8-1/4 teaspoon"
+				}, {
+					"name": "pureed overripe banana(roughly 2 large bananas, see note)",
+					"amount": "1 cup"
+				}, {
+					"name": "vanilla extract",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "grain-sweetened vegan chocolate chips (optional)",
+					"amount": "2 teaspoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat oven to 350 F. In a mixing bowl, combine the oats, oat flour, baking powder, sea salt, cinnamon, and nutmeg. Stir through until well combined."
+				}, {
+					"number": "2",
+					"directions": "Add the banana and vanilla (and chocolate chips, if using) to the dry mixture, and stir through until combined. "
+				}, {
+					"number": "3",
+					"directions": "Using a cookie scoop, place mounds of the batter (about 2 to 2 1/2 tablespoons) on to a baking sheet lined with parchment paper."
+				}, {
+					"number": "4",
+					"directions": "Bake for 14 to 15 minutes, until set to the touch and a touch golden. Remove and let cool on pan for just a minute, then transfer to a cooling rack."
+				}],
+				"tags": [4, 5]
+			},
+			{
+				"id": 83,
+				"name": "Veggie Fajitas",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "257 cals",
+				"carbohydrates": "50.3 g",
+				"protein": "12.9 g",
+				"fat": "2 g",
+				"Ingredients": [{
+					"name": "vegetable broth or water",
+					"amount": "¼ cup"
+				}, {
+					"name": "onion, sliced into strips",
+					"amount": "1"
+				}, {
+					"name": "ground cumin",
+					"amount": "1 teaspoon"
+				}, {
+					"name": "bell peppers(red, yellow, green, or a combination),seeded and sliced nto strips",
+					"amount": "3"
+				}, {
+					"name": "15-ounce cans black beans,drained and rinsed",
+					"amount": "2"
+				}, {
+					"name": "whole-wheat tortillas",
+					"amount": "6"
+				}, {
+					"name": "salsa",
+					"amount": "1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Heat broth or water in a nonstick skillet. Add onion and cook until translucent. Add cumin and bell peppers. Cook over medium heat until peppers are tender."
+				}, {
+					"number": "2",
+					"directions": "Heat beans in microwave for 1 minute."
+				}, {
+					"number": "3",
+					"directions": "Place tortilla in a large skillet over medium-low heat. Add 1/2 cup of heated black beans and 1/2 cup of the onion and pepper mixture. Fold tortilla in half, over the beans and vegetables, and cook for 3 minutes. Remove from heat and garnish with salsa. "
+				}, {
+					"number": "4",
+					"directions": "Repeat this procedure with all tortillas."
+				}],
+				"tags": [19, 2, 3]
+			},
+			{
+				"id": 84,
+				"name": "Quickie Quesadillas",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 6,
+				"level": "easy",
+				"calorie": "135 cals",
+				"carbohydrates": "24 g",
+				"protein": "5.5 g",
+				"fat": "2.7 g",
+				"Ingredients": [{
+					"name": "Read Pepper Hummus",
+					"amount": "2 cups"
+				}, {
+					"name": "tortillas",
+					"amount": "8 corn"
+				}, {
+					"name": "chopped green onions",
+					"amount": "½ cup"
+				}, {
+					"name": "chopped tomatoes",
+					"amount": "½ cup"
+				}, {
+					"name": "salsa",
+					"amount": "½-1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Spread a tortilla with 2 to 3 tablespoons of hummus and place in a large nonstick skillet over medium heat. Sprinkle with onions, tomatoes, and salsa."
+				}, {
+					"number": "2",
+					"directions": "Top with a second tortilla and cook until bottom tortilla is warm and soft, 2 to 3 minutes. Turn and cook second side for another minute. Remove from pan and cut in half. Repeat with remaining tortillas."
+				}],
+				"tags": [6, 5, 8]
+			},
+			{
+				"id": 85,
+				"name": "Lentil Artichoke Stew",
+				"image": "",
+				"time": "Ready In 30 min",
+				"servers": 6,
+				"level": "medium",
+				"calorie": "176 cals",
+				"carbohydrates": "34.3 g",
+				"protein": "11.7 g",
+				"fat": "1 g",
+				"Ingredients": [{
+					"name": "vegetable broth",
+					"amount": "¼ cup"
+				}, {
+					"name": "onion, chopped",
+					"amount": "1"
+				}, {
+					"name": "large garlic cloves, pressed or minced",
+					"amount": "2"
+				}, {
+					"name": "ground cumin",
+					"amount": "2 teaspoons"
+				}, {
+					"name": "ground coriander",
+					"amount": "1 teaspoon"
+				}, {
+					"name": " dry (uncooked) red lentils (3 cups cooked)",
+					"amount": "1 cup"
+				}, {
+					"name": " bay leaf",
+					"amount": "1"
+				}, {
+					"name": "water juice of 1 lemon",
+					"amount": "2 cup"
+				}, {
+					"name": "24-ounce cans chopped tomatoes(preferably fire-roasted),undrained, or 6 cups freshly chopped tomatoes plus 1 cup tomato juice",
+					"amount": "2"
+				}, {
+					"name": "quartered artichoke hearts (1 9-ounce frozen package or 1 15-ounce can) ",
+					"amount": "1 ½ cups"
+				}, {
+					"name": "crushed red pepper (optional) ",
+					"amount": "¼ teaspoon"
+				}, {
+					"name": "salt, or to taste",
+					"amount": "1/4 teaspoon"
+				}, {
+					"name": "black pepper, ot to taste",
+					"amount": "¼ teaspoon"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Heat broth in a large saucepan. Add onion and sauté on medium heat for about 5 minutes, until golden.  ."
+				}, {
+					"number": "2",
+					"directions": "Add garlic, cumin, and coriander and cook for 2 minutes, stirring frequently. Add dried lentils, bay leaf, and water to pan and bring to a boil. "
+				}, {
+					"number": "3",
+					"directions": "Lower heat and add lemon juice, tomatoes and their liquid, artichokes, and crushed red pepper (if using). "
+				}, {
+					"number": "4",
+					"directions": "Simmer for about 20 minutes, until the lentils are tender. Remove and discard the bay leaf. Add salt and black pepper, or to taste."
+				}],
+				"tags": [3, 5, 8]
+			},
+			{
+				"id": 86,
+				"name": "Nachos",
+				"image": "",
+				"time": "Ready In 20 min",
+				"servers": 1,
+				"level": "easy",
+				"calorie": "306 cals",
+				"carbohydrates": "32 g",
+				"protein": "8 g",
+				"fat": "17 g",
+				"Ingredients": [{
+					"name": "Mission Gluten-Free Tortilla Chips",
+					"amount": "8 ounces"
+				}, {
+					"name": "Can Refried Beans",
+					"amount": "1"
+				}, {
+					"name": "Sour Cream",
+					"amount": "½ cup"
+				}, {
+					"name": "Shredded Mexican Cheese Blend",
+					"amount": "8 ounces"
+				}, {
+					"name": "Roma Tomato diced",
+					"amount": "1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Preheat your oven to 375 degrees. Line 2 large baking sheets with foil or parchment paper."
+				}, {
+					"number": "2",
+					"directions": "Place the chips in a single layer on the prepared pans. Spread the beans on the chips, dividing evenly between the two pans. "
+				}, {
+					"number": "3",
+					"directions": "Sprinkle the pans with the cheese. Place the baking sheets in the oven and bake for 5 minutes, or until the cheese is melted. Enjoy!"
+				}],
+				"tags": [11, 1]
+			},
+			{
+				"id": 87,
+				"name": "Turkey Chili",
+				"image": "",
+				"time": "Ready In 1 h 10 min",
+				"servers": 1,
+				"level": "medium",
+				"calorie": "178.8 cals",
+				"carbohydrates": "14.9g",
+				"protein": "14.2g",
+				"fat": "7.1g",
+				"Ingredients": [{
+					"name": "Red bell pepper Sweet, raw 1/4 medium",
+					"amount": "29.8 grams"
+				}, {
+					"name": "Vegetable oil Natreon canola, high stability, non trans, high oleic (70%) 3/8 tbsp",
+					"amount": "5.3 grams"
+				}, {
+					"name": "Brown sugar 1/4 tsp packed",
+					"amount": "1.1 grams"
+				}, {
+					"name": "Canned black beans Low sodium, drained 1/8",
+					"amount": "53.1 grams"
+				}, {
+					"name": "Water Plain, clean water 1/16 cup",
+					"amount": "14.8 grams"
+				}, {
+					"name": " Water Plain, clean waterPer 0.063 cup Chili powderSpices 1/8 tbsp",
+					"amount": "0.94 grams"
+				}, {
+					"name": "Chili powderSpices 1/8 tsp 0.33 grams",
+					"amount": "0.33 grams"
+				}, {
+					"name": "Turkey, meat only All classes, cooked, roasted 1/4 cup, chopped or diced",
+					"amount": "35 grams"
+				}, {
+					"name": "Tomatoes Red, ripe, canned, packed in tomato juice 1/8",
+					"amount": "23.8 grams"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Chop the onions coarsely. Dice the bell peppers into 1 inch pieces."
+				}, {
+					"number": "2",
+					"directions": "Cook onion and peppers in oil in a heavy medium pot over medium heat, stirring occasionally, until golden, 12 to 15 minutes. Add spices and brown sugar and cook, stirring, until fragrant, about 1 minute. Add tomatoes with juice, breaking them up with back of a spoon, then add beans, water, and 1 teaspoon salt and simmer, covered, 15 minutes. "
+				}, {
+					"number": "3",
+					"directions": "Stir in turkey and let stand, covered, until heated through, 5 minutes."
+				}],
+				"tags": [3, 2, 5]
+			},
+			{
+				"id": 88,
+				"name": "Italian Popcorn with Parmesan",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 6,
+				"level": "easy",
+				"calorie": "227 cals",
+				"carbohydrates": "10.6 g",
+				"protein": "6.8 g",
+				"fat": "18 g",
+				"Ingredients": [{
+					"name": "unpopped popcorn",
+					"amount": "6 tablespoons"
+				}, {
+					"name": "olive oil",
+					"amount": "¼ cup"
+				}, {
+					"name": "olive oil",
+					"amount": "2 tablespoons"
+				}, {
+					"name": "Italian seasoning",
+					"amount": "1 1/2"
+				}, {
+					"name": "garlic salt",
+					"amount": "1 ½ teaspoons"
+				}, {
+					"name": "freshly grated Parmigiano cheese",
+					"amount": "1 cup"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Combine popcorn and 1/4 cup olive oil in a 2-quart saucepan; cover."
+				}, {
+					"number": "2",
+					"directions": "Cook over high heat, continuously shaking the pan, until the popcorn is popped and the lid begins to lift from the popcorn, about 5 minutes."
+				}, {
+					"number": "3",
+					"directions": "Pour popcorn into a large bowl. Mix 2 tablespoons olive oil, Italian seasoning, and garlic salt into popcorn; toss to coat. Add Parmesan cheese and mix well."
+				}],
+				"tags": [11, 17]
+			},
+			{
+				"id": 89,
+				"name": "Peppermint Eggnog Punch",
+				"image": "",
+				"time": "Ready In 10 min",
+				"servers": 16,
+				"level": "easy",
+				"calorie": "380 cals",
+				"carbohydrates": "65.1 g",
+				"protein": "3.6 g",
+				"fat": "8.4 g",
+				"Ingredients": [{
+					"name": "quart peppermint ice cream",
+					"amount": "1"
+				}, {
+					"name": "quart eggnog",
+					"amount": "1"
+				}, {
+					"name": "cans or bottles ginger ale, chilled",
+					"amount": "4 (12 fluid ounce)"
+				}, {
+					"name": "rum",
+					"amount": "1 cup"
+				}, {
+					"name": "small peppermint candy canes for garnish",
+					"amount": "24"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "Set aside 2 or 3 round scoops of ice cream in the freezer for garnish. Stir remaining ice cream until softened."
+				}, {
+					"number": "2",
+					"directions": "Gradually stir in eggnog and rum. Transfer to a punch bowl, and stir in ginger ale. Hang candy canes around the edge of the punchbowl."
+				}, {
+					"number": "3",
+					"directions": "Float reserved ice cream scoops on top, and serve immediately."
+				}],
+				"tags": [15, 17, 1]
+			},
+			{
+				"id": 90,
+				"name": "Creamy Dill Cucumber Toasties",
+				"image": "",
+				"time": "Ready In 15 min",
+				"servers": 12,
+				"level": "easy",
+				"calorie": "247 cals",
+				"carbohydrates": "23.7 g",
+				"protein": "6.1 g",
+				"fat": "14.5 g",
+				"Ingredients": [{
+					"name": "package cream cheese, softened",
+					"amount": "1(8 ounce)"
+				}, {
+					"name": "package dry Italian-style salad dressing mix",
+					"amount": "1(7 ounce)"
+				}, {
+					"name": "mayounnaise",
+					"amount": "½ cup"
+				}, {
+					"name": "French baguette, cut into",
+					"amount": "1"
+				}, {
+					"name": "thick circles",
+					"amount": "½ inch"
+				}, {
+					"name": "cucumber, sliced",
+					"amount": "1"
+				}, {
+					"name": "dried dill weed",
+					"amount": "2 teaspoons"
+				}],
+				"Directions": [{
+					"number": "1",
+					"directions": "In a medium bowl, mix together cream cheese, dressing mix and mayonnaise."
+				}, {
+					"number": "2",
+					"directions": "Spread a thin layer of the cream cheese mixture on a slice of bread, and top with a slice of cucumber. Sprinkle with dill. Repeat with remaining ingredients."
+				}],
+				"tags": [15, 1]
+			}
 		]
 	}
 }

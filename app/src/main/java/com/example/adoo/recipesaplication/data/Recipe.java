@@ -20,32 +20,29 @@ public class Recipe implements Parcelable {
     @ColumnInfo(name = "name")
     private String mName;
 
-    @ColumnInfo(name = "image_url")
+    @ColumnInfo(name = "image")
     private String mImage;
 
-    @ColumnInfo(name = "info")
-    private String mInfo;
-
     @ColumnInfo(name = "time")
-    private int mTime;
+    private String mTime;
 
-    @ColumnInfo(name = "calorie")
-    private int mCalorie;
-
-    @ColumnInfo(name = "carbs")
-    private int mCarbs;
-
-    @ColumnInfo(name = "fat")
-    private int mFat;
-
-    @ColumnInfo(name = "protein")
-    private int mProtein;
+    @ColumnInfo(name = "servers")
+    private int mServes;
 
     @ColumnInfo(name = "level")
     private String mLevel;
 
-    @ColumnInfo(name = "serves")
-    private int mServes;
+    @ColumnInfo(name = "calorie")
+    private String mCalorie;
+
+    @ColumnInfo(name = "carbohydrates")
+    private String mCarbs;
+
+    @ColumnInfo(name = "protein")
+    private String mProtein;
+
+    @ColumnInfo(name = "fat")
+    private String mFat;
 
     @Ignore
     private boolean mLike;
@@ -59,20 +56,19 @@ public class Recipe implements Parcelable {
     @Ignore
     private List<Tag> mTag = new ArrayList<>();
 
-    public Recipe(long id, String name, String image, String info, int time,
-                  int calorie, int carbs, int fat, int protein, String level,
-                  int serves) {
+    public Recipe(long id, String name, String image, String time, int serves,
+                  String level, String calorie, String carbs, String protein,
+                  String fat) {
         mId = id;
         mName = name;
         mImage = image;
-        mInfo = info;
         mTime = time;
+        mServes = serves;
+        mLevel = level;
         mCalorie = calorie;
         mCarbs = carbs;
-        mFat = fat;
         mProtein = protein;
-        mLevel = level;
-        mServes = serves;
+        mFat = fat;
     }
 
     public long getId() {
@@ -99,52 +95,20 @@ public class Recipe implements Parcelable {
         mImage = image;
     }
 
-    public String getInfo() {
-        return mInfo;
-    }
-
-    public void setInfo(String info) {
-        mInfo = info;
-    }
-
-    public int getTime() {
+    public String getTime() {
         return mTime;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         mTime = time;
     }
 
-    public int getCalorie() {
-        return mCalorie;
+    public int getServes() {
+        return mServes;
     }
 
-    public void setCalorie(int calorie) {
-        mCalorie = calorie;
-    }
-
-    public int getCarbs() {
-        return mCarbs;
-    }
-
-    public void setCarbs(int carbs) {
-        mCarbs = carbs;
-    }
-
-    public int getFat() {
-        return mFat;
-    }
-
-    public void setFat(int fat) {
-        mFat = fat;
-    }
-
-    public int getProtein() {
-        return mProtein;
-    }
-
-    public void setProtein(int protein) {
-        mProtein = protein;
+    public void setServes(int serves) {
+        mServes = serves;
     }
 
     public String getLevel() {
@@ -155,12 +119,36 @@ public class Recipe implements Parcelable {
         mLevel = level;
     }
 
-    public int getServes() {
-        return mServes;
+    public String getCalorie() {
+        return mCalorie;
     }
 
-    public void setServes(int serves) {
-        mServes = serves;
+    public void setCalorie(String calorie) {
+        mCalorie = calorie;
+    }
+
+    public String getCarbs() {
+        return mCarbs;
+    }
+
+    public void setCarbs(String carbs) {
+        mCarbs = carbs;
+    }
+
+    public String getProtein() {
+        return mProtein;
+    }
+
+    public void setProtein(String protein) {
+        mProtein = protein;
+    }
+
+    public String getFat() {
+        return mFat;
+    }
+
+    public void setFat(String fat) {
+        mFat = fat;
     }
 
     public boolean isLike() {
@@ -199,18 +187,17 @@ public class Recipe implements Parcelable {
         mId = in.readLong();
         mName = in.readString();
         mImage = in.readString();
-        mInfo = in.readString();
-        mTime = in.readInt();
-        mCalorie = in.readInt();
-        mCarbs = in.readInt();
-        mFat = in.readInt();
-        mProtein = in.readInt();
-        mLevel = in.readString();
+        mTime = in.readString();
         mServes = in.readInt();
+        mLevel = in.readString();
+        mCalorie = in.readString();
+        mCarbs = in.readString();
+        mProtein = in.readString();
+        mFat = in.readString();
         mLike = in.readByte() != 0;
-        in.readList(this.mDirections, Directions.class.getClassLoader());
-        in.readList(this.mIngredients, Ingredients.class.getClassLoader());
-        in.readList(this.mTag, Tag.class.getClassLoader());
+        mIngredients = in.createTypedArrayList(Ingredients.CREATOR);
+        mDirections = in.createTypedArrayList(Directions.CREATOR);
+        mTag = in.createTypedArrayList(Tag.CREATOR);
     }
 
     @Override
@@ -218,18 +205,17 @@ public class Recipe implements Parcelable {
         dest.writeLong(mId);
         dest.writeString(mName);
         dest.writeString(mImage);
-        dest.writeString(mInfo);
-        dest.writeInt(mTime);
-        dest.writeInt(mCalorie);
-        dest.writeInt(mCarbs);
-        dest.writeInt(mFat);
-        dest.writeInt(mProtein);
-        dest.writeString(mLevel);
+        dest.writeString(mTime);
         dest.writeInt(mServes);
+        dest.writeString(mLevel);
+        dest.writeString(mCalorie);
+        dest.writeString(mCarbs);
+        dest.writeString(mProtein);
+        dest.writeString(mFat);
         dest.writeByte((byte) (mLike ? 1 : 0));
-        dest.writeList(mDirections);
-        dest.writeList(mIngredients);
-        dest.writeList(mTag);
+        dest.writeTypedList(mIngredients);
+        dest.writeTypedList(mDirections);
+        dest.writeTypedList(mTag);
     }
 
     @Override

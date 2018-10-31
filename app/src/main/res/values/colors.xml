@@ -18,4 +18,6 @@
 
     <color name="textTag">#C6C6C6</color>
     <color name="borderTag">#DDDD</color>
+
+    <color name="banner">#ffdb2b</color>
 </resources>

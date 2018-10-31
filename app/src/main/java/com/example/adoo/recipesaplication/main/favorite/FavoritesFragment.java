@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,6 +21,8 @@ import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.databinding.FavoritesFragBinding;
 import com.example.adoo.recipesaplication.main.MainActivity;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
+import com.example.adoo.recipesaplication.main.subscribe.SubscribeActivity;
+import com.example.adoo.recipesaplication.main.subscribe.SubscribeEndFragment;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 import com.example.adoo.recipesaplication.util.ViewModelFactory;
 
@@ -44,6 +47,7 @@ public class FavoritesFragment extends Fragment implements RecyclerViewClickList
         mFavoritesViewModel.start();
         mBinding.setViewModel(mFavoritesViewModel);
 
+
         setupRv();
         return mBinding.getRoot();
     }
@@ -61,7 +65,6 @@ public class FavoritesFragment extends Fragment implements RecyclerViewClickList
 
         mFavoritesAdapter = new FavoritesAdapter(getActivity(), FavoritesFragment.this);
         mBinding.rvFavorites.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mBinding.rvFavorites.smoothScrollToPosition(0);
         mBinding.rvFavorites.setAdapter(mFavoritesAdapter);
 
     }
@@ -77,10 +80,10 @@ public class FavoritesFragment extends Fragment implements RecyclerViewClickList
     }
 
     @Override
-    public void favoritesCLickListener(View imageView, Recipe recipe) {
+    public void favoritesCLickListener(View v, Recipe recipe) {
 
         //if size recipes 0 = close recycleView
-        if (mFavoritesViewModel.mRecipes.size() == 1){
+        if (mFavoritesViewModel.mRecipes.size() == 1) {
             mBinding.rvFavorites.setVisibility(View.GONE);
         }
 
@@ -92,26 +95,16 @@ public class FavoritesFragment extends Fragment implements RecyclerViewClickList
 
         //snackbar - UNDO
         Snackbar snackbar = Snackbar
-                .make(imageView.getRootView(), "Removed from Favorite", Snackbar.LENGTH_SHORT)
+                .make(v.getRootView(), "Removed from Favorite", Snackbar.LENGTH_SHORT)
                 .setAction("UNDO", view -> {
 
                     mBinding.rvFavorites.setVisibility(View.VISIBLE);
                     mFavoritesViewModel.addFavorite(recipe.getId());
                     mFavoritesViewModel.getFavorite();
 
-                    Snackbar snackbar1 = Snackbar.make(imageView.getRootView(), "Recipe is restored!", Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar1 = Snackbar.make(view.getRootView(), "Recipe is restored!", Snackbar.LENGTH_SHORT);
                     snackbar1.show();
                 });
-
-        //margine snackbar
-        View snackBarView = snackbar.getView();
-        CoordinatorLayout.LayoutParams params = new CoordinatorLayout.LayoutParams(
-                CoordinatorLayout.LayoutParams.MATCH_PARENT,
-                CoordinatorLayout.LayoutParams.WRAP_CONTENT);
-
-        params.setMargins(0, 750, 0, 0);
-
-        snackBarView.setLayoutParams(params);
 
         snackbar.show();
     }

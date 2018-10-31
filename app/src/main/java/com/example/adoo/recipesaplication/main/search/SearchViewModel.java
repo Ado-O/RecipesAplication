@@ -2,7 +2,6 @@ package com.example.adoo.recipesaplication.main.search;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.ViewModel;
 import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableList;
@@ -10,7 +9,7 @@ import android.support.annotation.NonNull;
 
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
-import com.example.adoo.recipesaplication.data.storage.SuggestedRepository;
+import com.example.adoo.recipesaplication.data.storage.SearchRepository;
 import com.example.adoo.recipesaplication.util.SingleLiveEvent;
 
 import java.util.List;
@@ -19,7 +18,7 @@ public class SearchViewModel extends AndroidViewModel {
 
     private static final String TAG = SearchViewModel.class.getSimpleName();
 
-    private SuggestedRepository mSuggestedRepository;
+    private SearchRepository mSearchRepository;
     private RecipesRepository mRecipesRepository;
 
     public final ObservableList<Recipe> mRecipes = new ObservableArrayList<>();
@@ -29,38 +28,12 @@ public class SearchViewModel extends AndroidViewModel {
     private final SingleLiveEvent<Recipe> mOpenRecipesEvent = new SingleLiveEvent<>();
 
     public SearchViewModel(@NonNull Application application,
-                           SuggestedRepository suggestedRepository,
+                           SearchRepository searchRepository,
                            RecipesRepository recipesRepository) {
         super(application);
 
-        mSuggestedRepository = suggestedRepository;
+        mSearchRepository = searchRepository;
         mRecipesRepository = recipesRepository;
-    }
-
-    /********************
-     * get all recipes from suggested_table
-     ********************/
-    public void start() {
-        if (mRecipes.isEmpty()) {
-            getSuggested();
-        }
-    }
-
-    public void getSuggested() {
-
-        mSuggestedRepository.getSuggestedRecipes(new SuggestedRepository.GetSuggestedRecipesCallback() {
-            @Override
-            public void onSuccess(List<Recipe> suggesteds) {
-                mRecipes.clear();
-                mRecipes.addAll(suggesteds);
-                mError.set(mRecipes.isEmpty());
-            }
-
-            @Override
-            public void onError() {
-
-            }
-        });
     }
 
     /***************
@@ -69,6 +42,7 @@ public class SearchViewModel extends AndroidViewModel {
     public void startRecipes(String title) {
         if (mRecipes.isEmpty()) {
             getRecipes();
+
         } else {
             getRecipesSearch(title);
         }
@@ -99,7 +73,7 @@ public class SearchViewModel extends AndroidViewModel {
      *******************************/
     public void getRecipesSearch(String title) {
 
-        mSuggestedRepository.getSearchRecipes(title, new SuggestedRepository.GetSearchCallback() {
+        mSearchRepository.getSearchRecipes(title, new SearchRepository.GetSearchCallback() {
             @Override
             public void onSuccess(List<Recipe> recipes) {
                mRecipes.clear();

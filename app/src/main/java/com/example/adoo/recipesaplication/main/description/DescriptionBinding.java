@@ -5,6 +5,7 @@ import android.support.design.chip.ChipGroup;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.adoo.recipesaplication.R;
@@ -31,30 +32,26 @@ public class DescriptionBinding {
 
         if (tags != null) {
             LayoutInflater inflater = LayoutInflater.from(chipGroup.getContext());
+
             for (Tag tag : ((List<Tag>) tags)) {
+          //      if (tags.size() <= 3) {
+                        TextView view = (TextView) inflater.inflate(
+                                R.layout.description_tag, chipGroup, false
+                        );
 
-                TextView view = (TextView) inflater.inflate(
-                        R.layout.description_tag, chipGroup, false
-                );
+                        view.setText(tag.getName());
+                        chipGroup.addView(view);
 
-                view.setText(tag.getName());
-                chipGroup.addView(view);
-            }
+                }
+
+//                Button viewBtn = (Button) inflater.inflate(
+//                        R.layout.description_tag_more, chipGroup, false
+//                );
+//                chipGroup.addView(viewBtn);
+
+
+            //}
         }
-    }
-
-    /*************************
-     * convert number in minute
-     ************************/
-    @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:duration"})
-    public static void setNumber(TextView textView, int number) {
-
-        int minutes = (int) ((number % 3600) / 60);
-
-        String addMinuit = minutes + " min";
-
-        textView.setText(String.valueOf(addMinuit));
     }
 
     /*************************
@@ -68,5 +65,6 @@ public class DescriptionBinding {
             ((DescriptionAdapter) recyclerView.getAdapter()).setItems(recipeItems);
         }
     }
+
 }
 

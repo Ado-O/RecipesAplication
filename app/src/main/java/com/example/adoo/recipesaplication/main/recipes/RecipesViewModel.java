@@ -6,11 +6,9 @@ import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableList;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Tag;
-import com.example.adoo.recipesaplication.data.storage.ContentRepository;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
 import com.example.adoo.recipesaplication.util.SingleLiveEvent;
 
@@ -43,7 +41,7 @@ public class RecipesViewModel extends AndroidViewModel {
     public void start(long filterTag) {
         if (mRecipes.isEmpty()) {
             getRecipes();
-        }else {
+        } else {
             getFilterItem(filterTag);
         }
     }
@@ -109,6 +107,8 @@ public class RecipesViewModel extends AndroidViewModel {
         });
     }
 
-    public SingleLiveEvent<Recipe> getOpenRecipeEvent() { return mOpenRecipesEvent; }
+    public SingleLiveEvent<Recipe> getOpenRecipeEvent() {
+        return mOpenRecipesEvent;
+    }
 
 }

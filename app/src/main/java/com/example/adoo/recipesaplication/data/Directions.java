@@ -17,45 +17,27 @@ public class Directions implements Parcelable {
     @ColumnInfo(name= "recipes_id")
     private long mRecipesId;
 
-    @ColumnInfo(name = "description")
-    private String mDes;
+    @ColumnInfo(name = "number")
+    private String mNumber;
 
-    public Directions(Integer id, long recipesId, String des) {
+    @ColumnInfo(name = "directions")
+    private String mDirections;
+
+    public Directions(Integer id, long recipesId, String number, String directions) {
         mId = id;
         mRecipesId = recipesId;
-        mDes = des;
+        mNumber = number;
+        mDirections = directions;
     }
 
     @Ignore
-    public Directions(long recipesId, String des) {
+    public Directions(long recipesId, String number, String directions) {
         mId = null;
         mRecipesId = recipesId;
-        mDes = des;
+        mNumber = number;
+        mDirections = directions;
     }
 
-    public Integer getId() {
-        return mId;
-    }
-
-    public void setId(Integer id) {
-        mId = id;
-    }
-
-    public long getRecipesId() {
-        return mRecipesId;
-    }
-
-    public void setRecipesId(long recipesId) {
-        mRecipesId = recipesId;
-    }
-
-    public String getDes() {
-        return mDes;
-    }
-
-    public void setDes(String des) {
-        mDes = des;
-    }
     protected Directions(Parcel in) {
         if (in.readByte() == 0) {
             mId = null;
@@ -63,7 +45,8 @@ public class Directions implements Parcelable {
             mId = in.readInt();
         }
         mRecipesId = in.readLong();
-        mDes = in.readString();
+        mNumber = in.readString();
+        mDirections = in.readString();
     }
 
     @Override
@@ -75,7 +58,8 @@ public class Directions implements Parcelable {
             dest.writeInt(mId);
         }
         dest.writeLong(mRecipesId);
-        dest.writeString(mDes);
+        dest.writeString(mNumber);
+        dest.writeString(mDirections);
     }
 
     @Override
@@ -94,4 +78,36 @@ public class Directions implements Parcelable {
             return new Directions[size];
         }
     };
+
+    public Integer getId() {
+        return mId;
+    }
+
+    public void setId(Integer id) {
+        mId = id;
+    }
+
+    public long getRecipesId() {
+        return mRecipesId;
+    }
+
+    public void setRecipesId(long recipesId) {
+        mRecipesId = recipesId;
+    }
+
+    public String getNumber() {
+        return mNumber;
+    }
+
+    public void setNumber(String number) {
+        mNumber = number;
+    }
+
+    public String getDirections() {
+        return mDirections;
+    }
+
+    public void setDirections(String directions) {
+        mDirections = directions;
+    }
 }

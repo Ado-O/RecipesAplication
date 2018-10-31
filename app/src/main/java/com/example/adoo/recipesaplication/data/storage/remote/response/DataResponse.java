@@ -16,10 +16,6 @@ public class DataResponse implements Serializable {
     @Expose
     private List<RecipeResponse> recipes = null;
 
-    @SerializedName("suggested")
-    @Expose
-    private List<Integer> suggested = null;
-
     public List<TagsResponse> getTags() {
         return tags;
     }
@@ -36,11 +32,4 @@ public class DataResponse implements Serializable {
         this.recipes = recipes;
     }
 
-    public List<Integer> getSuggested() {
-        return suggested;
-    }
-
-    public void setSuggested(List<Integer> suggested) {
-        this.suggested = suggested;
-    }
 }

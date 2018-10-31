@@ -3,16 +3,11 @@ package com.example.adoo.recipesaplication.main;
 import android.databinding.BindingAdapter;
 import android.support.design.chip.Chip;
 import android.support.design.chip.ChipGroup;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.example.adoo.recipesaplication.R;
-import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.util.FilterClickListener;
-import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.util.List;
 
@@ -38,7 +33,7 @@ public class MainBinding {
             for (Tag tag : items) {
 
                 Chip chip = (Chip) inflater.inflate(
-                        R.layout.filter_tag, chipGroup, false
+                        R.layout.recipes_tag, chipGroup, false
                 );
 
                 chip.setOnClickListener(v -> {

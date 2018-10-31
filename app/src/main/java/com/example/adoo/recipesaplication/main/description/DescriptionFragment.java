@@ -1,27 +1,33 @@
 package com.example.adoo.recipesaplication.main.description;
 
-import android.databinding.DataBindingUtil;
+import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.ShareActionProvider;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
-import com.example.adoo.recipesaplication.databinding.DescriptionDirectionsItemBinding;
 import com.example.adoo.recipesaplication.databinding.DescriptionFragBinding;
 import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
-import com.example.adoo.recipesaplication.main.recipes.RecipesViewModel;
-import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 import com.example.adoo.recipesaplication.util.ViewModelFactory;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +37,6 @@ public class DescriptionFragment extends Fragment {
 
     private DescriptionFragBinding mBinding;
     private FavoritesViewModel mFavoritesViewModel;
-    private RecipesViewModel mRecipesViewModel;
     private Recipe r;
 
     public static DescriptionFragment newInstance(Recipe recipe) {
@@ -45,27 +50,27 @@ public class DescriptionFragment extends Fragment {
         return fragment;
     }
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = DescriptionFragBinding.inflate(inflater, container, false);
 
         mFavoritesViewModel = ViewModelFactory.obtainViewModel(getActivity(), FavoritesViewModel.class);
-        mRecipesViewModel = ViewModelFactory.obtainViewModel(getActivity(), RecipesViewModel.class);
 
         r = getActivity().getIntent().getExtras().getParcelable("recipe");
-
         mBinding.setRecipes(r);
 
+
         setupToolbar();
-        setupImg();
+        setupShare();
         setupToolbarColor();
         setupData();
         setupLike();
 
-
         return mBinding.getRoot();
     }
+
 
     /**********
      * toolbar
@@ -77,17 +82,23 @@ public class DescriptionFragment extends Fragment {
         //back button
         mBinding.ivArrow.setOnClickListener(v -> {
             getActivity().onBackPressed();
+            mFavoritesViewModel.getFavorite();
         });
 
     }
 
-    /********
-     * image
-     ********/
-    public void setupImg() {
-        Glide.with(this)
-                .load(r.getImage())
-                .into(mBinding.ivRecipes);
+
+    public void setupShare() {
+
+        mBinding.ivShare.setOnClickListener(v -> {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT,
+                    "Hey check out app at: " +
+                            "https://play.google.com/store/apps/dev?id=8964689875647814161");
+            sendIntent.setType("text/plain");
+            startActivity(sendIntent);
+        });
     }
 
     /***************************
@@ -96,15 +107,27 @@ public class DescriptionFragment extends Fragment {
     public void setupToolbarColor() {
         mBinding.appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
             if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
+                if (r.isLike()){
+                    mBinding.ivLike.setBackgroundResource(R.drawable.ic_like_hart_clik);
+                }else{
+                    mBinding.ivLike.setBackgroundResource(R.drawable.ic_favorite_border_black);
+                }
+
                 int colorBlack = Color.parseColor("#000000");
                 mBinding.ivArrow.setColorFilter(colorBlack);
-                mBinding.ivLike.setColorFilter(colorBlack);
                 mBinding.ivShare.setColorFilter(colorBlack);
+                mBinding.tlbTitle.setText(r.getName());
             } else if (verticalOffset == 0) {
-                int colorWhite = Color.parseColor("#FFFFFF");
+                if (r.isLike()){
+                    mBinding.ivLike.setBackgroundResource(R.drawable.ic_like_hart_clik);
+                }else{
+                    mBinding.ivLike.setBackgroundResource(R.drawable.ic_like_hart);
+                }
+
+              int colorWhite = Color.parseColor("#FFFFFF");
                 mBinding.ivArrow.setColorFilter(colorWhite);
-                mBinding.ivLike.setColorFilter(colorWhite);
                 mBinding.ivShare.setColorFilter(colorWhite);
+                mBinding.tlbTitle.setText(null);
             }
         });
     }
@@ -114,7 +137,7 @@ public class DescriptionFragment extends Fragment {
      **************************/
     public void setupData() {
 
-        List itemList = new ArrayList<>();
+        List<Object> itemList = new ArrayList<>();
         itemList.add(r);
         itemList.add("INGREDIENTS");
         itemList.addAll(r.getIngredients());
@@ -132,7 +155,7 @@ public class DescriptionFragment extends Fragment {
     /*************
      * like onClick
      *************/
-    public void setupLike(){
+    public void setupLike() {
 
         mBinding.ivLike.setOnClickListener(v -> {
             if (!r.isLike()) {

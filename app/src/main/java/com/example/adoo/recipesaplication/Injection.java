@@ -2,16 +2,15 @@ package com.example.adoo.recipesaplication;
 
 import android.content.Context;
 
-import com.example.adoo.recipesaplication.data.Favorite;
 import com.example.adoo.recipesaplication.data.storage.ContentRepository;
 import com.example.adoo.recipesaplication.data.storage.FavoriteRepository;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
-import com.example.adoo.recipesaplication.data.storage.SuggestedRepository;
+import com.example.adoo.recipesaplication.data.storage.SearchRepository;
 import com.example.adoo.recipesaplication.data.storage.local.AppDatabase;
 import com.example.adoo.recipesaplication.data.storage.local.content.ContentLocalDataSource;
 import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteLocalDataSource;
 import com.example.adoo.recipesaplication.data.storage.local.recipes.RecipesLocalDataSource;
-import com.example.adoo.recipesaplication.data.storage.local.suggested.SuggestedLocalDataSource;
+import com.example.adoo.recipesaplication.data.storage.local.search.SearchLocalDataSource;
 import com.example.adoo.recipesaplication.data.storage.remote.content.ContentRemoteDataSource;
 import com.example.adoo.recipesaplication.util.AppExecutors;
 
@@ -50,17 +49,20 @@ public class Injection {
         );
     }
 
-    public static SuggestedLocalDataSource provideSuggestedLocalDataSource(Context context){
-        return SuggestedLocalDataSource.getInstance(
+    public static SearchLocalDataSource provideSearchLocalDataSource(Context context){
+        return SearchLocalDataSource.getInstance(
                 provideAppExecutors(),
-                provideAppDatabase(context.getApplicationContext()).getSuggestedDao()
-        );
+                provideAppDatabase(context.getApplicationContext()).getSuggestedDao(),
+                provideAppDatabase(context.getApplicationContext()).getRecipesDao(),
+                provideAppDatabase(context.getApplicationContext()).getFavoriteDao()
+                );
     }
 
     public static FavoriteLocalDataSource provideFavoriteLocalDataSource(Context context){
         return FavoriteLocalDataSource.getInstance(
                 provideAppExecutors(),
-                provideAppDatabase(context.getApplicationContext()).getFavoriteDao()
+                provideAppDatabase(context.getApplicationContext()).getFavoriteDao(),
+                provideAppDatabase(context.getApplicationContext()).getRecipesDao()
         );
     }
 
@@ -83,9 +85,9 @@ public class Injection {
         );
     }
 
-    public static SuggestedRepository provideSuggestedRepository(Context context){
-        return SuggestedRepository.getInstance(
-                provideSuggestedLocalDataSource(context)
+    public static SearchRepository provideSearchRepository(Context context){
+        return SearchRepository.getInstance(
+                provideSearchLocalDataSource(context)
         );
     }
 

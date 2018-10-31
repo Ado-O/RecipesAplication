@@ -1,10 +1,11 @@
 package com.example.adoo.recipesaplication.data.storage.local.favorite;
 
-import com.example.adoo.recipesaplication.data.Favorite;
+import android.util.Log;
+
+import com.example.adoo.recipesaplication.data.Favorites;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.storage.FavoriteRepository;
-import com.example.adoo.recipesaplication.data.storage.local.suggested.SuggestedDao;
-import com.example.adoo.recipesaplication.data.storage.local.suggested.SuggestedLocalDataSource;
+import com.example.adoo.recipesaplication.data.storage.local.recipes.RecipesDao;
 import com.example.adoo.recipesaplication.util.AppExecutors;
 
 import java.util.List;
@@ -17,15 +18,19 @@ public class FavoriteLocalDataSource {
 
     private final AppExecutors mAppExecutors;
     private final FavoriteDao mFavoriteDao;
+    private final RecipesDao mRecipesDao;
 
-    public FavoriteLocalDataSource(AppExecutors appExecutors, FavoriteDao favoriteDao) {
+    public FavoriteLocalDataSource(AppExecutors appExecutors, FavoriteDao favoriteDao, RecipesDao recipesDao) {
         mAppExecutors = appExecutors;
         mFavoriteDao = favoriteDao;
+        mRecipesDao = recipesDao;
     }
 
-    public static FavoriteLocalDataSource getInstance(AppExecutors appExecutors, FavoriteDao favoriteDao) {
+    public static FavoriteLocalDataSource getInstance(AppExecutors appExecutors,
+                                                      FavoriteDao favoriteDao,
+                                                      RecipesDao recipesDao) {
         if (sInstance == null) {
-            sInstance = new FavoriteLocalDataSource(appExecutors, favoriteDao);
+            sInstance = new FavoriteLocalDataSource(appExecutors, favoriteDao, recipesDao);
         }
         return sInstance;
     }
@@ -38,6 +43,13 @@ public class FavoriteLocalDataSource {
 
             List<Recipe> recipes = mFavoriteDao.getFavoriteRecipes();
 
+            for (Recipe r : recipes) {
+                r.setDirections(mRecipesDao.getRecipesDescription(r.getId()));
+                r.setIngredients(mRecipesDao.getIngredients(r.getId()));
+                r.setTag(mRecipesDao.getRecipesTag(r.getId()));
+                r.setLike(mFavoriteDao.isFavorite(r.getId()) != null);
+            }
+
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(recipes));
         });
     }
@@ -47,7 +59,7 @@ public class FavoriteLocalDataSource {
      *****/
     public void addFavorite(long recipeId){
         mAppExecutors.diskIO().execute(() ->
-                mFavoriteDao.addFavorite(new Favorite(recipeId)));
+                mFavoriteDao.addFavorite(new Favorites(recipeId)));
 
     }
 

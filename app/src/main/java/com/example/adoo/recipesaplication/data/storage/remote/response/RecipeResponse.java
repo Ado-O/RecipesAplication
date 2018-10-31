@@ -16,49 +16,45 @@ public class RecipeResponse implements Serializable {
     @Expose
     private String mName;
 
-    @SerializedName("image_url")
+    @SerializedName("image")
     @Expose
     private String mImageUrl;
 
-    @SerializedName("info")
-    @Expose
-    private String mInfo;
-
     @SerializedName("time")
     @Expose
-    private int mTime;
+    private String mTime;
 
-    @SerializedName("calorie")
+    @SerializedName("servers")
     @Expose
-    private int mCalorie;
-
-    @SerializedName("carbs")
-    @Expose
-    private int mCarbs;
-
-    @SerializedName("fats")
-    @Expose
-    private int mFats;
-
-    @SerializedName("proteins")
-    @Expose
-    private int mProteins;
+    private int mServings;
 
     @SerializedName("level")
     @Expose
     private String mLevel;
 
-    @SerializedName("servings")
+    @SerializedName("calorie")
     @Expose
-    private int mServings;
+    private String mCalorie;
 
-    @SerializedName("ingredients")
+    @SerializedName("carbohydrates")
+    @Expose
+    private String mCarbs;
+
+    @SerializedName("protein")
+    @Expose
+    private String mProteins;
+
+    @SerializedName("fat")
+    @Expose
+    private String mFats;
+
+    @SerializedName("Ingredients")
     @Expose
     private List<IngredientsResponse> mIngredients = null;
 
-    @SerializedName("directions")
+    @SerializedName("Directions")
     @Expose
-    private List<String> mDirections = null;
+    private List<DirectionsResponse> mDirections = null;
 
     @SerializedName("tags")
     @Expose
@@ -88,60 +84,12 @@ public class RecipeResponse implements Serializable {
         mImageUrl = imageUrl;
     }
 
-    public String getInfo() {
-        return mInfo;
-    }
-
-    public void setInfo(String info) {
-        mInfo = info;
-    }
-
-    public int getTime() {
+    public String getTime() {
         return mTime;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         mTime = time;
-    }
-
-    public int getCalorie() {
-        return mCalorie;
-    }
-
-    public void setCalorie(int calorie) {
-        mCalorie = calorie;
-    }
-
-    public int getCarbs() {
-        return mCarbs;
-    }
-
-    public void setCarbs(int carbs) {
-        mCarbs = carbs;
-    }
-
-    public int getFats() {
-        return mFats;
-    }
-
-    public void setFats(int fats) {
-        mFats = fats;
-    }
-
-    public int getProteins() {
-        return mProteins;
-    }
-
-    public void setProteins(int proteins) {
-        mProteins = proteins;
-    }
-
-    public String getLevel() {
-        return mLevel;
-    }
-
-    public void setLevel(String level) {
-        mLevel = level;
     }
 
     public int getServings() {
@@ -152,6 +100,46 @@ public class RecipeResponse implements Serializable {
         mServings = servings;
     }
 
+    public String getLevel() {
+        return mLevel;
+    }
+
+    public void setLevel(String level) {
+        mLevel = level;
+    }
+
+    public String getCalorie() {
+        return mCalorie;
+    }
+
+    public void setCalorie(String calorie) {
+        mCalorie = calorie;
+    }
+
+    public String getCarbs() {
+        return mCarbs;
+    }
+
+    public void setCarbs(String carbs) {
+        mCarbs = carbs;
+    }
+
+    public String getProteins() {
+        return mProteins;
+    }
+
+    public void setProteins(String proteins) {
+        mProteins = proteins;
+    }
+
+    public String getFats() {
+        return mFats;
+    }
+
+    public void setFats(String fats) {
+        mFats = fats;
+    }
+
     public List<IngredientsResponse> getIngredients() {
         return mIngredients;
     }
@@ -160,11 +148,11 @@ public class RecipeResponse implements Serializable {
         mIngredients = ingredients;
     }
 
-    public List<String> getDirections() {
+    public List<DirectionsResponse> getDirections() {
         return mDirections;
     }
 
-    public void setDirections(List<String> directions) {
+    public void setDirections(List<DirectionsResponse> directions) {
         mDirections = directions;
     }
 

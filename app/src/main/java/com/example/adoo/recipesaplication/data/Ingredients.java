@@ -20,7 +20,7 @@ public class Ingredients implements Parcelable{
     @ColumnInfo(name = "name")
     private String mName;
 
-    @ColumnInfo(name = "quantity")
+    @ColumnInfo(name = "amount")
     private String mQuantity;
 
     public Integer getId() {

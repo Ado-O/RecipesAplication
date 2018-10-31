@@ -6,6 +6,9 @@
         <variable
             name="viewModel"
             type="com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel"/>
+        <variable
+            name="v"
+            type="android.view.View" />
     </data>
 
 
@@ -23,14 +26,52 @@
             app:title="Favorites"/>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_favorites"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:favoritesItem="@{viewModel.mRecipes}"
-        android:layout_margin="1dp"
-        android:paddingBottom="56dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_favorites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:paddingBottom="56dp"
+            android:layout_marginTop="10dp"
+            app:rvRecipe="@{viewModel.mRecipes}"
+            app:rvView="@{v}"
+            app:favoritesItem="@{viewModel.mRecipes}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            app:favoritesImage="@{viewModel.mRecipes}"
+            app:layout_constraintBottom_toTopOf="@+id/tv_des"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/clickColor"
+            android:textSize="20dp"
+            app:favoritesDes="@{viewModel.mRecipes}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_icon" />
+
+    </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>
 </layout>

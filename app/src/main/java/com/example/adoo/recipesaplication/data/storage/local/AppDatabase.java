@@ -8,28 +8,26 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.adoo.recipesaplication.data.Directions;
-import com.example.adoo.recipesaplication.data.Favorite;
+import com.example.adoo.recipesaplication.data.Favorites;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
-import com.example.adoo.recipesaplication.data.Suggested;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.local.content.ContentDao;
 import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteDao;
 import com.example.adoo.recipesaplication.data.storage.local.recipes.RecipesDao;
-import com.example.adoo.recipesaplication.data.storage.local.suggested.SuggestedDao;
+import com.example.adoo.recipesaplication.data.storage.local.search.SearchDao;
 
 import java.io.File;
 
 @Database(entities = {
         Recipe.class,
         Tag.class,
-        Suggested.class,
         Ingredients.class,
         Directions.class,
         RecipesTag.class,
-        Favorite.class
-}, version = 8, exportSchema = false)
+        Favorites.class
+}, version = 10, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
@@ -38,7 +36,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract RecipesDao getRecipesDao();
 
-    public abstract SuggestedDao getSuggestedDao();
+    public abstract SearchDao getSuggestedDao();
 
     public abstract FavoriteDao getFavoriteDao();
 

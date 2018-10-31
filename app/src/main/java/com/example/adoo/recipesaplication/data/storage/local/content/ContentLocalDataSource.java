@@ -41,7 +41,7 @@ public class ContentLocalDataSource {
              */
             mContentDao.clearRecipe();
             mContentDao.clearDirections();
-            mContentDao.clearIngredients();
+           mContentDao.clearIngredients();
 
             /**
              * add recipeResponses -> recipes
@@ -60,19 +60,12 @@ public class ContentLocalDataSource {
                         r.getId(),
                         r.getTags()
                 ));
-
-                mContentDao.clearSuggested(r.getId());
             }
 
             /**
-             * add TagResponse -> filter_tag
+             * add TagResponse -> recipes_tag
              */
             mContentDao.insertTag(RemoteToLocal.tagConverter(tagsResponses));
-
-            /**
-             * add baseResponse -> suggested
-             */
-            mContentDao.insertSuggested(RemoteToLocal.suggestedConverter(baseResponse));
 
         });
     }

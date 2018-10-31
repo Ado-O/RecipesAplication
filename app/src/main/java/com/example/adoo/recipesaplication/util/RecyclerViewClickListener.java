@@ -9,5 +9,5 @@ import com.example.adoo.recipesaplication.data.Tag;
 public interface RecyclerViewClickListener {
     void recyclerViewListClicked(View v, Recipe recipe);
 
-    void favoritesCLickListener(View view, Recipe recipe);
+    void favoritesCLickListener(View v, Recipe recipe);
 }

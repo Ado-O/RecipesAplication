@@ -1,6 +1,5 @@
 package com.example.adoo.recipesaplication.data.storage;
 
-import com.example.adoo.recipesaplication.data.Favorite;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteLocalDataSource;
 

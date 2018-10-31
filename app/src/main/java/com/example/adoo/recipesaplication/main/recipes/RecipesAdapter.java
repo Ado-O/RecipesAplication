@@ -2,6 +2,7 @@ package com.example.adoo.recipesaplication.main.recipes;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -48,10 +49,42 @@ public class RecipesAdapter extends RecyclerView.Adapter {
         return mList.size();
     }
 
-    public void setItems(List list){
-        mList.clear();
-        mList.addAll(list);
-        notifyDataSetChanged();
+    public void setItems(List list) {
+            List<Recipe> oldItems = this.mList;
+            DiffUtil.DiffResult result = DiffUtil.calculateDiff(new Callback(oldItems, list));
+            this.mList.clear();
+            this.mList.addAll(list);
+            result.dispatchUpdatesTo(this);
+        }
     }
 
-}
+    class Callback extends DiffUtil.Callback {
+
+        private final List<Recipe> mOldItems;
+        private final List<Recipe> mNewItems;
+
+        Callback(List<Recipe> oldItems, List<Recipe> newItems) {
+            mOldItems = oldItems;
+            mNewItems = newItems;
+        }
+
+        @Override
+        public int getOldListSize() {
+            return mOldItems.size();
+        }
+
+        @Override
+        public int getNewListSize() {
+            return mNewItems.size();
+        }
+
+        @Override
+        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+            return mOldItems.get(oldItemPosition).getId() == mNewItems.get(newItemPosition).getId();
+        }
+
+        @Override
+        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+            return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
+        }
+    }
