@@ -10,27 +10,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.android.billingclient.api.Purchase;
 import com.example.adoo.recipesaplication.R;
+import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.databinding.SubscribeActBinding;
-import com.example.adoo.recipesaplication.main.MainAdapter;
-import com.example.adoo.recipesaplication.main.favorite.FavoritesFragment;
-import com.example.adoo.recipesaplication.main.recipes.RecipesFragment;
-import com.example.adoo.recipesaplication.main.search.SearchFragment;
-import com.example.adoo.recipesaplication.util.billing.BillingManager;
+import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import fr.castorflex.android.verticalviewpager.VerticalViewPager;
-
-public class SubscribeActivity extends AppCompatActivity {
+public class SubscribeActivity extends AppCompatActivity  {
 
     public static final String TAG = SubscribeActivity.class.getSimpleName();
 
     SubscribeActBinding mSubscribeActBinding;
     private SubscribeFragmentAdapter mFragmentAdapter;
-    private boolean getId;
 
     public static void startActivity(Activity activity, boolean sub) {
 
@@ -106,7 +99,6 @@ public class SubscribeActivity extends AppCompatActivity {
             mSubscribeActBinding.btSubscribeNow.setVisibility(View.GONE);
         }
     }
-
 
 }
 

@@ -12,6 +12,7 @@ import com.example.adoo.recipesaplication.data.Favorites;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.local.content.ContentDao;
 import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteDao;
@@ -22,12 +23,13 @@ import java.io.File;
 
 @Database(entities = {
         Recipe.class,
+        SubRecipe.class,
         Tag.class,
         Ingredients.class,
         Directions.class,
         RecipesTag.class,
         Favorites.class
-}, version = 10, exportSchema = false)
+}, version = 13, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;

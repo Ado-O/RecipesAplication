@@ -1,6 +1,7 @@
 package com.example.adoo.recipesaplication.data.storage;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.storage.local.search.SearchLocalDataSource;
 
 import java.util.List;
@@ -31,9 +32,23 @@ public class SearchRepository {
         mSearchLocalDataSource.getSearchRecipes(title, callback);
     }
 
+    /**
+     * get SubSearch
+     */
+    public void getSubSearchRecipes(String title, GetSubSearchCallback callback) {
+        mSearchLocalDataSource.getSearchSubRecipes(title, callback);
+    }
+
+
 
     public interface GetSearchCallback {
         void onSuccess(List<Recipe> recipes);
+
+        void onError();
+    }
+
+    public interface GetSubSearchCallback {
+        void onSuccess(List<SubRecipe> recipes);
 
         void onError();
     }

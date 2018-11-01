@@ -10,11 +10,16 @@ import android.view.ViewGroup;
 import com.example.adoo.recipesaplication.data.Directions;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.databinding.BannerMainBinding;
 import com.example.adoo.recipesaplication.databinding.RecipesItemBinding;
 import com.example.adoo.recipesaplication.databinding.SearchItemBinding;
+import com.example.adoo.recipesaplication.databinding.SubRecipeBinding;
+import com.example.adoo.recipesaplication.databinding.SubRecipeTextBinding;
+import com.example.adoo.recipesaplication.databinding.SubSearchBinding;
 import com.example.adoo.recipesaplication.main.MainActivity;
 import com.example.adoo.recipesaplication.main.recipes.RecipesViewHolder;
+import com.example.adoo.recipesaplication.main.recipes.SubRecipeTextViewHolder;
 import com.example.adoo.recipesaplication.main.subscribe.BannerViewHolder;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
@@ -25,6 +30,7 @@ public class SearchAdapter extends RecyclerView.Adapter {
 
     private final int HEADER = 1;
     private final int SEARCH = 2;
+    private final int SUBRECIPES = 3;
 
     private List mItems = new ArrayList<>();
     private LayoutInflater mInflater;
@@ -44,8 +50,12 @@ public class SearchAdapter extends RecyclerView.Adapter {
         if (MainActivity.IS_SUB) {
             if (mItems.get(position) instanceof String) {
                 return HEADER;
+
             } else if (mItems.get(position) instanceof Recipe) {
                 return SEARCH;
+
+            } else if (mItems.get(position) instanceof SubRecipe) {
+                return SUBRECIPES;
             } else {
                 return -1;
             }
@@ -78,6 +88,15 @@ public class SearchAdapter extends RecyclerView.Adapter {
                             false
                     ), mListener
             );
+        }
+        if (viewType == SUBRECIPES) {
+            return new SubSearchViewHolder(
+                    SubSearchBinding.inflate(
+                            mInflater,
+                            parent,
+                            false
+                    )
+            );
         } else {
             throw new RuntimeException("The type has to be ONE");
         }
@@ -87,8 +106,12 @@ public class SearchAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder.getItemViewType() == HEADER) {
             ((BannerViewHolder) holder).setup((String) mItems.get(position));
+
         } else if (holder.getItemViewType() == SEARCH) {
             ((SearchViewHolder) holder).setup((Recipe) mItems.get(position));
+
+        } else if (holder.getItemViewType() == SUBRECIPES) {
+            ((SubSearchViewHolder) holder).setup((SubRecipe) mItems.get(position));
         }
     }
 
@@ -130,7 +153,11 @@ public class SearchAdapter extends RecyclerView.Adapter {
 
             if (mOldItems.get(oldItemPosition) instanceof Recipe && mNewItems.get(newItemPosition) instanceof Recipe) {
                 return ((Recipe) mOldItems.get(oldItemPosition)).getId() == ((Recipe) mNewItems.get(newItemPosition)).getId();
+
             } else if (mOldItems.get(oldItemPosition) instanceof String && mNewItems.get(newItemPosition) instanceof String) {
+                return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
+
+            } else if (mOldItems.get(oldItemPosition) instanceof SubRecipe && mNewItems.get(newItemPosition) instanceof SubRecipe) {
                 return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
             } else {
                 return false;

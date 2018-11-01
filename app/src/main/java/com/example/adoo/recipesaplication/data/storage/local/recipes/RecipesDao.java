@@ -6,6 +6,7 @@ import android.arch.persistence.room.Query;
 import com.example.adoo.recipesaplication.data.Directions;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 
 import java.util.List;
@@ -18,6 +19,9 @@ public interface RecipesDao {
      ********************/
     @Query("SELECT * FROM recipe_table")
     List<Recipe> getRecipes();
+
+    @Query("SELECT * FROM sub_recipe_table")
+    List<SubRecipe> getSubRecipes();
 
     @Query("SELECT * FROM tag_table")
     List<Tag> getTags();
@@ -47,5 +51,6 @@ public interface RecipesDao {
             "ON recipe_table._id = recipes_tag_table.recipes_id " +
             "WHERE recipes_tag_table.tag_id = :filteredTag")
     List<Recipe> getFilterTag(long filteredTag);
+
 
 }

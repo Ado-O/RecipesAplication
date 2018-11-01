@@ -81,7 +81,7 @@
         style="@style/Widget.MaterialComponents.Button"
         app:backgroundTint="@color/clickColor"
         android:textColor="@color/whiteColor"
-        android:text="ADD" />
+        android:text="Subscribe now" />
 
     <TextView
         android:id="@+id/tv_bottom"

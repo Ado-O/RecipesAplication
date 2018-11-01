@@ -8,6 +8,7 @@ import android.databinding.ObservableList;
 import android.support.annotation.NonNull;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
 import com.example.adoo.recipesaplication.data.storage.SearchRepository;
 import com.example.adoo.recipesaplication.util.SingleLiveEvent;
@@ -22,6 +23,7 @@ public class SearchViewModel extends AndroidViewModel {
     private RecipesRepository mRecipesRepository;
 
     public final ObservableList<Recipe> mRecipes = new ObservableArrayList<>();
+    public final ObservableList<SubRecipe> mSubRecipe = new ObservableArrayList<>();
 
     public final ObservableBoolean mError = new ObservableBoolean(false);
 
@@ -68,6 +70,34 @@ public class SearchViewModel extends AndroidViewModel {
         });
     }
 
+    /**********
+     * subRecipe
+     ***********/
+    public void startSub(String title) {
+        if (mSubRecipe.isEmpty()) {
+            getSubRecipes();
+        }else {
+            getSubRecipesSearch(title);
+        }
+    }
+
+    public void getSubRecipes() {
+
+        mRecipesRepository.getSubRecipes(new RecipesRepository.GetSubRecipesCallback() {
+            @Override
+            public void onSuccess(List<SubRecipe> subRecipes) {
+                mSubRecipe.clear();
+                mSubRecipe.addAll(subRecipes);
+                mError.set(mSubRecipe.isEmpty());
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+    }
+
     /********************************
      * add string and get recipes from recipes_table
      *******************************/
@@ -79,6 +109,26 @@ public class SearchViewModel extends AndroidViewModel {
                mRecipes.clear();
                mRecipes.addAll(recipes);
                mError.set(mRecipes.isEmpty());
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+    }
+
+    /********************************
+     * add string and get recipes from recipes_table
+     *******************************/
+    public void getSubRecipesSearch(String title) {
+
+        mSearchRepository.getSubSearchRecipes(title, new SearchRepository.GetSubSearchCallback() {
+            @Override
+            public void onSuccess(List<SubRecipe> recipes) {
+                mSubRecipe.clear();
+                mSubRecipe.addAll(recipes);
+                mError.set(mSubRecipe.isEmpty());
             }
 
             @Override

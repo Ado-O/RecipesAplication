@@ -17,11 +17,13 @@ import com.bumptech.glide.Glide;
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.generated.callback.OnClickListener;
+import com.example.adoo.recipesaplication.main.MainActivity;
 import com.example.adoo.recipesaplication.main.description.DescriptionAdapter;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecipesBinding {
@@ -44,22 +46,38 @@ public class RecipesBinding {
      * add list with use RecyclerView adapter
      ************************/
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:recipesItem"})
-    public static void setRecipesItem(RecyclerView recyclerView, List recipeItems) {
+    @BindingAdapter({"app:recipesItem", "app:subRecipes"})
+    public static void setRecipesItem(RecyclerView recyclerView, List recipeItems, List subRecipe) {
 
-        if (recipeItems != null && recipeItems.size() > 0) {
-            ((RecipesAdapter) recyclerView.getAdapter()).setItems(recipeItems);
+        List<Object> itemList = new ArrayList<>();
+        if (MainActivity.IS_SUB){
+            itemList.add("Free Recipes");
+            itemList.addAll(recipeItems);
+            itemList.add("Premium Recipes");
+            itemList.addAll(subRecipe);
+        }else{
+            itemList.addAll(recipeItems);
+        }
+
+        if (itemList != null && itemList.size() > 0) {
+            ((RecipesAdapter) recyclerView.getAdapter()).setItems(itemList);
         }
     }
 
 //    @SuppressWarnings("unchecked")
-//    @BindingAdapter({"app:lottieAnim"})
-//    public static void setAnim(LottieAnimationView lottieAnimationView, RecipesViewModel recipe) {
-//        Log.e(TAG, String.valueOf(recipe.mBooleans));
+//    @BindingAdapter({"app:lottie"})
+//    public static void setAnima(LottieAnimationView lottieAnimationView, boolean like) {
 //
-////        if (recipe.mBooleans == 0) {
-////        }
+//        Log.e(TAG, "lottie; "+RecipesFragment.IS_ANIM);
+//        Log.e(TAG, "like"+ like);
 //
-//
+//        if (RecipesFragment.IS_ANIM) {
+//            //animation
+//            lottieAnimationView.setAnimation("anim/heart-animation.json");
+//            lottieAnimationView.playAnimation();
+//        } else {
+//            lottieAnimationView.cancelAnimation();
+//        }
 //    }
+
 }

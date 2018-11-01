@@ -4,8 +4,8 @@ import com.example.adoo.recipesaplication.data.Directions;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
-import com.example.adoo.recipesaplication.data.storage.remote.response.BaseResponse;
 import com.example.adoo.recipesaplication.data.storage.remote.response.DirectionsResponse;
 import com.example.adoo.recipesaplication.data.storage.remote.response.IngredientsResponse;
 import com.example.adoo.recipesaplication.data.storage.remote.response.RecipeResponse;
@@ -42,13 +42,37 @@ public class RemoteToLocal {
             );
             //if sub get only 5 recipes
             if (MainActivity.IS_SUB) {
-                if (r.getId() == 6) {
+                if (r.getId() == 5) {
                     break;
                 }
             }
         }
 
         return recipes;
+    }
+
+    /**********
+     * SubRecipes
+     **********/
+    public static List<SubRecipe> subRecipesConverter(List<RecipeResponse> recipesResponse) {
+        List<SubRecipe> subRecipes = new ArrayList<>();
+
+        for (RecipeResponse r : recipesResponse) {
+            if (r.getId() == 1 || r.getId() == 2 || r.getId() == 3 ||
+                    r.getId() == 4 || r.getId() == 5) {
+               continue;
+            } else {
+                subRecipes.add(
+                        new SubRecipe(
+                                r.getId(),
+                                r.getName(),
+                                r.getImageUrl()
+                        )
+                );
+            }
+        }
+
+        return subRecipes;
     }
 
     /***************
@@ -97,6 +121,7 @@ public class RemoteToLocal {
 
         return recipesTags;
     }
+
 
     /*******
      * Tag

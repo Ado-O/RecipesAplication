@@ -1,6 +1,7 @@
 package com.example.adoo.recipesaplication.data.storage;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.local.recipes.RecipesLocalDataSource;
 
@@ -32,6 +33,13 @@ public class RecipesRepository {
     }
 
     /**
+     * get getSubRecipes
+     */
+    public void getSubRecipes(GetSubRecipesCallback callback) {
+        mRecipesLocalDataSource.getSubRecipes(callback);
+    }
+
+    /**
      * get Tag
      */
     public void getTag(GetTagCallback callback) {
@@ -45,12 +53,17 @@ public class RecipesRepository {
         mRecipesLocalDataSource.getRecipesTag(filterTag, callback);
     }
 
-
     /************
      * Callback
      ***********/
     public interface GetRecipesCallback {
         void onSuccess(List<Recipe> recipes);
+
+        void onError();
+    }
+
+    public interface GetSubRecipesCallback {
+        void onSuccess(List<SubRecipe> subRecipes);
 
         void onError();
     }
@@ -66,4 +79,5 @@ public class RecipesRepository {
 
         void onError();
     }
+
 }

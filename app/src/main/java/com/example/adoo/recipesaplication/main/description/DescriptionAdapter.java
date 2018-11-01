@@ -39,12 +39,16 @@ public class DescriptionAdapter extends RecyclerView.Adapter {
     public int getItemViewType(int position) {
         if (mItems.get(position) instanceof Recipe) {
             return DETAILS;
+
         } else if (mItems.get(position) instanceof String) {
             return HEADER;
+
         } else if (mItems.get(position) instanceof Ingredients) {
             return INGREDIENTS;
+
         } else if (mItems.get(position) instanceof Directions) {
             return DIRECTIONS;
+
         } else {
             return -1;
         }

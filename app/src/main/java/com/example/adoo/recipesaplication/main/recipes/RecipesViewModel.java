@@ -8,6 +8,7 @@ import android.databinding.ObservableList;
 import android.support.annotation.NonNull;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
 import com.example.adoo.recipesaplication.util.SingleLiveEvent;
@@ -21,6 +22,7 @@ public class RecipesViewModel extends AndroidViewModel {
     private RecipesRepository mRecipesRepository;
 
     public final ObservableList<Recipe> mRecipes = new ObservableArrayList<>();
+    public final ObservableList<SubRecipe> mSubRecipes = new ObservableArrayList<>();
     public final ObservableList<Tag> mTags = new ObservableArrayList<>();
 
     public final ObservableBoolean mError = new ObservableBoolean(false);
@@ -63,6 +65,32 @@ public class RecipesViewModel extends AndroidViewModel {
         });
     }
 
+    /**********
+     * subRecipe
+     ***********/
+    public void startSub() {
+        if (mSubRecipes.isEmpty()) {
+            getSubRecipes();
+        }
+    }
+
+    public void getSubRecipes() {
+
+        mRecipesRepository.getSubRecipes(new RecipesRepository.GetSubRecipesCallback() {
+            @Override
+            public void onSuccess(List<SubRecipe> subRecipes) {
+                mSubRecipes.clear();
+                mSubRecipes.addAll(subRecipes);
+                mError.set(mSubRecipes.isEmpty());
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+    }
+
     /***************************
      * with selected id get all from recipes_table but
      **************************/
@@ -87,6 +115,7 @@ public class RecipesViewModel extends AndroidViewModel {
             }
         });
     }
+
 
     /*************************
      * get all from tag_table

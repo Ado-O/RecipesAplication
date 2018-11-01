@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.databinding.FavoritesFragBinding;
 import com.example.adoo.recipesaplication.main.MainActivity;
 import com.example.adoo.recipesaplication.main.description.DescriptionActivity;
@@ -108,5 +109,6 @@ public class FavoritesFragment extends Fragment implements RecyclerViewClickList
 
         snackbar.show();
     }
+
 
 }

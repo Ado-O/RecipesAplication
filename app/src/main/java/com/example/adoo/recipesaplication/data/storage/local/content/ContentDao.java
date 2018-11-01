@@ -9,6 +9,7 @@ import com.example.adoo.recipesaplication.data.Directions;
 import com.example.adoo.recipesaplication.data.Ingredients;
 import com.example.adoo.recipesaplication.data.Recipe;
 import com.example.adoo.recipesaplication.data.RecipesTag;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 
 import java.util.List;
@@ -23,6 +24,15 @@ public interface ContentDao {
 
     @Query("DELETE FROM recipe_table")
     void clearRecipe();
+
+    /********
+     *SubRecipes
+     ********/
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertSubRecipes(List<SubRecipe> subRecipes);
+
+    @Query("DELETE FROM sub_recipe_table")
+    void clearSubRecipe();
 
     /************
      *Ingredients

@@ -1,6 +1,7 @@
 package com.example.adoo.recipesaplication.data.storage.local.search;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.storage.SearchRepository;
 import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteDao;
 import com.example.adoo.recipesaplication.data.storage.local.recipes.RecipesDao;
@@ -58,9 +59,16 @@ public class SearchLocalDataSource {
         });
     }
 
+    /************
+     * get search
+     ***********/
+    public void getSearchSubRecipes(String title, SearchRepository.GetSubSearchCallback callback) {
+        mAppExecutors.diskIO().execute(() -> {
 
+            List<SubRecipe> subRecipes = mSearchDao.getSearchSubRecipes(title);
 
+            mAppExecutors.mainThread().execute(() -> callback.onSuccess(subRecipes));
 
-
-
+        });
+    }
 }

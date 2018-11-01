@@ -1,6 +1,7 @@
 package com.example.adoo.recipesaplication.data.storage.local.recipes;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.data.storage.RecipesRepository;
 import com.example.adoo.recipesaplication.data.storage.local.favorite.FavoriteDao;
@@ -48,6 +49,18 @@ public class RecipesLocalDataSource {
             }
 
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(recipes));
+        });
+    }
+
+    /*********
+     * Recipes
+     *********/
+    public void getSubRecipes(RecipesRepository.GetSubRecipesCallback callback) {
+        mAppExecutors.diskIO().execute(() -> {
+
+            List<SubRecipe> subRecipes = mRecipesDao.getSubRecipes();
+
+            mAppExecutors.mainThread().execute(() -> callback.onSuccess(subRecipes));
         });
     }
 

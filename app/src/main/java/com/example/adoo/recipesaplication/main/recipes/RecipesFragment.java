@@ -26,6 +26,7 @@ import com.airbnb.lottie.ImageAssetDelegate;
 import com.airbnb.lottie.LottieImageAsset;
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.data.Tag;
 import com.example.adoo.recipesaplication.databinding.RecipesFragBinding;
 import com.example.adoo.recipesaplication.main.MainActivity;
@@ -62,6 +63,10 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
         mRecipesViewModel.start(filterTag);
         mRecipesFragBinding.setRecipesViewModel(mRecipesViewModel);
 
+        //sub recipe
+        mRecipesFragBinding.setSubRecipes(mRecipesViewModel);
+        mRecipesViewModel.startSub();
+
         //add data for tag
         mRecipesViewModel.startTag();
         mRecipesFragBinding.setRecipesViewModel(mRecipesViewModel);
@@ -77,7 +82,7 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
     public void onResume() {
         super.onResume();
         mRecipesViewModel.getRecipes();
-        mRecipesFragBinding.lottieAnimationView.cancelAnimation();
+           mRecipesFragBinding.lottieAnimationView.cancelAnimation();
     }
 
     /**********
@@ -86,7 +91,6 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
     public void setupToolbar() {
         AppCompatActivity activity = (AppCompatActivity) getActivity();
         activity.setSupportActionBar(mRecipesFragBinding.tbMain);
-        activity.getSupportActionBar().setTitle("Recipe");
     }
 
     /*************************
@@ -133,20 +137,20 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
     @Override
     public void favoritesCLickListener(View v, Recipe recipe) {
 
-            // if Like from recipes_table false = add icon, set Like = true and in favorite_table data od id
-            if (!recipe.isLike()) {
-                v.setBackgroundResource(R.drawable.ic_like_hart_clik);
-                recipe.setLike(true);
-                mFavoritesViewModel.addFavorite(recipe.getId());
+        // if Like from recipes_table false = add icon, set Like = true and in favorite_table data od id
+        if (!recipe.isLike()) {
+            v.setBackgroundResource(R.drawable.ic_like_hart_clik);
+            recipe.setLike(true);
+            mFavoritesViewModel.addFavorite(recipe.getId());
+            //animation
+            mRecipesFragBinding.lottieAnimationView.setAnimation("anim/heart-animation.json");
+            mRecipesFragBinding.lottieAnimationView.playAnimation();
+        } else {
+            v.setBackgroundResource(R.drawable.ic_like_hart);
+            recipe.setLike(false);
+            mFavoritesViewModel.deleteFavorite(recipe.getId());
 
-                //animation
-                mRecipesFragBinding.lottieAnimationView.setAnimation("anim/heart-animation.json");
-                mRecipesFragBinding.lottieAnimationView.playAnimation();
-            } else {
-                v.setBackgroundResource(R.drawable.ic_like_hart);
-                recipe.setLike(false);
-                mFavoritesViewModel.deleteFavorite(recipe.getId());
-            }
+        }
 
     }
 

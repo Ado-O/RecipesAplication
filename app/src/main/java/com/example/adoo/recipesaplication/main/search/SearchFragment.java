@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.adoo.recipesaplication.R;
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
 import com.example.adoo.recipesaplication.databinding.SearchFragBinding;
 import com.example.adoo.recipesaplication.main.favorite.FavoritesViewModel;
 import com.example.adoo.recipesaplication.main.recipes.RecipesAdapter;
@@ -39,7 +40,6 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     private SearchFragBinding mBinding;
     private SearchViewModel mSearchViewModel;
     private SearchAdapter mSearchAdapter;
-    private FavoritesViewModel mFavoritesViewModel;
     private String title = "";
 
     public static SearchFragment newInstance() {
@@ -51,11 +51,12 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = SearchFragBinding.inflate(inflater, container, false);
 
-        mFavoritesViewModel = ViewModelFactory.obtainViewModel(getActivity(), FavoritesViewModel.class);
-
         mSearchViewModel = ViewModelFactory.obtainViewModel(getActivity(), SearchViewModel.class);
         mSearchViewModel.startRecipes(title);
         mBinding.setViewModel(mSearchViewModel);
+
+        mSearchViewModel.startSub(title);
+        mBinding.setSubRecipes(mSearchViewModel);
 
         setupRv();
         setupClear();
@@ -119,6 +120,8 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
             @Override
             public void afterTextChanged(Editable s) {
                 mSearchViewModel.getRecipesSearch(s.toString());
+                mSearchViewModel.getSubRecipesSearch(s.toString());
+
 
                 if (!s.toString().isEmpty()) {
                     mBinding.etSimple.setCompoundDrawablesWithIntrinsicBounds(

@@ -8,7 +8,13 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.adoo.recipesaplication.data.Recipe;
+import com.example.adoo.recipesaplication.data.SubRecipe;
+import com.example.adoo.recipesaplication.databinding.BannerMainBinding;
 import com.example.adoo.recipesaplication.databinding.RecipesItemBinding;
+import com.example.adoo.recipesaplication.databinding.SubRecipeBinding;
+import com.example.adoo.recipesaplication.databinding.SubRecipeTextBinding;
+import com.example.adoo.recipesaplication.main.MainActivity;
+import com.example.adoo.recipesaplication.main.subscribe.BannerViewHolder;
 import com.example.adoo.recipesaplication.util.RecyclerViewClickListener;
 
 import java.util.ArrayList;
@@ -16,7 +22,12 @@ import java.util.List;
 
 public class RecipesAdapter extends RecyclerView.Adapter {
 
-    private final List<Recipe> mList=new ArrayList<>();
+    private final int RECIPE = 1;
+    private final int HEADER = 2;
+    private final int SUBRECIPE = 3;
+
+
+    private final List mItems = new ArrayList<>();
     private LayoutInflater mInflater;
     private RecyclerViewClickListener mListener;
 
@@ -26,65 +37,130 @@ public class RecipesAdapter extends RecyclerView.Adapter {
         mListener = listener;
     }
 
+    /***************
+     * add position
+     **************/
+    @Override
+    public int getItemViewType(int position) {
+        if (MainActivity.IS_SUB) {
+            if (mItems.get(position) instanceof Recipe) {
+                return RECIPE;
+
+            } else if (mItems.get(position) instanceof String) {
+                return HEADER;
+
+            } else if (mItems.get(position) instanceof SubRecipe) {
+                return SUBRECIPE;
+
+            } else {
+                return -1;
+            }
+        } else {
+            if (mItems.get(position) instanceof Recipe) {
+                return RECIPE;
+            } else {
+                return -1;
+            }
+        }
+    }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new RecipesViewHolder(
-                RecipesItemBinding.inflate(
-                        mInflater,
-                        parent,
-                        false
-                ), mListener
-        );
+        if (viewType == RECIPE) {
+            return new RecipesViewHolder(
+                    RecipesItemBinding.inflate(
+                            mInflater,
+                            parent,
+                            false
+                    ), mListener
+            );
+        }
+        if (viewType == HEADER) {
+            return new SubRecipeTextViewHolder(
+                    SubRecipeTextBinding.inflate(
+                            mInflater,
+                            parent,
+                            false
+                    )
+            );
+        }
+        if (viewType == SUBRECIPE) {
+            return new SubRecipeViewHolder(
+                    SubRecipeBinding.inflate(
+                            mInflater,
+                            parent,
+                            false
+                    )
+            );
+        } else {
+            throw new RuntimeException("The type has to be ONE");
+        }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        ((RecipesViewHolder) holder).setup(mList.get(position));
+        if (holder.getItemViewType() == RECIPE) {
+            ((RecipesViewHolder) holder).setup((Recipe) mItems.get(position));
+        } else if (holder.getItemViewType() == HEADER) {
+            ((SubRecipeTextViewHolder) holder).setup((String) mItems.get(position));
+        } else if (holder.getItemViewType() == SUBRECIPE) {
+            ((SubRecipeViewHolder) holder).setup((SubRecipe) mItems.get(position));
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mList.size();
+        return mItems.size();
     }
 
     public void setItems(List list) {
-            List<Recipe> oldItems = this.mList;
-            DiffUtil.DiffResult result = DiffUtil.calculateDiff(new Callback(oldItems, list));
-            this.mList.clear();
-            this.mList.addAll(list);
-            result.dispatchUpdatesTo(this);
-        }
+        List oldItems = this.mItems;
+        DiffUtil.DiffResult result = DiffUtil.calculateDiff(new Callback(oldItems, list));
+        this.mItems.clear();
+        this.mItems.addAll(list);
+        result.dispatchUpdatesTo(this);
+    }
+}
+
+class Callback extends DiffUtil.Callback {
+
+    private final List mOldItems;
+    private final List mNewItems;
+
+    Callback(List<Recipe> oldItems, List<Recipe> newItems) {
+        mOldItems = oldItems;
+        mNewItems = newItems;
     }
 
-    class Callback extends DiffUtil.Callback {
+    @Override
+    public int getOldListSize() {
+        return mOldItems.size();
+    }
 
-        private final List<Recipe> mOldItems;
-        private final List<Recipe> mNewItems;
+    @Override
+    public int getNewListSize() {
+        return mNewItems.size();
+    }
 
-        Callback(List<Recipe> oldItems, List<Recipe> newItems) {
-            mOldItems = oldItems;
-            mNewItems = newItems;
-        }
+    @Override
+    public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
+        if (mOldItems.get(oldItemPosition) instanceof Recipe && mNewItems.get(newItemPosition) instanceof Recipe) {
+            return ((Recipe) mOldItems.get(oldItemPosition)).getId() == ((Recipe) mNewItems.get(newItemPosition)).getId();
 
-        @Override
-        public int getOldListSize() {
-            return mOldItems.size();
-        }
-
-        @Override
-        public int getNewListSize() {
-            return mNewItems.size();
-        }
-
-        @Override
-        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-            return mOldItems.get(oldItemPosition).getId() == mNewItems.get(newItemPosition).getId();
-        }
-
-        @Override
-        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+        } else if (mOldItems.get(oldItemPosition) instanceof String && mNewItems.get(newItemPosition) instanceof String) {
             return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
+
+        } else if (mOldItems.get(oldItemPosition) instanceof SubRecipe && mNewItems.get(newItemPosition) instanceof SubRecipe) {
+            return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
+
+        } else {
+            return false;
         }
     }
+
+    @Override
+    public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
+        return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
+    }
+}

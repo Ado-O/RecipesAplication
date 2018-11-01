@@ -25,13 +25,14 @@ public class SearchBinding {
      * add list with use RecyclerView adapter
      ************************/
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:searchItem"})
-    public static void setSearchItem(RecyclerView recyclerView, List searchItem) {
+    @BindingAdapter({" app:subRecipes","app:searchItem"})
+    public static void setSearchItem(RecyclerView recyclerView, List subSearch, List searchItem) {
 
         List<Object> itemList = new ArrayList<>();
         if (MainActivity.IS_SUB){
             itemList.add("Unlock all Recipe!");
             itemList.addAll(searchItem);
+            itemList.addAll(subSearch);
         }else{
             itemList.addAll(searchItem);
         }

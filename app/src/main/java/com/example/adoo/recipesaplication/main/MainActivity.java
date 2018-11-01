@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavigationView();
         setupEvent();
     }
-
 
     /***************************
      * Setting up the listView & its adapter
@@ -138,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
                 DescriptionActivity.startActivity(MainActivity.this, recipe)
         );
 
+    }
+
+    public void SubRecipe(View v){
+        SubscribeActivity.startActivity(this, true);
     }
 
     public void SubClick(View v) {

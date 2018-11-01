@@ -10,6 +10,10 @@
             type="com.example.adoo.recipesaplication.main.search.SearchViewModel" />
 
         <variable
+            name="subRecipes"
+            type="com.example.adoo.recipesaplication.main.search.SearchViewModel" />
+
+        <variable
             name="items"
             type="java.util.List" />
 
@@ -76,6 +80,7 @@
                 app:rvError="@{errorBoolean}"
                 app:rvRecipe="@{viewModel.mRecipes}"
                 app:rvView="@{v}"
+                app:subRecipes="@{subRecipes.mSubRecipe}"
                 app:searchItem="@{viewModel.mRecipes}" />
 
             <ImageView

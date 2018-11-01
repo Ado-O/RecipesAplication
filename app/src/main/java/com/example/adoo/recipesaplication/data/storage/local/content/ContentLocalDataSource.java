@@ -40,6 +40,7 @@ public class ContentLocalDataSource {
              * clear
              */
             mContentDao.clearRecipe();
+            mContentDao.clearSubRecipe();
             mContentDao.clearDirections();
            mContentDao.clearIngredients();
 
@@ -47,6 +48,7 @@ public class ContentLocalDataSource {
              * add recipeResponses -> recipes
              */
             mContentDao.insertRecipes(RemoteToLocal.recipesConverter(recipeResponse));
+            mContentDao.insertSubRecipes(RemoteToLocal.subRecipesConverter(recipeResponse));
             mContentDao.insertIngredients(RemoteToLocal.ingredientsConverter(recipeResponse));
             mContentDao.insertDirections(RemoteToLocal.directionsConverter(recipeResponse));
 
