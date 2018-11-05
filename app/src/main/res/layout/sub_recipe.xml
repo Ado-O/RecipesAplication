@@ -4,7 +4,7 @@
     <data>
         <variable
             name="subRecipe"
-            type="com.example.adoo.recipesaplication.data.SubRecipe"/>
+            type="com.spartanapp.recipe.chef.data.SubRecipe"/>
 
     </data>
     <android.support.design.card.MaterialCardView

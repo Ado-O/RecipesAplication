@@ -8,11 +8,11 @@
 
         <variable
             name="listener"
-            type="com.example.adoo.recipesaplication.util.RecyclerViewClickListener" />
+            type="com.spartanapp.recipe.chef.util.RecyclerViewClickListener" />
 
         <variable
             name="recipes"
-            type="com.example.adoo.recipesaplication.data.Recipe" />
+            type="com.spartanapp.recipe.chef.data.Recipe" />
     </data>
 
     <android.support.design.card.MaterialCardView

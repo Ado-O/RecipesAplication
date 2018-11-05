@@ -7,11 +7,11 @@
 
         <variable
             name="viewModel"
-            type="com.example.adoo.recipesaplication.main.search.SearchViewModel" />
+            type="com.spartanapp.recipe.chef.main.search.SearchViewModel" />
 
         <variable
             name="subRecipes"
-            type="com.example.adoo.recipesaplication.main.search.SearchViewModel" />
+            type="com.spartanapp.recipe.chef.main.search.SearchViewModel" />
 
         <variable
             name="items"
@@ -79,6 +79,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:rvError="@{errorBoolean}"
                 app:rvRecipe="@{viewModel.mRecipes}"
+                app:rvSubRecipe="@{viewModel.mSubRecipe}"
                 app:rvView="@{v}"
                 app:subRecipes="@{subRecipes.mSubRecipe}"
                 app:searchItem="@{viewModel.mRecipes}" />
@@ -89,6 +90,7 @@
                 android:layout_height="50dp"
                 android:layout_marginBottom="20dp"
                 app:imageError="@{errorBoolean}"
+                app:imageSubRecipe="@{viewModel.mSubRecipe}"
                 app:imageRecipe="@{viewModel.mRecipes}"
                 app:layout_constraintBottom_toTopOf="@+id/tv_noResultFind"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -106,6 +108,7 @@
                 android:textColor="@color/clickColor"
                 android:textSize="20dp"
                 app:headerBoolean="@{errorBoolean}"
+                app:headerSubRecipe="@{viewModel.mSubRecipe}"
                 app:headerError="@{viewModel.mRecipes}"
                 app:layout_constraintBottom_toTopOf="@+id/tv_noResultFindDes"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -123,6 +126,7 @@
                 android:textColor="@color/darkTextDisabled"
                 android:textSize="16dp"
                 app:desBoolean="@{errorBoolean}"
+                app:desSubRecipe="@{viewModel.mSubRecipe}"
                 app:desError="@{viewModel.mRecipes}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

@@ -6,14 +6,14 @@
 
         <variable
             name="ingredients"
-            type="com.example.adoo.recipesaplication.data.Ingredients" />
+            type="com.spartanapp.recipe.chef.data.Ingredients" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.example.adoo.recipesaplication.main.CustomTextView
+        <com.spartanapp.recipe.chef.main.CustomTextView
             android:id="@+id/tv_name"
             android:layout_width="250dp"
             android:layout_height="wrap_content"

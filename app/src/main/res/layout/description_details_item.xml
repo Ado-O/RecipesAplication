@@ -6,7 +6,7 @@
 
         <variable
             name="recipe"
-            type="com.example.adoo.recipesaplication.data.Recipe" />
+            type="com.spartanapp.recipe.chef.data.Recipe" />
 
     </data>
 
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_kcal"
             app:layout_constraintRight_toRightOf="parent"/>
 
-        <com.example.adoo.recipesaplication.main.CustomTextView
+        <com.spartanapp.recipe.chef.main.CustomTextView
             android:id="@+id/iv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cg_main" />
 
-        <com.example.adoo.recipesaplication.main.CustomTextView
+        <com.spartanapp.recipe.chef.main.CustomTextView
             android:id="@+id/iv_serves"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             app:layout_constraintStart_toEndOf="@+id/iv_time"
             app:layout_constraintTop_toBottomOf="@id/cg_main" />
 
-        <com.example.adoo.recipesaplication.main.CustomTextView
+        <com.spartanapp.recipe.chef.main.CustomTextView
             android:id="@+id/iv_medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

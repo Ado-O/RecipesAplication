@@ -9,11 +9,11 @@
 
         <variable
             name="listener"
-            type="com.example.adoo.recipesaplication.util.FilterClickListener" />
+            type="com.spartanapp.recipe.chef.util.FilterClickListener" />
 
         <variable
             name="recipesViewModel"
-            type="com.example.adoo.recipesaplication.main.recipes.RecipesViewModel" />
+            type="com.spartanapp.recipe.chef.main.recipes.RecipesViewModel" />
 
     </data>
 
@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         tools:context=".main.MainActivity">
 
-                <com.example.adoo.recipesaplication.main.CustomViewPager
+                <com.spartanapp.recipe.chef.main.CustomViewPager
                     android:id="@+id/vp_main"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

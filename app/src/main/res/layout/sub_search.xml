@@ -5,7 +5,7 @@
     <data>
         <variable
             name="recipes"
-            type="com.example.adoo.recipesaplication.data.SubRecipe" />
+            type="com.spartanapp.recipe.chef.data.SubRecipe" />
     </data>
 
     <android.support.design.card.MaterialCardView
@@ -62,7 +62,7 @@
                 android:id="@+id/tv_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text='@{recipes.name, default="ssssss"}'
+                android:text='@{recipes.name}'
                 android:textSize="16dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="20dp"

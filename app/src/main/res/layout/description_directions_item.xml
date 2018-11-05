@@ -6,7 +6,7 @@
         
         <variable
             name="directions"
-            type="com.example.adoo.recipesaplication.data.Directions" />
+            type="com.spartanapp.recipe.chef.data.Directions" />
         
     </data>
 

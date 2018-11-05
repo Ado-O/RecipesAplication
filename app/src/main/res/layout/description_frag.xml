@@ -9,7 +9,7 @@
 
     <variable
         name="recipes"
-        type="com.example.adoo.recipesaplication.data.Recipe" />
+        type="com.spartanapp.recipe.chef.data.Recipe" />
 
 </data>
 <android.support.design.widget.CoordinatorLayout
