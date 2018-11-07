@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.spartanapp.recipe.chef.R;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,14 +22,13 @@ public class SearchBinding {
      * add list with use RecyclerView adapter
      ************************/
     @SuppressWarnings("unchecked")
-    @BindingAdapter({" app:subRecipes", "app:searchItem"})
-    public static void setSearchItem(RecyclerView recyclerView, List subSearch, List searchItem) {
+    @BindingAdapter({"app:searchItem", "app:lockBooleanSearch"})
+    public static void setSearchItem(RecyclerView recyclerView, List searchItem, boolean lock) {
 
         List<Object> itemList = new ArrayList<>();
-        if (RecipeApp.IS_SUB) {
+        if (lock) {
             itemList.add("Unlock all Recipe!");
             itemList.addAll(searchItem);
-            itemList.addAll(subSearch);
         } else {
             itemList.addAll(searchItem);
         }
@@ -42,20 +42,19 @@ public class SearchBinding {
      * editText
      */
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:rvRecipe", "app:rvSubRecipe", "app:rvError", "app:rvView"})
-    public static void setError(RecyclerView recyclerView, List mRecipe, List mSubRecipe,
+    @BindingAdapter({"app:rvRecipe", "app:rvError", "app:rvView"})
+    public static void setError(RecyclerView recyclerView, List mRecipe,
                                 boolean mError, View view) {
 
-        Log.e(TAG, "recipe: " + mRecipe);
-        Log.e(TAG, "subRecipe: " + mSubRecipe);
-        Log.e(TAG, "boolean: " + mError);
-
+//        Log.e(TAG, "recipe: " + mRecipe);
+//        Log.e(TAG, "subRecipe: " + mSubRecipe);
+//        Log.e(TAG, "boolean: " + mError);
 
         if (mRecipe.size() != 0 && mError == false
-                || mRecipe.size() == 0 && mError == false && mSubRecipe.size() == 0) {
+                || mRecipe.size() == 0 && mError == false) {
             recyclerView.setVisibility(view.GONE);
 
-        } else if (mRecipe.size() == 0 && mError == true && mSubRecipe.size() == 0) {
+        } else if (mRecipe.size() == 0 && mError == true) {
             recyclerView.setVisibility(view.GONE);
 
         } else {
@@ -68,14 +67,14 @@ public class SearchBinding {
      * imageView
      */
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:imageRecipe", "app:imageSubRecipe", "app:imageError"})
-    public static void setSearchImage(ImageView imageView, List mRecipe, List mSubRecipe, boolean mError) {
+    @BindingAdapter({"app:imageRecipe", "app:imageError"})
+    public static void setSearchImage(ImageView imageView, List mRecipe, boolean mError) {
 
         if (mRecipe.size() != 0 && mError == false
-                || mRecipe.size() == 0 && mError == false && mSubRecipe.size() == 0) {
+                || mRecipe.size() == 0 && mError == false) {
             imageView.setImageResource(R.drawable.ic_search_color);
 
-        } else if (mRecipe.size() == 0 && mError == true && mSubRecipe.size() == 0) {
+        } else if (mRecipe.size() == 0 && mError == true) {
             imageView.setImageResource(R.drawable.ic_local_dining_color);
 
         } else {
@@ -87,14 +86,14 @@ public class SearchBinding {
      * headerText
      */
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:headerError", "app:headerSubRecipe", "app:headerBoolean"})
-    public static void setHeaderText(TextView textView, List mRecipe, List mSubRecipe, boolean mError) {
+    @BindingAdapter({"app:headerError", "app:headerBoolean"})
+    public static void setHeaderText(TextView textView, List mRecipe, boolean mError) {
 
         if (mRecipe.size() != 0 && mError == false
-                || mRecipe.size() == 0 && mError == false && mSubRecipe.size() == 0) {
+                || mRecipe.size() == 0 && mError == false) {
             textView.setText("FIND YOUR RECIPE");
 
-        } else if (mRecipe.size() == 0 && mError == true && mSubRecipe.size() == 0) {
+        } else if (mRecipe.size() == 0 && mError == true) {
             textView.setText("SORRY,NO RESULTS");
 
         } else {
@@ -106,14 +105,14 @@ public class SearchBinding {
      * descriptionText
      */
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:desError", "app:desSubRecipe", "app:desBoolean"})
-    public static void setDesText(TextView textView, List mRecipe, List mSubRecipe, boolean mError) {
+    @BindingAdapter({"app:desError","app:desBoolean"})
+    public static void setDesText(TextView textView, List mRecipe, boolean mError) {
 
         if (mRecipe.size() != 0 && mError == false
-                || mRecipe.size() == 0 && mError == false && mSubRecipe.size() == 0) {
+                || mRecipe.size() == 0 && mError == false) {
             textView.setText("Type the name and wait for the results. Enjoy your Meal!");
 
-        } else if (mRecipe.size() == 0 && mError == true && mSubRecipe.size() == 0) {
+        } else if (mRecipe.size() == 0 && mError == true) {
             textView.setText("Use the search bar, or click on the tags below to find the recipe. Enjoy!");
 
         } else {

@@ -31,9 +31,10 @@ public class PolicyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.policy_act);
 
+        //add sharedPreferences
         SharedPreferences settings = getSharedPreferences("my_prefs", 0);
         SharedPreferences.Editor editor = settings.edit();
-        editor.putString("name", "Tom");
+        editor.putInt("id", 1);
         editor.commit();
 
 

@@ -1,6 +1,8 @@
 package com.spartanapp.recipe.chef.main.search;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +17,7 @@ import android.view.ViewGroup;
 import com.spartanapp.recipe.chef.R;
 import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.databinding.SearchFragBinding;
+import com.spartanapp.recipe.chef.main.MainActivity;
 import com.spartanapp.recipe.chef.util.RecyclerViewClickListener;
 import com.spartanapp.recipe.chef.util.ViewModelFactory;
 
@@ -42,8 +45,17 @@ public class SearchFragment extends Fragment implements RecyclerViewClickListene
         mSearchViewModel.startRecipes(title);
         mBinding.setViewModel(mSearchViewModel);
 
-        mSearchViewModel.startSub(title);
-        mBinding.setSubRecipes(mSearchViewModel);
+        //lock subs
+        SharedPreferences sub = getActivity().getSharedPreferences("is_sub", 0);
+        boolean isSub = sub.getBoolean("free", false);
+
+        if (!isSub){
+            mBinding.setLockBoolean(true);
+        }else{
+            mBinding.setLockBoolean(false);
+        }
+
+
 
         setupRv();
         setupClear();

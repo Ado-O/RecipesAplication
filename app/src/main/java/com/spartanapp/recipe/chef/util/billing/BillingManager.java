@@ -75,6 +75,8 @@ public class BillingManager implements PurchasesUpdatedListener {
                 handlePurchase(purchase);
             }
 
+            mPurchases.addAll(purchases);
+
             mListener.onPurchasesUpdated(mPurchases);
         }
     }
@@ -158,9 +160,11 @@ public class BillingManager implements PurchasesUpdatedListener {
      * Query subs  ??
      *****************/
     public void querySubscriptions() {
+        Log.e(TAG, "querySub1");
         Runnable queryToExecute = () -> {
             Purchase.PurchasesResult purchasesResult = mBillingClient.queryPurchases(BillingClient.SkuType.SUBS);
 
+            Log.e(TAG, purchasesResult.getPurchasesList().size()+"   ...");
 
             if (mBillingClient == null ||
                     purchasesResult.getResponseCode() != BillingClient.BillingResponse.OK) {

@@ -6,9 +6,14 @@
         <variable
             name="viewModel"
             type="com.spartanapp.recipe.chef.main.favorite.FavoritesViewModel"/>
+
         <variable
             name="v"
             type="android.view.View" />
+
+        <variable
+            name="lockBoolean"
+            type="java.lang.Boolean" />
     </data>
 
 
@@ -69,6 +74,7 @@
             app:rvRecipe="@{viewModel.mRecipes}"
             app:rvView="@{v}"
             app:favoritesItem="@{viewModel.mRecipes}"
+            app:lockBooleanFavorite="@{lockBoolean}"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -43,6 +43,7 @@ public class Injection {
 
     public static RecipesLocalDataSource provideRecipesLocalDataSource(Context context) {
         return RecipesLocalDataSource.getInstance(
+                context,
                 provideAppExecutors(),
                 provideAppDatabase(context.getApplicationContext()).getRecipesDao(),
                 provideAppDatabase(context.getApplicationContext()).getFavoriteDao()
@@ -54,7 +55,8 @@ public class Injection {
                 provideAppExecutors(),
                 provideAppDatabase(context.getApplicationContext()).getSuggestedDao(),
                 provideAppDatabase(context.getApplicationContext()).getRecipesDao(),
-                provideAppDatabase(context.getApplicationContext()).getFavoriteDao()
+                provideAppDatabase(context.getApplicationContext()).getFavoriteDao(),
+                context
                 );
     }
 

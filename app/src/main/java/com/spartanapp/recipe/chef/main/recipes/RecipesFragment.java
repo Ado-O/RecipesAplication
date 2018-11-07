@@ -47,10 +47,6 @@ public class RecipesFragment extends Fragment implements RecyclerViewClickListen
         mRecipesViewModel.start(filterTag);
         mRecipesFragBinding.setRecipesViewModel(mRecipesViewModel);
 
-        //sub recipe
-        mRecipesFragBinding.setSubRecipes(mRecipesViewModel);
-        mRecipesViewModel.startSub();
-
         //add data for tag
         mRecipesViewModel.startTag();
         mRecipesFragBinding.setRecipesViewModel(mRecipesViewModel);

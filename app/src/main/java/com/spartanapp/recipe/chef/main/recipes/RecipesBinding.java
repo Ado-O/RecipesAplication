@@ -3,11 +3,15 @@ package com.spartanapp.recipe.chef.main.recipes;
 import android.databinding.BindingAdapter;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 
 import com.bumptech.glide.Glide;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,36 +36,23 @@ public class RecipesBinding {
      * add list with use RecyclerView adapter
      ************************/
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:recipesItem", "app:subRecipes"})
-    public static void setRecipesItem(RecyclerView recyclerView, List recipeItems, List subRecipe) {
+    @BindingAdapter({"app:recipesItem"})
+    public static void setRecipesItem(RecyclerView recyclerView, List recipeItems) {
 
-        List<Object> itemList = new ArrayList<>();
-        if (RecipeApp.IS_SUB){
-            itemList.addAll(recipeItems);
-            itemList.addAll(subRecipe);
-        }else{
-            itemList.addAll(recipeItems);
-        }
-
-        if (itemList != null && itemList.size() > 0) {
-            ((RecipesAdapter) recyclerView.getAdapter()).setItems(itemList);
+        if (recipeItems != null && recipeItems.size() > 0) {
+            ((RecipesAdapter) recyclerView.getAdapter()).setItems(recipeItems);
         }
     }
 
-//    @SuppressWarnings("unchecked")
-//    @BindingAdapter({"app:lottie"})
-//    public static void setAnima(LottieAnimationView lottieAnimationView, boolean like) {
-//
-//        Log.e(TAG, "lottie; "+RecipesFragment.IS_ANIM);
-//        Log.e(TAG, "like"+ like);
-//
-//        if (RecipesFragment.IS_ANIM) {
-//            //animation
-//            lottieAnimationView.setAnimation("anim/heart-animation.json");
-//            lottieAnimationView.playAnimation();
-//        } else {
-//            lottieAnimationView.cancelAnimation();
-//        }
-//    }
+    @SuppressWarnings("unchecked")
+    @BindingAdapter({"app:frame"})
+    public static void setFramelayout(FrameLayout frameLayout, boolean loke) {
+
+        if (loke) {
+            frameLayout.setVisibility(View.GONE);
+        }else{
+            frameLayout.setVisibility(View.VISIBLE);
+        }
+    }
 
 }

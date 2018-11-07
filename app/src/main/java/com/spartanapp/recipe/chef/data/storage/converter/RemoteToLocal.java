@@ -1,16 +1,23 @@
 package com.spartanapp.recipe.chef.data.storage.converter;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import com.spartanapp.recipe.chef.data.Directions;
 import com.spartanapp.recipe.chef.data.Ingredients;
 import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.data.RecipesTag;
 import com.spartanapp.recipe.chef.data.SubRecipe;
 import com.spartanapp.recipe.chef.data.Tag;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import com.spartanapp.recipe.chef.data.storage.remote.response.DirectionsResponse;
 import com.spartanapp.recipe.chef.data.storage.remote.response.IngredientsResponse;
 import com.spartanapp.recipe.chef.data.storage.remote.response.RecipeResponse;
 import com.spartanapp.recipe.chef.data.storage.remote.response.TagsResponse;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,11 +48,11 @@ public class RemoteToLocal {
                     )
             );
             //if sub get only 5 recipes
-            if (RecipeApp.IS_SUB) {
-                if (r.getId() == 5) {
-                    break;
-                }
-            }
+//            if (MainActivity.IS_SUB) {
+//                if (r.getId() == 5) {
+//                    break;
+//                }
+//            }
         }
 
         return recipes;

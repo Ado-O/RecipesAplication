@@ -1,6 +1,8 @@
 package com.spartanapp.recipe.chef.main.search;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +14,7 @@ import com.spartanapp.recipe.chef.databinding.BannerMainBinding;
 import com.spartanapp.recipe.chef.databinding.SearchItemBinding;
 import com.spartanapp.recipe.chef.databinding.SubSearchBinding;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 import com.spartanapp.recipe.chef.main.subscribe.BannerViewHolder;
 import com.spartanapp.recipe.chef.util.RecyclerViewClickListener;
 
@@ -22,16 +25,16 @@ public class SearchAdapter extends RecyclerView.Adapter {
 
     private final int HEADER = 1;
     private final int SEARCH = 2;
-    private final int SUBRECIPES = 3;
 
     private List mItems = new ArrayList<>();
     private LayoutInflater mInflater;
     private RecyclerViewClickListener mListener;
-
+    private Context mContext;
 
     public SearchAdapter(Context context, RecyclerViewClickListener listener) {
         mInflater = LayoutInflater.from(context);
         mListener = listener;
+        mContext = context;
     }
 
     /***************
@@ -39,16 +42,17 @@ public class SearchAdapter extends RecyclerView.Adapter {
      **************/
     @Override
     public int getItemViewType(int position) {
-        if (RecipeApp.IS_SUB) {
+        SharedPreferences sub = mContext.getSharedPreferences("is_sub", 0);
+        boolean isSub = sub.getBoolean("free", false);
+
+        if (!isSub) {
             if (mItems.get(position) instanceof String) {
                 return HEADER;
 
             } else if (mItems.get(position) instanceof Recipe) {
                 return SEARCH;
 
-            } else if (mItems.get(position) instanceof SubRecipe) {
-                return SUBRECIPES;
-            } else {
+            }else {
                 return -1;
             }
         } else {
@@ -80,15 +84,6 @@ public class SearchAdapter extends RecyclerView.Adapter {
                             false
                     ), mListener
             );
-        }
-        if (viewType == SUBRECIPES) {
-            return new SubSearchViewHolder(
-                    SubSearchBinding.inflate(
-                            mInflater,
-                            parent,
-                            false
-                    )
-            );
         } else {
             throw new RuntimeException("The type has to be ONE");
         }
@@ -101,9 +96,6 @@ public class SearchAdapter extends RecyclerView.Adapter {
 
         } else if (holder.getItemViewType() == SEARCH) {
             ((SearchViewHolder) holder).setup((Recipe) mItems.get(position));
-
-        } else if (holder.getItemViewType() == SUBRECIPES) {
-            ((SubSearchViewHolder) holder).setup((SubRecipe) mItems.get(position));
         }
     }
 

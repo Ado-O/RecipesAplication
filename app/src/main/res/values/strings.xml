@@ -8,4 +8,9 @@
     <!-- Subscribe -->
     <string name="learn_more">Learn more</string>
     <string name="sub">Subscribe Now</string>
+
+    <!--rate us-->
+    <string name="rate_us">Rate us</string>
+    <string name="rateUs_des">Support us and leave 5 stars!</string>
+    <string name="appLink">https://play.google.com/store/apps/details?id=com.spartanapp.recipe.chef</string>
 </resources>

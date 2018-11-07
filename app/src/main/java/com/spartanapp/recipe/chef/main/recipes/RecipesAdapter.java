@@ -1,6 +1,8 @@
 package com.spartanapp.recipe.chef.main.recipes;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +15,7 @@ import com.spartanapp.recipe.chef.databinding.RecipesItemBinding;
 import com.spartanapp.recipe.chef.databinding.SubRecipeBinding;
 import com.spartanapp.recipe.chef.databinding.SubRecipeTextBinding;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 import com.spartanapp.recipe.chef.util.RecyclerViewClickListener;
 
 import java.util.ArrayList;
@@ -20,52 +23,22 @@ import java.util.List;
 
 public class RecipesAdapter extends RecyclerView.Adapter {
 
-    private final int RECIPE = 1;
-    private final int HEADER = 2;
-    private final int SUBRECIPE = 3;
-
-
     private final List mItems = new ArrayList<>();
     private LayoutInflater mInflater;
     private RecyclerViewClickListener mListener;
+    private Context mContext;
 
 
     public RecipesAdapter(Context context, RecyclerViewClickListener listener) {
+        mContext = context;
         mInflater = LayoutInflater.from(context);
         mListener = listener;
     }
 
-    /***************
-     * add position
-     **************/
-    @Override
-    public int getItemViewType(int position) {
-        if (RecipeApp.IS_SUB) {
-            if (mItems.get(position) instanceof Recipe) {
-                return RECIPE;
-
-            } else if (mItems.get(position) instanceof String) {
-                return HEADER;
-
-            } else if (mItems.get(position) instanceof SubRecipe) {
-                return SUBRECIPE;
-
-            } else {
-                return -1;
-            }
-        } else {
-            if (mItems.get(position) instanceof Recipe) {
-                return RECIPE;
-            } else {
-                return -1;
-            }
-        }
-    }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        if (viewType == RECIPE) {
             return new RecipesViewHolder(
                     RecipesItemBinding.inflate(
                             mInflater,
@@ -74,37 +47,11 @@ public class RecipesAdapter extends RecyclerView.Adapter {
                     ), mListener
             );
         }
-        if (viewType == HEADER) {
-            return new SubRecipeTextViewHolder(
-                    SubRecipeTextBinding.inflate(
-                            mInflater,
-                            parent,
-                            false
-                    )
-            );
-        }
-        if (viewType == SUBRECIPE) {
-            return new SubRecipeViewHolder(
-                    SubRecipeBinding.inflate(
-                            mInflater,
-                            parent,
-                            false
-                    )
-            );
-        } else {
-            throw new RuntimeException("The type has to be ONE");
-        }
-    }
+
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        if (holder.getItemViewType() == RECIPE) {
             ((RecipesViewHolder) holder).setup((Recipe) mItems.get(position));
-        } else if (holder.getItemViewType() == HEADER) {
-            ((SubRecipeTextViewHolder) holder).setup((String) mItems.get(position));
-        } else if (holder.getItemViewType() == SUBRECIPE) {
-            ((SubRecipeViewHolder) holder).setup((SubRecipe) mItems.get(position));
-        }
     }
 
     @Override
@@ -144,12 +91,6 @@ public class RecipesAdapter extends RecyclerView.Adapter {
         public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
             if (mOldItems.get(oldItemPosition) instanceof Recipe && mNewItems.get(newItemPosition) instanceof Recipe) {
                 return ((Recipe) mOldItems.get(oldItemPosition)).getId() == ((Recipe) mNewItems.get(newItemPosition)).getId();
-
-            } else if (mOldItems.get(oldItemPosition) instanceof String && mNewItems.get(newItemPosition) instanceof String) {
-                return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
-
-            } else if (mOldItems.get(oldItemPosition) instanceof SubRecipe && mNewItems.get(newItemPosition) instanceof SubRecipe) {
-                return mOldItems.get(oldItemPosition).equals(mNewItems.get(newItemPosition));
 
             } else {
                 return false;

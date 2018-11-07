@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.spartanapp.recipe.chef.R;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +21,11 @@ public class FavoritesBinding {
      *add list with use RecyclerView adapter
      ************************/
     @SuppressWarnings("unchecked")
-    @BindingAdapter({"app:favoritesItem"})
-    public static void setFavoritesItem(RecyclerView recyclerView, List favoriteItem) {
+    @BindingAdapter({"app:favoritesItem", "app:lockBooleanFavorite"})
+    public static void setFavoritesItem(RecyclerView recyclerView, List favoriteItem, boolean lock) {
 
         List<Object> itemList = new ArrayList<>();
-        if (RecipeApp.IS_SUB){
+        if (lock){
             itemList.add("Unlock all Recipe!");
             itemList.addAll(favoriteItem);
         }else {

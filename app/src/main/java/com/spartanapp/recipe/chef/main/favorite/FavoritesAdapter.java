@@ -1,6 +1,8 @@
 package com.spartanapp.recipe.chef.main.favorite;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +13,7 @@ import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.databinding.BannerMainBinding;
 import com.spartanapp.recipe.chef.databinding.FavoritesItemBinding;
 import com.spartanapp.recipe.chef.RecipeApp;
+import com.spartanapp.recipe.chef.main.MainActivity;
 import com.spartanapp.recipe.chef.main.subscribe.BannerViewHolder;
 import com.spartanapp.recipe.chef.util.RecyclerViewClickListener;
 
@@ -27,10 +30,12 @@ public class FavoritesAdapter extends RecyclerView.Adapter {
     private final List mItems = new ArrayList<>();
     private LayoutInflater mInflater;
     private RecyclerViewClickListener mListener;
+    private Context mContext;
 
     public FavoritesAdapter(Context context, RecyclerViewClickListener listener) {
         mInflater = LayoutInflater.from(context);
         mListener = listener;
+        mContext = context;
     }
 
     /***************
@@ -38,7 +43,10 @@ public class FavoritesAdapter extends RecyclerView.Adapter {
      **************/
     @Override
     public int getItemViewType(int position) {
-        if (RecipeApp.IS_SUB) {
+        SharedPreferences sub = mContext.getSharedPreferences("is_sub", 0);
+        boolean isSub = sub.getBoolean("free", false);
+
+        if (!isSub) {
             if (mItems.get(position) instanceof String) {
                 return HEADER;
             } else if (mItems.get(position) instanceof Recipe) {

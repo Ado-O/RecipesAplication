@@ -13,10 +13,6 @@
         <variable
             name="recipesViewModel"
             type="com.spartanapp.recipe.chef.main.recipes.RecipesViewModel" />
-
-        <variable
-            name="subRecipes"
-            type="com.spartanapp.recipe.chef.main.recipes.RecipesViewModel" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -88,8 +84,7 @@
             android:layout_margin="1dp"
             android:paddingBottom="56dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:recipesItem="@{recipesViewModel.mRecipes}"
-            app:subRecipes="@{subRecipes.mSubRecipes}"/>
+            app:recipesItem="@{recipesViewModel.mRecipes}"/>
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/lottieAnimationView"

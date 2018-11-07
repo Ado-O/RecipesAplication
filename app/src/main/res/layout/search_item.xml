@@ -34,6 +34,39 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="@color/blackColor"
+                android:clickable="true"
+                app:frame='@{recipes.lock}'
+                android:onClick="SubRecipe"
+                android:alpha="0.5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_icon_sub"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/ic_sub_recipe"
+                        android:tint="@color/whiteColor"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        />
+
+                </android.support.constraint.ConstraintLayout>
+            </FrameLayout>
+
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="0dp"

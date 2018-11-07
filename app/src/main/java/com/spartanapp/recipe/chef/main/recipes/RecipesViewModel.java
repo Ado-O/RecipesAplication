@@ -6,6 +6,7 @@ import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableList;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.data.SubRecipe;
@@ -53,9 +54,9 @@ public class RecipesViewModel extends AndroidViewModel {
         mRecipesRepository.getRecipes(new RecipesRepository.GetRecipesCallback() {
             @Override
             public void onSuccess(List<Recipe> recipes) {
-                mRecipes.clear();
-                mRecipes.addAll(recipes);
-                mError.set(mRecipes.isEmpty());
+                    mRecipes.clear();
+                    mRecipes.addAll(recipes);
+                    mError.set(mRecipes.isEmpty());
             }
 
             @Override

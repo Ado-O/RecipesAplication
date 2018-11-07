@@ -4,6 +4,7 @@ import com.spartanapp.recipe.chef.data.Favorites;
 import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.data.storage.FavoriteRepository;
 import com.spartanapp.recipe.chef.data.storage.local.recipes.RecipesDao;
+import com.spartanapp.recipe.chef.main.MainActivity;
 import com.spartanapp.recipe.chef.util.AppExecutors;
 
 import java.util.List;
@@ -46,6 +47,7 @@ public class FavoriteLocalDataSource {
                 r.setIngredients(mRecipesDao.getIngredients(r.getId()));
                 r.setTag(mRecipesDao.getRecipesTag(r.getId()));
                 r.setLike(mFavoriteDao.isFavorite(r.getId()) != null);
+
             }
 
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(recipes));
@@ -55,7 +57,7 @@ public class FavoriteLocalDataSource {
     /******
      * add
      *****/
-    public void addFavorite(long recipeId){
+    public void addFavorite(long recipeId) {
         mAppExecutors.diskIO().execute(() ->
                 mFavoriteDao.addFavorite(new Favorites(recipeId)));
 
@@ -64,7 +66,7 @@ public class FavoriteLocalDataSource {
     /********
      * remove
      ********/
-    public void getRemove(long id){
+    public void getRemove(long id) {
         mAppExecutors.diskIO().execute(() -> {
 
             mFavoriteDao.removeFavorite(id);

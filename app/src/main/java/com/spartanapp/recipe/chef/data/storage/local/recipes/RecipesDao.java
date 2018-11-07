@@ -20,6 +20,18 @@ public interface RecipesDao {
     @Query("SELECT * FROM recipe_table")
     List<Recipe> getRecipes();
 
+//    @Query("SELECT \n" +
+//            "  CASE \n" +
+//            "    WHEN 'true' =:recipeBoolean THEN recipe_table._id IN (1, 2, 3, 4, 5)\n" +
+//            "    ELSE '*' \n" +
+//            "  END\n" +
+//            "FROM recipe_table;")
+//    List<Recipe> getRecipes(boolean recipeBoolean);
+
+//    @Query("SELECT * FROM recipe_table \n" +
+//            "WHERE recipe_table._id IN (1, 2, 3, 4, 5)")
+//    List<Recipe> getRecipes();
+
     @Query("SELECT * FROM sub_recipe_table")
     List<SubRecipe> getSubRecipes();
 

@@ -2,8 +2,10 @@ package com.spartanapp.recipe.chef.main;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import com.android.billingclient.api.SkuDetails;
 import com.android.billingclient.api.SkuDetailsResponseListener;
 import com.spartanapp.recipe.chef.Injection;
 import com.spartanapp.recipe.chef.R;
+import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.main.favorite.FavoritesViewModel;
 import com.spartanapp.recipe.chef.main.description.DescriptionActivity;
 import com.spartanapp.recipe.chef.main.favorite.FavoritesFragment;
@@ -31,10 +34,16 @@ import java.util.List;
 import com.spartanapp.recipe.chef.databinding.MainActBinding;
 import com.spartanapp.recipe.chef.main.recipes.RecipesViewModel;
 import com.spartanapp.recipe.chef.main.subscribe.SubscribeActivity;
+import com.spartanapp.recipe.chef.util.AppExecutors;
+import com.spartanapp.recipe.chef.util.LinkUtils;
+import com.spartanapp.recipe.chef.util.SimpleDialog;
 import com.spartanapp.recipe.chef.util.ViewModelFactory;
 import com.spartanapp.recipe.chef.util.billing.BillingManager;
 
-public class MainActivity extends AppCompatActivity {
+import static com.spartanapp.recipe.chef.RecipeApp.SUB_1_MONTH;
+
+public class MainActivity extends AppCompatActivity implements
+        BillingManager.BillingUpdatesListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -45,17 +54,18 @@ public class MainActivity extends AppCompatActivity {
     private SearchViewModel mSearchViewModel;
     private BillingManager mBillingManager;
 
+    public static void startActivity(Activity activity) {
+
+        Intent intent = new Intent(activity, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        activity.startActivity(intent);
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_act);
-
-        SharedPreferences settings = getSharedPreferences("my_prefs", 0);
-        String name = settings.getString("name", null);
-
-        if (name == null) {
-            PolicyActivity.startActivity(this);
-        }
 
         //add content
         Injection.provideContentRepository(this).setContent();
@@ -65,10 +75,30 @@ public class MainActivity extends AppCompatActivity {
         mFavoritesViewModel = ViewModelFactory.obtainViewModel(this, FavoritesViewModel.class);
         mSearchViewModel = ViewModelFactory.obtainViewModel(this, SearchViewModel.class);
 
+        mBillingManager = new BillingManager(this, this);
+        mBillingManager.start();
+
         //setup
+        setupSherPreference();
         setupPager();
         setupBottomNavigationView();
         setupEvent();
+        showRateUsDialog();
+    }
+
+    public void setupSherPreference() {
+        //policyActivity
+        SharedPreferences settings = getSharedPreferences("my_prefs", 0);
+        int id = settings.getInt("id", 0);
+
+        if (id == 0) {
+            PolicyActivity.startActivity(this);
+        }
+
+        //substrice
+        SharedPreferences sub = getSharedPreferences("is_sub", 0);
+        boolean isSub = sub.getBoolean("free", false);
+
     }
 
     /***************************
@@ -149,6 +179,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /******************
+     * open subscrition activity
+     *****************/
     public void SubRecipe(View v) {
         SubscribeActivity.startActivity(this, true);
     }
@@ -161,7 +194,63 @@ public class MainActivity extends AppCompatActivity {
         SubscribeActivity.startActivity(this, false);
     }
 
+    /************
+     * rate us
+     ************/
+    private void showRateUsDialog() {
+        //createing
+        SharedPreferences preferences = getSharedPreferences("preferences", 0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("incres", preferences.getInt("incres", 0) + 1);
+        editor.commit();
 
+        //adding
+        SharedPreferences incresing = getSharedPreferences("preferences", 0);
+        int id = incresing.getInt("incres", 0);
+
+        //cheking if user have go to rate
+        SharedPreferences dialogOut = getSharedPreferences("dialog", 0);
+        boolean dlg = dialogOut.getBoolean("dialog", false);
+
+        if (id % 3 == 0) {
+            if (!dlg) {
+                SimpleDialog.areYouSure(
+                        this,
+                        "Rate Us",
+                        "Support recipe apps",
+                        () -> {
+                            LinkUtils.openLink(this, getString(R.string.appLink));
+
+                            SharedPreferences dialogIn = getSharedPreferences("dialog", 0);
+                            SharedPreferences.Editor editorDialog = dialogIn.edit();
+                            editorDialog.putBoolean("dialog", true);
+                            editorDialog.commit();
+                        });
+            }
+        }
+    }
+
+
+    /******************
+     * billingManager
+     *****************/
+    @Override
+    public void onBillingClientSetupFinished() {
+        mBillingManager.querySubscriptions();
+
+    }
+
+    @Override
+    public void onPurchasesUpdated(List<Purchase> purchases) {
+
+        if (purchases.isEmpty()) {
+            SharedPreferences preferences = getSharedPreferences("is_sub", 0);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putBoolean("free", false);
+            editor.commit();
+
+        }
+    }
 }
 
 

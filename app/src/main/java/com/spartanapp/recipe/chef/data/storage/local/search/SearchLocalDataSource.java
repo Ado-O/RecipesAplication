@@ -1,5 +1,9 @@
 package com.spartanapp.recipe.chef.data.storage.local.search;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import com.spartanapp.recipe.chef.data.Recipe;
 import com.spartanapp.recipe.chef.data.SubRecipe;
 import com.spartanapp.recipe.chef.data.storage.SearchRepository;
@@ -19,22 +23,26 @@ public class SearchLocalDataSource {
     private final SearchDao mSearchDao;
     private final RecipesDao mRecipesDao;
     private final FavoriteDao mFavoriteDao;
+    private final Context mContext;
 
     public SearchLocalDataSource(AppExecutors appExecutors, SearchDao searchDao,
-                                 RecipesDao recipesDao, FavoriteDao favoriteDao) {
+                                 RecipesDao recipesDao, FavoriteDao favoriteDao,
+                                 Context context) {
         mAppExecutors = appExecutors;
         mSearchDao = searchDao;
         mRecipesDao = recipesDao;
         mFavoriteDao = favoriteDao;
+        mContext = context;
     }
 
     public static SearchLocalDataSource getInstance(AppExecutors appExecutors,
                                                     SearchDao searchDao,
                                                     RecipesDao recipesDao,
-                                                    FavoriteDao favoriteDao) {
+                                                    FavoriteDao favoriteDao,
+                                                    Context context) {
         if (sInstance == null) {
             sInstance = new SearchLocalDataSource(appExecutors, searchDao,
-                    recipesDao, favoriteDao);
+                    recipesDao, favoriteDao, context);
         }
         return sInstance;
     }
@@ -45,13 +53,27 @@ public class SearchLocalDataSource {
     public void getSearchRecipes(String title, SearchRepository.GetSearchCallback callback) {
         mAppExecutors.diskIO().execute(() -> {
 
-            List<Recipe> recipes = mSearchDao.getSearchRecipes('%'+title+'%');
+            List<Recipe> recipes = mSearchDao.getSearchRecipes('%' + title + '%');
 
             for (Recipe r : recipes) {
                 r.setDirections(mRecipesDao.getRecipesDescription(r.getId()));
                 r.setIngredients(mRecipesDao.getIngredients(r.getId()));
                 r.setTag(mRecipesDao.getRecipesTag(r.getId()));
                 r.setLike(mFavoriteDao.isFavorite(r.getId()) != null);
+
+                SharedPreferences sub = mContext.getSharedPreferences("is_sub", 0);
+                boolean isSub = sub.getBoolean("free", false);
+
+                if (!isSub) {
+                    if (r.getId() == 1 || r.getId() == 2 || r.getId() == 3
+                            || r.getId() == 4 || r.getId() == 5) {
+                        r.setLock(true);
+                    } else {
+                        r.setLock(false);
+                    }
+                } else {
+                    r.setLock(true);
+                }
             }
 
             mAppExecutors.mainThread().execute(() -> callback.onSuccess(recipes));

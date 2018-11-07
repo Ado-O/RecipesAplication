@@ -10,7 +10,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(tableName="recipe_table")
+@Entity(tableName = "recipe_table")
 public class Recipe implements Parcelable {
 
     @ColumnInfo(name = "_id")
@@ -46,6 +46,9 @@ public class Recipe implements Parcelable {
 
     @Ignore
     private boolean mLike;
+
+    @Ignore
+    private boolean mIsLock;
 
     @Ignore
     private boolean mPolicy;
@@ -162,6 +165,14 @@ public class Recipe implements Parcelable {
         mLike = like;
     }
 
+    public boolean isLock() {
+        return mIsLock;
+    }
+
+    public void setLock(boolean lock) {
+        mIsLock = lock;
+    }
+
     public boolean isPolicy() {
         return mPolicy;
     }
@@ -206,6 +217,7 @@ public class Recipe implements Parcelable {
         mProtein = in.readString();
         mFat = in.readString();
         mLike = in.readByte() != 0;
+        mIsLock = in.readByte() != 0;
         mPolicy = in.readByte() != 0;
         mIngredients = in.createTypedArrayList(Ingredients.CREATOR);
         mDirections = in.createTypedArrayList(Directions.CREATOR);
@@ -225,6 +237,7 @@ public class Recipe implements Parcelable {
         dest.writeString(mProtein);
         dest.writeString(mFat);
         dest.writeByte((byte) (mLike ? 1 : 0));
+        dest.writeByte((byte) (mIsLock ? 1 : 0));
         dest.writeByte((byte) (mPolicy ? 1 : 0));
         dest.writeTypedList(mIngredients);
         dest.writeTypedList(mDirections);

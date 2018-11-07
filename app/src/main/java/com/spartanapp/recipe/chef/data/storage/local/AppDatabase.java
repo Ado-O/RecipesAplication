@@ -28,8 +28,8 @@ import java.io.File;
         Ingredients.class,
         Directions.class,
         RecipesTag.class,
-        Favorites.class
-}, version = 13, exportSchema = false)
+        Favorites.class,
+}, version = 15, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;

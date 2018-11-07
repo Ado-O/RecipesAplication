@@ -33,6 +33,7 @@
                 android:layout_margin="10dp"
                 android:background="@color/blackColor"
                 android:clickable="true"
+                android:onClick="SubRecipe"
                 android:alpha="0.5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

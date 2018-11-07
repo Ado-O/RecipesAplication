@@ -39,7 +39,6 @@ public class ContentRemoteDataSource {
                         }.getType()
                 );
 
-        Log.e(TAG, String.valueOf(baseResponse.getData().getRecipes().size()));
 
         callback.onSuccess(
                 baseResponse
